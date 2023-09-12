@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  background: rgba(13, 41, 54, 0.68);
+  height: rem(80);
+  @include mq(md) {
+    height: rem(90);
+  }
+}
+
+.header-inner {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left:rem(15);
+  padding-right:rem(15);
+  @include mq(md) {
+    padding-left:rem(40);
+    padding-right:rem(20);
+  }
+}
+.header-logo {
+  width: rem(102);
+  position: relative;
+  z-index: 999;
+  @include mq(md) {
+  }
+}
+.header-drawer {
+  @include mq(md) {
+    display: none;
+  }
+}

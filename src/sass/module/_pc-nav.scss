@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.pc-nav{
+  height: inherit;
+  display: none;
+  @include mq(md){
+    display: block;
+  }
+}
+
+.pc-nav__list{
+  height: inherit;
+  display: flex;
+  align-items: center;
+
+}
+
+.pc-nav__item{
+  height: inherit;
+}
+
+.pc-nav__link{
+  height: inherit;
+  display: inline-block;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 rem(20);
+}
+.pc-nav__link--english{
+  font-family: $english-font-family;
+  // タブレットサイズに収めるため画面幅でフォントサイズを変更する
+  font-size: vw(1440,18);
+  line-height: 1;
+}
+.pc-nav__link--japanese{
+    // タブレットサイズに収めるため画面幅でフォントサイズを変更する
+  font-size: vw(1440,10);
+  line-height: 1.5;
+  margin-top: rem(4);
+}
