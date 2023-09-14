@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.section-title{
+
+}
+
+.section-title_main {
+  text-align: center;
+  font-family:$english-font-family;
+  font-size: rem(32);
+  line-height: 1.25;
+  @include mq(md){
+    font-size: rem(40);
+    line-height: 1;
+  }
+}
+
+.section-title_acronym {
+
+  color: $accent-color;
+  text-transform: uppercase;
+
+}
+
+.section-title_sub {
+  text-align: center;
+  color: $accent-color;
+  font-size: rem(12);
+  line-height: 1.5; 
+  margin-top: rem(4);
+  @include mq(md){
+    margin-top: rem(8);
+  }
+}
+

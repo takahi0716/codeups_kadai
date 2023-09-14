@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.article-cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-cards__item {
+  width: 100%;
+  @include mq(md){
+    max-width: calc(33.333333% - 2.5rem * 2 / 3);
+  width: 100%;
+  }
+}
+
+.article-cards__item + .article-cards__item{
+  margin-left: rem(40);
+}

@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.lists {
+  display: flex;
+  justify-content: space-between;
+  @include mq(md) {
+    justify-content: space-between;
+  }
+}
+
+.lists__wrapper {
+  @include mq(md) {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.lists__wrapper + .lists__wrapper{
+  @include mq(md) {
+
+  }
+}
+.lists__container{
+  @include mq(md) {
+  width: 50%;
+  }
+}
+.lists__container + .lists__container {
+  padding-top: rem(40);
+  @include mq(md) {
+    padding-top: 0;
+  }
+}
+
+.lists__item + .lists__item {
+  padding-top: rem(40);
+}

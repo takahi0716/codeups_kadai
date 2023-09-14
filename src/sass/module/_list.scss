@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.list  {
+
+}
+
+.list__item {
+  padding-left: rem(22);
+  line-height: 1.125; /* 112.5% */
+  position: relative;
+}
+
+.list__item:first-child {
+  font-weight: $bold;
+}
+
+.list__item:first-child::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background-image: url(../images/common/seastar.png);
+}
+
+.list__item + .list__item {
+  padding-top: rem(24);
+}

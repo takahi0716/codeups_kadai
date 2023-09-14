@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.sp-nav {
+  padding-top: rem(104);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $accent-color;
+  color: $white;
+
+}
+
+.sp-nav.is-active {
+  display: block;
+}
+
+.sp-nav__inner {
+  padding-left: rem(15);
+  padding-right: rem(15);
+  max-width: rem(560);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.sp-nav__lists {
+
+}
+
+

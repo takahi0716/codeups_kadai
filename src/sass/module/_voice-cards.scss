@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.voice-cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.voice-cards__item {
+  width: 100%;
+  @include mq(md){
+    max-width: calc(50% - 2.5rem * 2 / 3);
+  width: 100%;
+  }
+}
+
+.voice-cards__item + .voice-cards__item{
+  margin-left: rem(40);
+}
