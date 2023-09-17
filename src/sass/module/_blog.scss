@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.blog {
+  padding-top: rem(80);
+  padding-bottom: rem(40);
+  @include mq(md){
+    padding-top: rem(100);
+    background: linear-gradient(180deg,transparent 0%, transparent 57%, $white 57%,  $white 100%),url(../images/common/blog-bg.jpg);
+    background-size:contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.blog__inner {
+}
+
+.blog__title {
+}
+
+.blog__cards {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}
+
+.blog__wrapper {
+  margin-top: rem(40);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}
+
+.blog__button {
+}

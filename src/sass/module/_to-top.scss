@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.to-top{
+    position: fixed;
+    right: rem(15);
+    bottom: rem(16);
+    z-index: 99;
+    @include mq(md){
+      right: rem(20);
+      bottom: rem(20);
+    }
+}
+
+.to-top__link{
+  display: block;
+  width: rem(48);
+  height: rem(48);
+  overflow: hidden;
+  @include mq(md){
+    width: rem(80);
+    height: rem(80);
+  }
+}

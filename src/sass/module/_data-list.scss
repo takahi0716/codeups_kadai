@@ -1,0 +1,24 @@
+@use "global" as *;
+.data-list {
+  color: $font-color;
+}
+
+.data-list__title {
+  font-weight: $bold;
+  line-height: 1.5; /* 150% */
+  padding-bottom: rem(4);
+  border-bottom: 1px solid $accent-color;
+}
+
+.data-list__data {
+  font-size: rem(14);
+  line-height: 1.71429; /* 171.429% */
+  margin-top: rem(8);
+}
+
+.data-list__wrapper {
+  margin-top: rem(8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -11,7 +11,7 @@
   }
 }
 
-.header-inner {
+.header__inner {
   height: inherit;
   display: flex;
   align-items: center;
@@ -20,18 +20,16 @@
   padding-right:rem(15);
   @include mq(md) {
     padding-left:rem(40);
-    padding-right:rem(20);
+    padding-right:rem(40);
   }
 }
-.header-logo {
+.header__logo {
   width: rem(102);
   position: relative;
   z-index: 999;
   @include mq(md) {
   }
 }
-.header-drawer {
-  @include mq(md) {
-    display: none;
-  }
+.header__hamburger {
+
 }

@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.mv {
+  position: relative;
+  height: 100vh;
+}
+
+.mv__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-family: $english-font-family;
+  font-weight: $normal;
+  text-align: center;
+  @include mq(md) {
+  }
+}
+
+.mv__main {
+  font-size: rem(40);
+  text-transform: uppercase;
+  letter-spacing: 0.54em;
+
+  @include mq(md) {
+    font-size: rem(80);
+    line-height: 1.25; /* 125% */
+  }
+}
+
+.mv__sub {
+  font-size: rem(20);
+}

@@ -2,6 +2,9 @@
 
 .hamburger {
   z-index: 9999;
+  @include mq(md) {
+    display: none;
+  }
 }
 
 .hamburger span {

@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.top-about{
+  margin-top: rem(80);
+  @include mq(md){
+    margin-top: rem(140);
+  }
+}
+
+.top-about__design {
+  display: none;
+  @include mq(md) {
+    display: block;
+    position: relative;
+  }
+}
+
+.top-about__design-image {
+  @include mq(md) {
+    position: absolute;
+    bottom: rem(-86);
+    right: rem(83);
+    width: vw(1440,194);
+  }
+}

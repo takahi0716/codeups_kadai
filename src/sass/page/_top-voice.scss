@@ -1,0 +1,24 @@
+@use "global" as *;
+.top-voice{
+  margin-top: rem(40);
+  @include mq(md){
+    margin-top: rem(100);
+  }
+}
+
+.top-voice__design {
+  display: none;
+  @include mq(md) {
+    display: block;
+    position: relative;
+  }
+}
+
+.top-voice__design-image {
+  @include mq(md) {
+    position: absolute;
+    bottom: rem(-67);
+    right: rem(180);
+    width: vw(1440,71);
+  }
+}

@@ -1,18 +1,17 @@
 @use "global" as *;
 
 .campaign-cards{
-  display: flex;
-  flex-wrap: wrap;
+
 }
 
 .campaign-cards__item {
-  width: 100%;
-  @include mq(md){
-    max-width: calc(33.333333% - 2.5rem * 2 / 3);
-  width: 100%;
-  }
+
 }
 
 .campaign-cards__item + .campaign-cards__item{
-  margin-left: rem(40);
+  margin-left: rem(24);
+  @include mq(md){
+    margin-left: rem(40);
+  }
+
 }

@@ -1,0 +1,75 @@
+@use "global" as *;
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slide__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slider 32s linear infinite;
+}
+
+.slide__image:nth-child(1) {
+  background-image: url(../images/common/mv-turtle-sp.jpg);
+  animation-delay: 0s;
+  @include mq(md){
+    background-image: url(../images/common/mv-turtle-pc.jpg);
+  }
+}
+
+.slide__image:nth-child(2) {
+  background-image: url(../images/common/mv-diver-sp.jpg);
+  animation-delay: 8s;
+  @include mq(md){
+    background-image: url(../images/common/mv-diver-pc.jpg);
+  }
+}
+
+.slide__image:nth-child(3) {
+  background-image: url(../images/common/mv-ship-sp.jpg);
+  animation-delay: 16s;
+  @include mq(md){
+    background-image: url(../images/common/mv-ship-pc.jpg);
+  }
+}
+.slide__image:nth-child(4) {
+  background-image: url(../images/common/mv-beach-sp.jpg);
+  animation-delay: 24s;
+  @include mq(md){
+    background-image: url(../images/common/mv-beach-pc.jpg);
+  }
+}
+
+@keyframes slider {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  //1秒後
+  3.125% {
+    opacity: 1;
+  }
+  //8秒後
+  25% {
+    opacity: 1;
+  }
+  //10秒後
+  31.25% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  //32秒後
+  100% {
+    opacity: 0;
+  }
+}

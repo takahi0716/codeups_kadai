@@ -19,6 +19,11 @@
   height: inherit;
 }
 
+.pc-nav__item:not(:last-child){
+  padding-right:  vw(1440,40);
+}
+
+
 .pc-nav__link{
   height: inherit;
   display: inline-block;
@@ -27,15 +32,38 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 rem(20);
+      /*線の基点とするためrelativeを指定*/
+	position: relative;
 }
-.pc-nav__link--english{
+
+.pc-nav__link::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: rem(20);
+  left: 0;
+  /*線の形状*/
+  width: 100%;
+  height: 1px;
+  background:$white;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: center top;/*上部中央基点*/
+}
+
+/*hoverの設定*/
+.pc-nav__link:hover::after {
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+.pc-nav___english-title{
   font-family: $english-font-family;
   // タブレットサイズに収めるため画面幅でフォントサイズを変更する
   font-size: vw(1440,18);
   line-height: 1;
 }
-.pc-nav__link--japanese{
+.pc-nav__japanese-title{
     // タブレットサイズに収めるため画面幅でフォントサイズを変更する
   font-size: vw(1440,10);
   line-height: 1.5;

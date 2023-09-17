@@ -1,0 +1,20 @@
+@use "global" as *;
+.top-price {
+}
+
+.top-price__design {
+  display: none;
+  @include mq(md) {
+    display: block;
+    position: relative;
+  }
+}
+
+.top-price__design-image {
+  @include mq(md) {
+    position: absolute;
+    bottom: rem(-40);
+    left: rem(100);
+    width: vw(1440,437);
+  }
+}

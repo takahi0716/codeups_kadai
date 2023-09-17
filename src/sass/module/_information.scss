@@ -1,0 +1,78 @@
+@use "global" as *;
+
+.information {
+  background-color: $gray2;
+  color: $font-color;
+  padding-bottom: rem(80);
+  @include mq(md) {
+    padding-bottom: rem(100);
+  }
+}
+
+.information__inner {
+}
+
+.information__title {
+}
+
+.infomation__contaner {
+  margin-top: rem(24);
+  @include mq(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.information__image {
+  position: relative;
+  @include mq(md) {
+    width: calc(50% - (48px / 2));
+  }
+}
+/* コンテナ要素の擬似要素(ここで比率を調整) */
+.information__image::before {
+  content: "";
+  display: block;
+  padding-top: calc(356 / 540 * 100%); /* 比率を指定 */
+}
+
+.information__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;//トリミング
+}
+
+.information__body {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(0);
+    width: calc(50% - (48px / 2));
+  }
+}
+.information__article-title {
+  font-size: 2rem (20);
+  font-weight: $bold;
+  line-height: 1.2; /* 120% */
+  padding-bottom: rem(4);
+  border-bottom: 1px solid $accent-color;
+  @include mq(md) {
+    padding-bottom: rem(8);
+  }
+}
+.information__text {
+  margin-top: rem(8);
+  line-height: 1.5; /* 150% */
+  @include mq(md) {
+    margin-top: rem(16);
+  }
+}
+
+.information__wrapper {
+  margin-top: rem(40);
+  text-align: center;
+}

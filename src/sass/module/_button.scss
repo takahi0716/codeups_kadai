@@ -1,6 +1,5 @@
 @use "global" as *;
 
-
 /* ボタン共通設定 */
 .button {
   /*矢印の基点とするためrelativeを指定*/
@@ -8,14 +7,12 @@
   /*ボタンの形状*/
   display: inline-block;
   color: $white;
-  font-family: $english-font-family;
-  font-size: rem(14);
   background-color: $accent-color;
   border: 1px solid $accent-color;
-  position: relative;
+  font-family: $english-font-family;
+  font-size: rem(14);
   z-index: 1;
   text-align: center;
-
   transition: 0.2s;
 }
 
@@ -32,7 +29,7 @@
 
 .button__text {
   display: inline-block;
-  padding: rem(16) rem(88)  rem(16) rem(40);
+  padding: rem(16) rem(88) rem(16) rem(40);
 }
 
 .button__text::before {
@@ -47,7 +44,6 @@
   display: inline-block;
   border-bottom: 1px solid $white;
   z-index: 1;
-
   transition: 0.2s;
 }
 
@@ -63,7 +59,6 @@
   display: inline-block;
   vertical-align: middle;
   z-index: 1;
-
   transition: 0.2s;
 }
 
