@@ -124,6 +124,7 @@ margin-top: rem(4);
   text-align: center;
   font-family: $english-font-family;
   font-size: min(vw(375, 80), rem(80));
+  font-weight: $normal;
   line-height: 1;
   margin-left: rem(-10);
   @include mq(md) {

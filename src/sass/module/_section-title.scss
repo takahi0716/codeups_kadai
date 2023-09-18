@@ -9,6 +9,7 @@
   font-family: $english-font-family;
   font-size: rem(32);
   line-height: 1.25;
+  font-weight: $normal;
   @include mq(md) {
     font-size: rem(40);
     line-height: 1;
