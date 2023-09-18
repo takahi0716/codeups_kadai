@@ -7,6 +7,7 @@
 .section-title__main {
   text-align: center;
   font-family: $english-font-family;
+  color: $font-color;
   font-size: rem(32);
   line-height: 1.25;
   font-weight: $normal;
@@ -15,6 +16,7 @@
     line-height: 1;
   }
 }
+
 .section-title__main--white {
   @include mq(md) {
     color: white;
