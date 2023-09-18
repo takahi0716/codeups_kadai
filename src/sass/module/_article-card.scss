@@ -3,8 +3,8 @@
 .article-card {
   color: $font-color;
   background-color: $white;
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
-  padding: rem(16) rem(16) rem(24);
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+  padding: rem(15) rem(16) rem(24);
 }
 
 .article-card__img {
@@ -39,19 +39,19 @@ font-family: $english-font-family;
 }
 
 .article-card__title {
-  margin-top: rem(4);
-  font-weight: $bold;
+  font-size: rem(16);
+  font-weight: 500;
   line-height: 1.5;
   display: block;
-  border-bottom: 1px solid $accent-color;
+  border-bottom: rem(1) solid $accent-color;
   padding-bottom: rem(4);
 }
 
 .article-card__text {
   margin-top: rem(16);
-  font-size: rem(14);
+  font-size: rem(16);
   line-height: 1.5;
   @include mq(md) {
-    font-size: rem(16);
+
   }
 }

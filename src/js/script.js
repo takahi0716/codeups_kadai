@@ -15,9 +15,16 @@ jQuery(function ($) {
   });
 
   // swiper
+  var windowSize = $(window).width();
+  var space = 24;
+  if (windowSize < 376) {
+    space = 24;
+  } else {
+    space = 40;
+  }
   var swiper = new Swiper(".js-campaign-swiper", {
     slidesPerView: "auto",
-    spaceBetween: 24,
+    spaceBetween: space,
 
     pagination: {
       el: ".swiper-pagination",
@@ -70,27 +77,29 @@ jQuery(function ($) {
   // ボタンの表示設定
   $(window).scroll(function () {
     if ($(this).scrollTop() > headerHeight) {
-      // 指定px以上のスクロールでボタンを表示
+      // 指定の要素が登場したらスクロールでボタンを表示
       topBtn.fadeIn();
     } else {
-      // 画面が指定pxより上ならボタンを非表示
+      // 指定の要素より上ならボタンを非表示
       topBtn.fadeOut();
     }
   });
 
   // ローディング
-
   window.addEventListener("load", (e) => {
     const tl = gsap.timeline();
     const title = document.querySelector(".loading__title");
     const loading = document.querySelector(".loading__wrap");
 
-    tl.to(".loading__image-left", {
-      y: "0%",
-      duration: 1,
-      ease: "power4.out",
-      delay: 1,
-    })
+    tl
+      // 左の画像を上げる
+      .to(".loading__image-left", {
+        y: "0%",
+        duration: 1,
+        ease: "power4.out",
+        delay: 1,
+      })
+      // 右の画像を上げる
       .to(
         ".loading__image-right",
         {
@@ -100,10 +109,11 @@ jQuery(function ($) {
         },
         "<0.25"
       )
+      // 文字色を白に変更
       .add(() => {
         title.classList.add("loading__title--white");
       }, "<0.25")
-      // .to('.loading__reveal-2',1,{y:'-200%'},'>.5')
+      // ローディング画面をゆっくり透明にする
       .to(".loading__wrap", {
         opacity: 0,
         duration: 1,

@@ -17,7 +17,7 @@
 }
 
 .price__flex{
-  margin-top: rem(24);
+  margin-top: rem(28);
   display: flex;
   flex-direction: column;
   @include mq(md) {
@@ -53,10 +53,14 @@
 .price__pc-image {
   display: none;
   position: relative;
-  max-width: calc(50% - 40px * 1 / 2);
+  max-width: calc(50% - rem(40) * 1 / 2);
   width: 100%;
   @include mq(md){
     display:block;
+    max-width: rem(492);
+    width: vw(1440,492);
+    margin-left: min(vw(1440,93), rem(93));
+    
   }
 }
 
@@ -79,13 +83,14 @@
   width: 100%;
   margin-top: rem(40);
   @include mq(md){
-    max-width: calc(50% - 93px * 1 / 2);
+    max-width: rem(492);
+    width: vw(1440,492);
     margin-top: 0;
   }
 }
 
 .price__list:not(:first-child) {
-  margin-top: rem(40);
+  margin-top: rem(39);
   
 }
 

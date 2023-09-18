@@ -9,26 +9,33 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -56%);
   color: $white;
   font-family: $english-font-family;
   font-weight: $normal;
   text-align: center;
   @include mq(md) {
+    transform: translate(-50%, -44%);
   }
 }
 
 .mv__main {
   font-size: rem(40);
-  text-transform: uppercase;
   letter-spacing: 0.54em;
-
+  transform: translateX(rem(10));
   @include mq(md) {
     font-size: rem(80);
-    line-height: 1.25; /* 125% */
+    line-height: 1;
+    letter-spacing: 0.52em;
+    transform: translateX(rem(21));
   }
 }
 
 .mv__sub {
   font-size: rem(20);
+  margin-top: rem(-3);
+  line-height: 1;
+  @include mq(md) {
+    margin-top: rem(10);
+  }
 }

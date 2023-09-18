@@ -3,29 +3,46 @@
 .blog {
   padding-top: rem(80);
   padding-bottom: rem(40);
-  @include mq(md){
+  @include mq(md) {
     padding-top: rem(100);
-    background: linear-gradient(180deg,transparent 0%, transparent 57%, $white 57%,  $white 100%),url(../images/common/blog-bg.jpg);
-    background-size:contain;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        transparent 57%,
+        $white 57%,
+        $white 100%
+      ),
+      url(../images/common/blog-bg.jpg);
+    background-size: contain;
     background-repeat: no-repeat;
   }
 }
 
 .blog__inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-left: rem(21);
+  padding-right: rem(21);
+  @include mq("md") {
+    max-width: $inner + strip-unit($padding-pc) * 2;
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
 }
 
 .blog__title {
 }
 
 .blog__cards {
-  margin-top: rem(24);
+  margin-top: rem(29);
   @include mq(md) {
     margin-top: rem(80);
   }
 }
 
 .blog__wrapper {
-  margin-top: rem(40);
+  margin-top: rem(39);
   text-align: center;
   @include mq(md) {
     margin-top: rem(80);

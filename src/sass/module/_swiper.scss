@@ -3,7 +3,7 @@
 .swiper {
   width: 100%;
   height: 100%;
-  padding-bottom: 10px;
+  padding-bottom: rem(10);
   padding-left: rem(15);
   padding-right: rem(15);
   @include mq(md) {
@@ -26,13 +26,13 @@
 .swiper-button-prev,
 .swiper-button-next {
   display: none;
-  @include mq(md){
-  display: block;
-  height: rem(80);
-  width: rem(80);
+  @include mq(md) {
+    display: block;
+    height: rem(80);
+    width: rem(80);
+  }
 }
-}
-.swiper-button{
+.swiper-button {
   position: relative;
 }
 /* 前へ次への矢印カスタマイズ */
@@ -49,15 +49,14 @@
 .swiper-button-prev {
   position: absolute;
   left: inherit;
-  top: rem(-40);
-  right: vw(1440,340);
-
+  top: rem(-43);
+  right: vw(1440, 340);
 }
 
 .swiper-button-next {
   position: absolute;
-  top: rem(-40);
-  right: vw(1440,180);
+  top: rem(-45);
+  right: vw(1440, 180);
 }
 
 /* 前への矢印カスタマイズ */
@@ -66,6 +65,5 @@
 }
 /* 次への矢印カスタマイズ */
 .swiper-button-next::after {
-  background-image: url(../images/common/next-btn.png)
+  background-image: url(../images/common/next-btn.png);
 }
-

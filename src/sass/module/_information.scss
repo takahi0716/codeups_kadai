@@ -3,7 +3,7 @@
 .information {
   background-color: $gray2;
   color: $font-color;
-  padding-bottom: rem(80);
+  padding-bottom: rem(83);
   @include mq(md) {
     padding-bottom: rem(100);
   }
@@ -16,18 +16,19 @@
 }
 
 .infomation__contaner {
-  margin-top: rem(24);
+  margin-top: rem(27);
   @include mq(md) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: rem(39);
   }
 }
 
 .information__image {
   position: relative;
   @include mq(md) {
-    width: calc(50% - (48px / 2));
+    width: vw(1440,540);
   }
 }
 /* コンテナ要素の擬似要素(ここで比率を調整) */
@@ -50,29 +51,33 @@
 .information__body {
   margin-top: rem(24);
   @include mq(md) {
-    margin-top: rem(0);
-    width: calc(50% - (48px / 2));
+    margin-top: rem(-2);
+    width: vw(1440,492);
+    margin-left: rem(48);
   }
 }
 .information__article-title {
-  font-size: 2rem (20);
+  font-size: rem(20);
   font-weight: $bold;
   line-height: 1.2; /* 120% */
   padding-bottom: rem(4);
-  border-bottom: 1px solid $accent-color;
+  border-bottom: rem(1) solid $accent-color;
   @include mq(md) {
     padding-bottom: rem(8);
+    font-size: rem(24);
+    line-height: 1;
   }
 }
 .information__text {
   margin-top: rem(8);
   line-height: 1.5; /* 150% */
   @include mq(md) {
-    margin-top: rem(16);
+    margin-top: rem(8);
   }
 }
 
 .information__wrapper {
-  margin-top: rem(40);
+  margin-top: rem(39);
+  padding-right: rem(2);
   text-align: center;
 }

@@ -6,17 +6,21 @@
 .campaign__title {
 }
 
+.campaign__swiper-button {
+}
+
 .campaign__swiper {
-  margin-top: rem(24);
+  margin-top: rem(29);
   @include mq(md) {
     margin-top: rem(40);
   }
 }
 
 .campaign__wrapper {
-  margin-top: rem(40);
+  margin-top: rem(28);
   text-align: center;
+  padding-right:rem(4);
   @include mq(md) {
-    margin-top: rem(80);
+    margin-top: rem(72);
   }
 }

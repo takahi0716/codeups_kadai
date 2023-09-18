@@ -2,7 +2,7 @@
 .top-contact {
   margin-top: rem(80);
   @include mq(md) {
-    margin-top: rem(140);
+    margin-top: rem(142);
   }
 }
 
@@ -15,9 +15,9 @@
   top: rem(-26);
   right: rem(15);
   width: rem(109);
-  @include mq(md){
-    top: rem(-40 );
+  @include mq(md) {
+    top: rem(-40);
     right: rem(50);
-    width: vw(1440,301);
+    width: vw(1440, 301);
   }
 }

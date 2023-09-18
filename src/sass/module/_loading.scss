@@ -16,6 +16,7 @@
   top: 0;
   left: 0;
 }
+
 .loading__backgroud {
   background-color: $white;
   z-index: 10;
@@ -59,29 +60,38 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -56%);
   color: $accent-color;
   font-family: $english-font-family;
   font-weight: $normal;
   text-align: center;
   z-index: 30;
+  @include mq(md) {
+    transform: translate(-50%, -44%);
+  }
 }
 
 .loading__main {
   font-size: rem(40);
-  text-transform: uppercase;
   letter-spacing: 0.54em;
-
+  transform: translateX(rem(10));
   @include mq(md) {
     font-size: rem(80);
-    line-height: 1.25; /* 125% */
+    line-height: 1;
+    letter-spacing: 0.52em;
+    transform: translateX(rem(21));
   }
 }
 
 .loading__sub {
   font-size: rem(20);
+  margin-top: rem(-3);
+  line-height: 1;
+  @include mq(md) {
+    margin-top: rem(10);
+  }
 }
 
-.loading__title--white{
-  color:$white;
+.loading__title--white {
+  color: $white;
 }

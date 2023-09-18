@@ -10,14 +10,14 @@
 .hamburger span {
   position: relative;
   display: block;
-  height: rem(1);
+  height: rem(2);
   width: rem(32);
   background: $white;
   transition: all .5s;
 }
 
 .hamburger span:nth-child(1) {
-  top: 0;
+  top: rem(2);
 }
 
 .hamburger span:nth-child(2) {
@@ -26,7 +26,7 @@
 }
 
 .hamburger span:nth-child(3) {
-  top: 0;
+  top: rem(-2);
 }
 /*is-OPEN時の動き*/
 .hamburger.is-open span:nth-child(1) {

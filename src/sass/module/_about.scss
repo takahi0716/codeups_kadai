@@ -1,14 +1,14 @@
 @use "global" as *;
 
 .about {
-  padding-bottom: rem(70);
+  padding-bottom: rem(74);
   @include mq(md) {
     padding-bottom: rem(140);
   }
 }
 
 .about__bg{
-  margin-top: rem(24); 
+  margin-top: rem(28); 
   @include mq(md) {
     margin-top: rem(40); 
     position: relative;
@@ -17,7 +17,6 @@
 }
 
 .about__image{
-
   position: relative;
   padding-top: calc((26 + 186) / (64 + 281) * 100%);
 
@@ -67,12 +66,12 @@
   @include mq(md) {
     display: flex;
     justify-content: center;
-
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
+    transform: translate(-41%,-54%);
+    max-width: rem(840);
+    width: calc(840 / 1080 * 100%);
   }
 }
 
@@ -86,9 +85,11 @@
   @include mq(md) { 
     margin-top: rem(0);
     color: $white;
-    font-size: vw(1440,80);// レスポンシブを考慮し画面サイズによって大きさを変動
+    font-size: min(vw(1440,80), rem(80));// レスポンシブを考慮し画面サイズによって大きさを変動
     line-height: 1.25; /* 125% */
+    max-width: rem(400);
     width:  vw(1440,400);// レスポンシブを考慮し画面サイズによって大きさを変動
+    // width:  calc(400 / 840 * 100%);// レスポンシブを考慮し画面サイズによって大きさを変動
   }
 }
 
@@ -96,8 +97,10 @@
   margin-top: rem(16);
   @include mq(md) {
     margin-top: rem(0);
-    width:  vw(1440,400); // レスポンシブを考慮し画面サイズによって大きさを変動
-    margin-left: rem(20);
+    max-width: rem(400);
+    // width:  vw(1440,400); // レスポンシブを考慮し画面サイズによって大きさを変動
+    width:  calc(400 / 840 * 100%);// レスポンシブを考慮し画面サイズによって大きさを変動
+    margin-left: min(vw(1440,40), rem(40));
   }
 }
 
@@ -111,8 +114,10 @@
 .about__wrapper {
   margin-top: rem(50);
   text-align: center;
+  padding-right:rem(16);
   @include mq(md) {
     margin-top: rem(40);
+    padding-right:0;
   }
 }
 

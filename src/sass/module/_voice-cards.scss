@@ -12,7 +12,7 @@
 .voice-cards__item {
   width: 100%;
   @include mq(md){
-    max-width: calc(50% - 40px * 1 / 2);
+    max-width: calc(50% - rem(40) * 1 / 2);
   }
 }
 

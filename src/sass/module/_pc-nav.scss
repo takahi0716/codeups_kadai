@@ -1,30 +1,28 @@
 @use "global" as *;
 
-.pc-nav{
+.pc-nav {
   height: inherit;
   display: none;
-  @include mq(md){
+  @include mq(md) {
     display: block;
   }
 }
 
-.pc-nav__list{
+.pc-nav__list {
   height: inherit;
   display: flex;
   align-items: center;
-
 }
 
-.pc-nav__item{
+.pc-nav__item {
   height: inherit;
 }
 
-.pc-nav__item:not(:last-child){
-  padding-right:  vw(1440,40);
+.pc-nav__item:not(:last-child) {
+  padding-right: vw(1440, 40);
 }
 
-
-.pc-nav__link{
+.pc-nav__link {
   height: inherit;
   display: inline-block;
   color: #fff;
@@ -32,40 +30,41 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-      /*線の基点とするためrelativeを指定*/
-	position: relative;
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
 }
 
 .pc-nav__link::after {
-  content: '';
+  content: "";
   /*絶対配置で線の位置を決める*/
   position: absolute;
   bottom: rem(20);
   left: 0;
   /*線の形状*/
   width: 100%;
-  height: 1px;
-  background:$white;
+  height: rem(1);
+  background: $white;
   /*アニメーションの指定*/
-  transition: all .3s;
-  transform: scale(0, 1);/*X方向0、Y方向1*/
-  transform-origin: center top;/*上部中央基点*/
+  transition: all 0.3s;
+  transform: scale(0, 1); /*X方向0、Y方向1*/
+  transform-origin: center top; /*上部中央基点*/
 }
 
 /*hoverの設定*/
 .pc-nav__link:hover::after {
-  transform: scale(1, 1);/*X方向にスケール拡大*/
+  transform: scale(1, 1); /*X方向にスケール拡大*/
 }
 
-.pc-nav___english-title{
+.pc-nav__english-title {
   font-family: $english-font-family;
   // タブレットサイズに収めるため画面幅でフォントサイズを変更する
-  font-size: vw(1440,18);
+  font-size: vw(1440, 18);
+  font-weight: $normal;
   line-height: 1;
 }
-.pc-nav__japanese-title{
-    // タブレットサイズに収めるため画面幅でフォントサイズを変更する
-  font-size: vw(1440,10);
+.pc-nav__japanese-title {
+  // タブレットサイズに収めるため画面幅でフォントサイズを変更する
+  font-size: vw(1440, 10);
   line-height: 1.5;
   margin-top: rem(4);
 }

@@ -14,14 +14,9 @@
     line-height: 1;
   }
 }
-.section-title__main--white{
-  color: white;
-}
-.section-title__main--big {
-  font-size: min(vw(375,80),rem(80));
-  line-height: 1;
+.section-title__main--white {
   @include mq(md) {
-    font-size: min(vw(1440,80),rem(80));
+    color: white;
   }
 }
 
@@ -30,8 +25,10 @@
   text-transform: uppercase;
 }
 
-.section-title__acronym--white{
-  color: white;
+.section-title__acronym--white {
+  @include mq(md) {
+    color: white;
+  }
 }
 
 .section-title__sub {
@@ -45,6 +42,8 @@
   }
 }
 
-.section-title__sub--white{
-  color: white;
+.section-title__sub--white {
+  @include mq(md) {
+    color: white;
+  }
 }

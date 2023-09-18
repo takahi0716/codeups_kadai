@@ -13,8 +13,8 @@
 .top-price__design-image {
   @include mq(md) {
     position: absolute;
-    bottom: rem(-40);
-    left: rem(100);
-    width: vw(1440,437);
+    bottom: rem(-54);
+    left: rem(95);
+    width: vw(1440, 447);
   }
 }

@@ -1,8 +1,8 @@
 @use "global" as *;
-.top-voice{
-  margin-top: rem(40);
-  @include mq(md){
-    margin-top: rem(100);
+.top-voice {
+  margin-top: rem(42);
+  @include mq(md) {
+    margin-top: rem(103);
   }
 }
 
@@ -17,8 +17,8 @@
 .top-voice__design-image {
   @include mq(md) {
     position: absolute;
-    bottom: rem(-67);
+    bottom: rem(-72);
     right: rem(180);
-    width: vw(1440,71);
+    width: vw(1440, 71);
   }
 }

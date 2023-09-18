@@ -1,7 +1,10 @@
 @use "global" as *;
 
 .voice {
-  padding-bottom: rem(140);
+  padding-bottom: rem(83);
+  @include mq(md) {
+    padding-bottom: rem(144);
+  }
 }
 
 .voice__inner {
@@ -10,7 +13,7 @@
 .voice__title {
 }
 .voice__cards {
-  margin-top: rem(40);
+  margin-top: rem(46);
   @include mq(md) {
     margin-top: rem(30);
   }
@@ -18,7 +21,7 @@
 
 .voice__wrapper {
   text-align: center;
-  margin-top: rem(40);
+  margin-top: rem(39);
   @include mq(md) {
     margin-top: rem(80);
   }
