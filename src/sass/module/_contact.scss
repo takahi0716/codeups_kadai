@@ -123,6 +123,7 @@ margin-top: rem(4);
 .contact__main-title {
   text-align: center;
   font-family: $english-font-family;
+  color: $font-color;
   font-size: min(vw(375, 80), rem(80));
   font-weight: $normal;
   line-height: 1;
