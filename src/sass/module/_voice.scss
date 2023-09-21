@@ -8,6 +8,12 @@
 }
 
 .voice__inner {
+  padding-left: $padding-sp;
+  padding-right: $padding-sp;
+  @include mq(md) {
+    padding-left: vw(1440, strip-unit($padding-pc));
+    padding-right: vw(1440, strip-unit($padding-pc));
+  }
 }
 
 .voice__title {

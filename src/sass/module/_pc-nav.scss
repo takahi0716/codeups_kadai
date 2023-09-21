@@ -58,13 +58,13 @@
 .pc-nav__english-title {
   font-family: $english-font-family;
   // タブレットサイズに収めるため画面幅でフォントサイズを変更する
-  font-size: vw(1440, 18);
+  font-size: min(vw(1440, 18), rem(18));
   font-weight: $normal;
   line-height: 1;
 }
 .pc-nav__japanese-title {
   // タブレットサイズに収めるため画面幅でフォントサイズを変更する
-  font-size: vw(1440, 10);
+  font-size: min(vw(1440, 10), rem(10));
   line-height: 1.5;
   margin-top: rem(4);
 }

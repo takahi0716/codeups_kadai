@@ -36,6 +36,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeLegibility;
   line-height: 1.5;
+  position: relative; //トップボタンを止めるために追加
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -73,7 +74,6 @@ select {
 img:not([alt]) {
   filter: blur(10px);
 }
-
 
 /* フォームリセット */
 input,

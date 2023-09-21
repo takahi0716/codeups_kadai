@@ -16,15 +16,15 @@
   }
 }
 
-.lists__wrapper:nth-child(2){
+.lists__wrapper:nth-child(2) {
   padding-right: rem(11);
   @include mq(md) {
-    padding-right:0;
+    padding-right: 0;
   }
 }
-.lists__container{
+.lists__container {
   @include mq(md) {
-  width: 47%;
+    width: 47%;
   }
 }
 .lists__container + .lists__container {

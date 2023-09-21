@@ -1,7 +1,6 @@
 @use "global" as *;
 
-.list  {
-
+.list {
 }
 
 .list__item {
@@ -26,4 +25,10 @@
 
 .list__item + .list__item {
   padding-top: rem(24);
+}
+.list__item a {
+  display: block;
+}
+.list__item:hover {
+  opacity: 0.8;
 }

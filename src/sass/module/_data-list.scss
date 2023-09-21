@@ -15,7 +15,7 @@
   font-size: rem(14);
   line-height: 1.71429; /* 171.429% */
   margin-top: rem(8);
-  @include mq(md){
+  @include mq(md) {
     font-size: rem(16);
     line-height: 1.5; /* 150% */
   }
@@ -26,4 +26,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.data-list__wrapper dt {
+  padding-right: rem(10);
 }

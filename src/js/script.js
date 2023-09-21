@@ -68,10 +68,16 @@ jQuery(function ($) {
   // to-topボタンを表示
   let topBtn = $(".to-top");
   let header = $(".header");
+  let footer = $(".footer");
   // ファーストビューの高さ
   let mvHeight = $(".mv").height();
   // ヘッダーの高さ
   let headerHeight = $(".header").height();
+  // フッターの高さ
+  let footHeight = $(".footer").innerHeight();
+  let buttoBottom;
+  let scrollHeight;
+  let scrollPosition;
   topBtn.hide();
 
   // ボタンの表示設定
@@ -82,6 +88,37 @@ jQuery(function ($) {
     } else {
       // 指定の要素より上ならボタンを非表示
       topBtn.fadeOut();
+    }
+  });
+  topBtn.click(function () {
+    $("body,html").animate(
+      {
+        scrollTop: 0, // 上から0pxの位置に戻る
+      },
+      400 // 500ミリ秒かけて戻る
+    );
+    return false;
+  });
+  // フッター手前でストップ
+  if (windowSize < 376) {
+    buttoBottom = 16;
+  } else {
+    buttoBottom = 20;
+  }
+  $(window).on("scroll", function () {
+    scrollHeight = $(document).height(); //ドキュメントの高さ
+    scrollPosition = $(window).height() + $(window).scrollTop(); //現在の位置
+    if (scrollHeight - scrollPosition <= footHeight) {
+      // ページトップボタンがフッター手前に来たらpositionとfixedからabsoluteに変更
+      topBtn.css({
+        position: "absolute",
+        bottom: footHeight,
+      });
+    } else {
+      topBtn.css({
+        position: "fixed",
+        bottom: buttoBottom,
+      });
     }
   });
 

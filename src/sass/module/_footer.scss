@@ -5,22 +5,22 @@
   color: $white;
   padding-top: rem(48);
   padding-bottom: rem(56);
-    @include mq(md){
-      padding-top: rem(80);
-      padding-bottom: rem(80);
+  @include mq(md) {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
   }
 }
 
 .footer__inner {
   max-width: rem(560);
   width: 100%;
-  @include mq(md){
-    max-width:inherit;
+  @include mq(md) {
+    max-width: inherit;
   }
 }
 
-.footer__wrapper{
-  @include mq(md){
+.footer__wrapper {
+  @include mq(md) {
     display: flex;
     align-items: flex-end;
   }
@@ -29,8 +29,8 @@
 .footer__logo {
   width: rem(120);
   height: rem(40);
-  @include mq(md){
-    max-width:inherit;
+  @include mq(md) {
+    max-width: inherit;
     width: rem(200);
     height: rem(75);
   }
@@ -40,7 +40,7 @@
   margin-top: rem(23);
   display: flex;
   padding-left: rem(2);
-  @include mq(md){
+  @include mq(md) {
     margin-top: 0;
     margin-left: rem(40);
     margin-bottom: rem(10);
@@ -50,17 +50,17 @@
 .footer__sns img {
   width: rem(20);
   height: rem(20);
-  @include mq(md){
+  @include mq(md) {
     width: rem(26);
     height: rem(26);
   }
 }
 
 .footer__facebook img,
-.footer__instagram img{
+.footer__instagram img {
   width: rem(20);
   height: rem(20);
-  @include mq(md){
+  @include mq(md) {
     width: rem(26);
     height: rem(26);
   }
@@ -68,14 +68,14 @@
 
 .footer__instagram {
   margin-left: rem(19);
-  @include mq(md){
+  @include mq(md) {
     margin-left: rem(22);
   }
 }
 
 .footer__lists {
   margin-top: rem(40);
-  @include mq(md){
+  @include mq(md) {
     margin-top: rem(24);
   }
 }
@@ -86,11 +86,9 @@
   font-size: rem(12);
   font-family: $english-font-family;
   line-height: 1.5; /* 150% */
-  @include mq(md){
+  @include mq(md) {
     font-size: rem(14);
     margin-top: rem(80);
     line-height: 1.28571; /* 128.571% */
   }
 }
-
-

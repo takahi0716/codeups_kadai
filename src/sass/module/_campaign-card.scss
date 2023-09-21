@@ -7,6 +7,7 @@
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   display: flex; //下揃えするためflexにしてcolumnで縦にする
   flex-direction: column;
+  height: 100%;
 }
 
 .campaign-card__img {
@@ -26,10 +27,10 @@
 
 .campaign-card__body {
   padding-bottom: rem(6);
-  border-bottom: rem(1) solid $accent-color;
   margin-top: rem(16);
   margin-left: rem(16);
   margin-right: rem(16);
+  margin-bottom: auto;
   @include mq(md) {
     padding-bottom: rem(8);
     margin-top: rem(25);
@@ -58,8 +59,9 @@
 }
 
 .campaign-card__footer {
+  border-top: rem(1) solid $accent-color;
+
   padding-top: rem(10);
-  margin-top: auto;
   margin-left: rem(16);
   margin-right: rem(16);
   margin-bottom: rem(24);
@@ -86,7 +88,7 @@
   font-size: rem(20);
   font-weight: $bold;
   line-height: 1;
-  text-decoration: line-through rem(3)  solid #c94800;
+  text-decoration: line-through rem(3) solid #c94800;
   @include mq(md) {
     font-size: rem(24);
   }
