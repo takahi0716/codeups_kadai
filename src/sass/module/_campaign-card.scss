@@ -26,16 +26,10 @@
 }
 
 .campaign-card__body {
-  padding-bottom: rem(6);
-  margin-top: rem(16);
-  margin-left: rem(16);
-  margin-right: rem(16);
+  padding: rem(16) rem(16) rem(6);
   margin-bottom: auto;
   @include mq(md) {
-    padding-bottom: rem(8);
-    margin-top: rem(25);
-    margin-left: rem(16);
-    margin-right: rem(16);
+    padding: rem(25) rem(16) rem(8);
   }
 }
 .campaign-card__category {
@@ -52,7 +46,7 @@
 }
 
 .campaign-card__title {
-  margin-top: rem(4);
+  padding-top: rem(4);
   font-size: rem(16);
   font-weight: 500;
   line-height: 1.5;
@@ -60,14 +54,12 @@
 
 .campaign-card__footer {
   border-top: rem(1) solid $accent-color;
-
+  margin: 0 rem(16);
   padding-top: rem(10);
-  margin-left: rem(16);
-  margin-right: rem(16);
-  margin-bottom: rem(24);
+  padding-bottom: rem(24);
   @include mq(md) {
     padding-top: rem(15);
-    margin-bottom: rem(36);
+    padding-bottom: rem(36);
   }
 }
 
@@ -80,7 +72,7 @@
 }
 
 .campaign-card__price {
-  margin-top: rem(8);
+  padding-top: rem(8);
   text-align: center;
 }
 
@@ -99,9 +91,9 @@
   font-size: rem(32);
   font-weight: $bold;
   line-height: 1;
-  margin-left: rem(15);
+  padding-left: rem(15);
   @include mq(md) {
     font-size: rem(40);
-    margin-left: rem(24);
+    padding-left: rem(24);
   }
 }

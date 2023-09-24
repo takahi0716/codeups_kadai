@@ -1,7 +1,11 @@
 @use "global" as *;
 
 /* ボタン共通設定 */
-.button {
+.button2 {
+
+  margin: 10px;
+
+
   /*矢印の基点とするためrelativeを指定*/
   position: relative;
   /*ボタンの形状*/
@@ -16,7 +20,7 @@
   transition: 0.2s;
 }
 
-.button::before {
+.button2::before {
   content: "";
   position: absolute;
   top: rem(4);
@@ -27,12 +31,12 @@
   z-index: -1;
 }
 
-.button__text {
+.button2__text {
   display: inline-block;
   padding: rem(16) rem(88) rem(16) rem(40);
 }
 
-.button__text::before {
+.button2__text::before {
   content: "";
   /*絶対配置で下線の位置を決める*/
   position: absolute;
@@ -47,8 +51,9 @@
   transition: 0.2s;
 }
 
-.button__text::after {
+.button2__text::after {
   content: "";
+
   position: absolute;
   top: 44%;
   right: rem(39);
@@ -62,7 +67,7 @@
   transition: 0.2s;
 }
 
-.button::after {
+.button2::after {
   content: "";
   background-color: $white;
   position: absolute;
@@ -75,21 +80,21 @@
   transition: 0.2s;
   z-index: -1;
 }
-.button:hover {
+.button2:hover {
   cursor: pointer;
   color: $accent-color;
 }
-.button:hover::after {
+.button2:hover::after {
   cursor: pointer;
   transform: scale(1, 1);
 }
 
-.button__text:hover::before {
+.button2__text:hover::before {
   cursor: pointer;
   border-bottom: rem(1) solid $accent-color;
 }
 
-.button__text:hover::after {
+.button2__text:hover::after {
   cursor: pointer;
   border-bottom: rem(1) solid $accent-color;
 }

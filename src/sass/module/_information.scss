@@ -3,8 +3,10 @@
 .information {
   background-color: $gray2;
   color: $font-color;
+  padding-top: rem(80);
   padding-bottom: rem(83);
   @include mq(md) {
+    padding-top: rem(100);
     padding-bottom: rem(100);
   }
 }
@@ -16,12 +18,12 @@
 }
 
 .infomation__contaner {
-  margin-top: rem(27);
+  padding-top: rem(27);
   @include mq(md) {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: rem(39);
+    padding-top: rem(39);
   }
 }
 
@@ -49,9 +51,9 @@
 }
 
 .information__body {
-  margin-top: rem(24);
+  padding-top: rem(24);
   @include mq(md) {
-    margin-top: rem(-2);
+    padding-top: 0;
     width: vw(1440, 492);
     margin-left: rem(48);
   }
@@ -69,15 +71,15 @@
   }
 }
 .information__text {
-  margin-top: rem(8);
+  padding-top: rem(8);
   line-height: 1.5; /* 150% */
   @include mq(md) {
-    margin-top: rem(8);
+    padding-top: rem(8);
   }
 }
 
 .information__wrapper {
-  margin-top: rem(39);
+  padding-top: rem(39);
   padding-right: rem(2);
   text-align: center;
 }

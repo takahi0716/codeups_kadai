@@ -32,7 +32,7 @@
   width: 100%;
   @include mq(md) {
     max-width: rem(492);
-    width: vw(1440, 492);
+    width: calc(50% - rem(93) / 2);
     margin-left: rem(93);
   }
 }
@@ -109,8 +109,9 @@
   width: 100%;
   margin-top: rem(40);
   @include mq(md) {
+    width: calc(50% - rem(93) / 2);
     max-width: rem(492);
-    width: vw(1440, 492);
+    // width: vw(1440, 492);
     margin-top: 0;
   }
 }

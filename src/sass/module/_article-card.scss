@@ -52,7 +52,7 @@
 }
 
 .article-card__text {
-  margin-top: rem(16);
+  padding-top: rem(16);
   font-size: rem(16);
   line-height: 1.5;
   @include mq(md) {

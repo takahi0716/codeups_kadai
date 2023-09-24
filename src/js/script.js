@@ -25,7 +25,7 @@ jQuery(function ($) {
   var swiper = new Swiper(".js-campaign-swiper", {
     slidesPerView: "auto",
     spaceBetween: space,
-
+    loop: true, // ループ有効
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -33,6 +33,9 @@ jQuery(function ($) {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 0, // 途切れなくループ
     },
   });
 
@@ -126,13 +129,13 @@ jQuery(function ($) {
   window.addEventListener("load", (e) => {
     const tl = gsap.timeline();
     const title = document.querySelector(".loading__title");
-    const loading = document.querySelector(".loading__wrap");
+    const loading = document.querySelector(".loading");
 
     tl
       // 左の画像を上げる
       .to(".loading__image-left", {
         y: "0%",
-        duration: 1,
+        duration: 2,
         ease: "power4.out",
         delay: 1,
       })
@@ -141,22 +144,22 @@ jQuery(function ($) {
         ".loading__image-right",
         {
           y: "0%",
-          duration: 1,
+          duration: 2,
           ease: "power4.out",
         },
-        "<0.25"
+        "<0.5"
       )
       // 文字色を白に変更
       .add(() => {
         title.classList.add("loading__title--white");
-      }, "<0.25")
+      }, "<0.3")
       // ローディング画面をゆっくり透明にする
-      .to(".loading__wrap", {
+      .to(".loading", {
         opacity: 0,
         duration: 1,
         onComplete: () => {
           loading.style.display = "none";
         },
-      });
+      },">2");
   });
 });

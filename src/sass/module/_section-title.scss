@@ -18,20 +18,22 @@
 }
 
 .section-title__main--white {
+  text-align: center;
+  font-family: $english-font-family;
+  color: $font-color;
+  font-size: rem(32);
+  line-height: 1.25;
+  font-weight: $normal;
   @include mq(md) {
-    color: white;
+    color: $white;
+    font-size: rem(40);
+    line-height: 1;
   }
 }
 
-.section-title__acronym {
+.section-title__main::first-letter {
   color: $accent-color;
   text-transform: uppercase;
-}
-
-.section-title__acronym--white {
-  @include mq(md) {
-    color: white;
-  }
 }
 
 .section-title__sub {

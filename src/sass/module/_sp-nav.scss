@@ -11,11 +11,12 @@
   height: 100vh;
   background-color: $accent-color;
   color: $white;
-
+  overflow: scroll;
 }
 
 .sp-nav.is-active {
   display: block;
+  overflow: hidden;
 }
 
 .sp-nav__inner {
@@ -25,6 +26,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto; 
+  height: 100%;
+  overflow: scroll;
 }
 
 .sp-nav__lists {

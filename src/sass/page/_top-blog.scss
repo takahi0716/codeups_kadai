@@ -1,41 +1,24 @@
 @use "global" as *;
 
 .top-blog {
+  position: relative;
+
 }
 
-.top-blog__design--primary {
-  display: none;
+.top-blog::before {
+  content:"";
+
   @include mq(md) {
+    background-image: url(../../assets/images/common/fish-cluster-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     display: block;
-    position: relative;
-  }
-}
 
-.top-blog__design-image--primary {
-  @include mq(md) {
     position: absolute;
-    top: rem(-76);
-    left: calc(50vw - min(50vw, rem(621)));
-    width: vw(1440, 437);
+    top: rem(26);
+    left: calc(50vw - min(48vw, rem(621)));
+    width: rem(437);
     max-width: rem(437);
-  }
-}
-
-.top-blog__design--secondary {
-  display: none;
-  @include mq(md) {
-    display: block;
-    position: relative;
-  }
-}
-
-.top-blog__design-image--secondary {
-  @include mq(md) {
-    transform: scale(-1, 1);
-    position: absolute;
-    bottom: rem(-168);
-    left: calc(50vw - min(50vw, rem(622)));
-    width: vw(1440, 302);
-    max-width: rem(302);
+    height: rem(201);
   }
 }
