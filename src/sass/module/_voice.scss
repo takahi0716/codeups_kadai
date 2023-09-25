@@ -16,17 +16,17 @@
 .voice__title {
 }
 .voice__cards {
-  padding-top: rem(46);
+  margin-top: rem(46);
   @include mq(md) {
-    padding-top: rem(30);
+    margin-top: rem(30);
   }
 }
 
 .voice__wrapper {
   text-align: center;
-  padding-top: rem(39);
+  margin-top: rem(39);
   @include mq(md) {
-    padding-top: rem(80);
+    margin-top: rem(80);
   }
 }
 

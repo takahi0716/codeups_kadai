@@ -40,6 +40,7 @@
   text-align: center;
   color: $accent-color;
   font-size: rem(12);
+  font-weight: $normal;
   line-height: 1.5;
   margin-top: rem(4);
   @include mq(md) {

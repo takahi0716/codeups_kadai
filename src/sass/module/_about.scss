@@ -15,8 +15,6 @@
   margin-left: auto;
   max-width: calc(281 / 345 * 100%);
   width: 100%;
-  z-index: -2;
-
   @include mq(md) {
     max-width: rem(880);
     width: calc(880 / 1080 * 100%);
@@ -92,10 +90,8 @@
 .about__wrapper {
   padding-top: rem(50);
   text-align: center;
-  padding-right: rem(16);
   @include mq(md) {
     padding-top: rem(40);
-    padding-right: 0;
   }
 }
 

@@ -2,7 +2,10 @@
 
 .top-blog {
   position: relative;
-
+  margin-top: rem(80);
+  @include mq(md) {
+    margin-top: 0;
+  }
 }
 
 .top-blog::before {
