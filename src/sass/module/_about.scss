@@ -5,9 +5,9 @@
 
 .about__contaner {
   position: relative;
-  padding-top: rem(53);
+  margin-top: rem(53);
   @include mq(md) {
-    padding-top: rem(120);
+    margin-top: rem(120);
   }
 }
 
@@ -23,13 +23,13 @@
 
 .about__image-left {
   position: absolute;
-  top: rem(29);
+  top: rem(-25);
   left: 0;
   max-width: calc(128 / 345 * 100%);
   width: 100%;
   z-index: 1;
   @include mq(md) {
-    top: rem(37);
+    top: rem(-79);
     max-width: rem(400);
     width: calc(400 / 1080 * 100%);
   }
@@ -42,7 +42,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-41%, -46%);
+    transform: translate(-41%, -71%);
     max-width: rem(840);
     width: calc(840 / 1080 * 100%);
     z-index: 3;
@@ -50,14 +50,14 @@
 }
 
 .about__sub-title {
-  padding-top: rem(40);
+  margin-top: rem(40);
   color: $accent-color;
   font-family: $english-font-family;
   font-weight: $normal;
   font-size: rem(40);
   line-height: 1;
   @include mq(md) {
-    padding-top: rem(0);
+    margin-top: rem(0);
     color: $white;
     font-size: min(
       vw(1440, 80),
@@ -70,9 +70,9 @@
 }
 
 .about__content {
-  padding-top: rem(16);
+  margin-top: rem(16);
   @include mq(md) {
-    padding-top: rem(0);
+    margin-top: rem(0);
     max-width: rem(400);
     width: calc(400 / 840 * 100%); // レスポンシブを考慮し画面サイズによって大きさを変動
     margin-left: min(vw(1440, 40), rem(40));
@@ -88,10 +88,10 @@
 }
 
 .about__wrapper {
-  padding-top: rem(50);
+  margin-top: rem(50);
   text-align: center;
   @include mq(md) {
-    padding-top: rem(40);
+    margin-top: rem(40);
   }
 }
 

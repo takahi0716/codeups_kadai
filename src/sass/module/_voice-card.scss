@@ -6,7 +6,7 @@
   background: $white;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   @include mq(md) {
-    padding: rem(36) rem(24) rem(24);
+    padding: rem(25) rem(24) rem(24);
   }
 }
 
@@ -57,14 +57,14 @@
   @include mq(md) {
     font-size: rem(24);
     padding-bottom: 0;
-    padding-top: rem(8);
+    margin-top: rem(8);
   }
 }
 
 .voice-card__image {
   position: relative;
   width: 100%;
-  padding-left: rem(15);
+  margin-left: rem(15);
   @include mq(md) {
     width: calc(180 / (520 - 24 * 2) * 100%);
   }
@@ -89,9 +89,9 @@
 }
 
 .voice-card__text {
-  padding-top: rem(15);
+  margin-top: rem(15);
   line-height: 1.5;
   @include mq(md) {
-    padding-top: rem(40);
+    margin-top: rem(40);
   }
 }

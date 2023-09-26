@@ -52,9 +52,9 @@
 }
 
 .contact__container {
-  padding-top: rem(16);
+  margin-top: rem(16);
   @include mq(md) {
-    padding-top: rem(24);
+    margin-top: rem(24);
     display: flex;
     justify-content: space-between;
   }
@@ -69,7 +69,7 @@
 }
 
 .contact__text p:not(:first-child){
-padding-top: rem(4);
+  margin-top: rem(4);
 }
 
 .contact__map {
@@ -102,10 +102,10 @@ padding-top: rem(4);
 }
 
 .contact__contact-info {
-  padding-top: rem(40);
+  margin-top: rem(40);
   text-align: center;
   @include mq(md) {
-    padding-top: 0;
+    margin-top: 0;
     padding-right: rem(62);
     max-width: rem(315);
     width: calc(397 / (1080 - 20) * 100%);
@@ -149,7 +149,7 @@ padding-top: rem(4);
 }
 
 .contact__contact-text {
-  padding-top: rem(8);
+  margin-top: rem(8);
   color: $accent-color;
   font-size: rem(14);
   text-align: center;
@@ -157,7 +157,7 @@ padding-top: rem(4);
 }
 
 .contact__wrapper {
-  padding-top: rem(40);
+  margin-top: rem(40);
   text-align: center;
 }
 
