@@ -31,9 +31,9 @@
   position: relative;
   width: 100%;
   @include mq(md) {
-    max-width: rem(492);
-    width: calc(50% - rem(93) / 2);
-    margin-left: rem(93);
+    max-width:calc(497 / 1080 * 100%);
+    width: 100%;
+    margin-left: calc(93 / 1080 * 100%);
   }
 }
 
