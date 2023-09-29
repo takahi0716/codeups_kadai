@@ -30,7 +30,7 @@
 .information__image {
   position: relative;
   @include mq(md) {
-    width: vw(1440, 540);
+    width: calc(540 / 1080 * 100%);
   }
 }
 /* コンテナ要素の擬似要素(ここで比率を調整) */
@@ -54,7 +54,7 @@
   margin-top: rem(24);
   @include mq(md) {
     margin-top: 0;
-    width: vw(1440, 492);
+    width: calc(492 / 1080 * 100%);
     margin-left: rem(48);
   }
 }

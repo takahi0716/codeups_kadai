@@ -4,11 +4,7 @@
 }
 
 .contact__inner {
-  width: vw(375,295);
-  @include mq(md) {
-    padding-left: 0;
-    padding-right: 0;
-  }
+
 }
 
 .contact__company {
@@ -18,7 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: rem(1080);
     padding: rem(80) rem(10);
     box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
   }
@@ -43,9 +38,9 @@
   color: $font-color;
   line-height: 1.5; /* 150% */
   @include mq(md) {
-    max-width: calc(522 / (1080 - 20) * 100%);
+    max-width: min(calc((440 + 82) / (1080 - 20) * 100%),rem(522)); // 内側の余白であるpaddingを考慮して1080から20を引いている
     width: 100%;
-    padding-right: calc(82 / (1080 - 20) * 100%);
+    padding-right:  min(calc(82 / (1080 - 20) * 100%),rem(82));
     border-right: rem(1) solid $accent-color;
 
   }
@@ -61,10 +56,13 @@
 }
 
 .contact__text {
+  font-size: rem(16);
   text-align: center;
   line-height: 1.5; /* 150% */
   @include mq(md){
     text-align: left;
+    max-width: rem(146);
+    width: 100%;
   }
 }
 
@@ -77,8 +75,9 @@
   position: relative;
   @include mq(md) {
     margin-top: 0;
-    width: calc(273 / 440 * 100%);
-    margin-left: rem(21);
+    max-width: calc(273 / 440 * 100%);
+    width: 100%;
+    margin-left: calc(21 / 440 * 100%);
   }
 }
 
@@ -122,17 +121,16 @@
   text-align: center;
   font-family: $english-font-family;
   color: $font-color;
-  font-size: min(vw(375, 80), rem(80));
+  font-size: rem(80);
   font-weight: $normal;
   line-height: 1;
   margin-left: rem(-10);
   @include mq(md) {
-    // レスポンシブを考慮して画面幅によってフォントサイズを変更
-    font-size: min(vw(1440, 80), rem(80));
+
+    font-size: rem(80);
     line-height: 1;
   }
 }
-
 .contact__main-title::first-letter {
   color: $accent-color;
   text-transform: uppercase;

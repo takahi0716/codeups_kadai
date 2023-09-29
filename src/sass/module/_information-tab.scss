@@ -1,0 +1,42 @@
+@use "global" as *;
+
+
+.information-tab__text {
+  display: inline-block;
+  color: $accent-color;
+  background-color: #DDF0F1;
+  text-align: center;
+  transition: 0.2s;
+  padding: rem(10) rem(16);
+
+  @include mq(md){
+  font-size: rem(24);
+  line-height:rem(22);
+  padding: rem(26) rem(18) rem(26) calc(rem(18) + rem(64) + rem(8));
+  position: relative;
+  }
+}
+
+.information-tab__text::before{
+  display: none;
+  content: "";
+  @include mq(md){
+    display: block;
+    background-image: url(../../assets/images/common/ocean_sea_icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: rem(64);
+  height: rem(64);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: rem(14);
+  }
+
+}
+
+.information-tab__text.active {
+  color: $white;
+  background-color: $accent-color;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+}

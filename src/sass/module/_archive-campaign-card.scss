@@ -1,0 +1,143 @@
+@use "global" as *;
+
+.archive-campaign-card {
+  color: $font-color;
+
+  background: $white;
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+  display: flex; //下揃えするためflexにしてcolumnで縦にする
+  flex-direction: column;
+  height: 100%;
+}
+
+.archive-campaign-card__img {
+  padding-top: calc(rem(223) / rem(333) * 100%);; //高さ÷幅*100
+  position: relative;
+}
+
+.archive-campaign-card__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.archive-campaign-card__body {
+  padding: rem(16) rem(16) rem(6);
+  margin-bottom: auto;
+
+  @include mq(md) {
+    padding: rem(25) rem(16) rem(8);
+  }
+}
+
+.archive-campaign-card__category {
+  color: $accent-color;
+  font-size: rem(12);
+  display: inline-block;
+  border: rem(1) solid $accent-color;
+  padding: rem(3) rem(11);
+  line-height: 1.833;
+  box-sizing: border-box;
+
+  @include mq(md) {
+    padding: rem(4) rem(16);
+  }
+}
+
+.archive-campaign-card__title {
+  margin-top: rem(4);
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.archive-campaign-card__price {
+  border-top: rem(1) solid $accent-color;
+  padding-top: rem(10);
+  margin-left: rem(16);
+  margin-right: rem(16);
+  padding-bottom: rem(24);
+  @include mq(md) {
+    padding-top: rem(15);
+    padding-bottom: rem(0);
+  }
+}
+
+.archive-campaign-card__person {
+  font-size: rem(14);
+  text-align: center;
+
+  @include mq(md) {
+    font-size: rem(16);
+  }
+}
+
+.archive-campaign-card__price-text {
+  margin-top: rem(8);
+  text-align: center;
+}
+
+.archive-campaign-card__price-previous {
+  font-size: rem(20);
+  font-weight: $bold;
+  line-height: 1;
+  text-decoration: line-through rem(3) solid #c94800;
+
+  @include mq(md) {
+    font-size: rem(24);
+  }
+}
+
+.archive-campaign-card__price-current {
+  color: $accent-color;
+  font-size: rem(32);
+  font-weight: $bold;
+  line-height: 1;
+  margin-left: rem(15);
+
+  @include mq(md) {
+    font-size: rem(40);
+    margin-left: rem(24);
+  }
+}
+
+.archive-campaign-card__text{
+  display: none;
+  @include mq(md) {
+    display: block;
+  margin-top: rem(24);
+  padding-left: rem(24);
+  padding-right: rem(24);
+}
+}
+
+.archive-campaign-card__footer{
+  display: none;
+  @include mq(md) {
+    display: block;
+  margin-top: rem(32);
+  padding-left: rem(24);
+  padding-right: rem(24);
+  padding-bottom: rem(44);
+  text-align: center;
+}
+}
+.archive-campaign-card__period{
+  color: $accent-color;
+  font-weight: $bold;
+  line-height: 1.1125; /* 112.5% */
+}
+
+.archive-campaign-card__reservation{
+  margin-top: rem(14);
+  color: $accent-color;
+  line-height: 1.28571;
+}
+
+.archive-campaign-card__button{
+  margin-top: rem(16);
+}

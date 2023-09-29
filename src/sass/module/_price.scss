@@ -54,64 +54,12 @@
   object-fit: cover;
 }
 
-.price__sp-image {
-  position: relative;
-  width: 100%;
-  @include mq(md) {
-    display: none;
-  }
-}
-
-.price__sp-image::before {
-  content: "";
-  display: block;
-  padding-top: calc(227 / 345 * 100%); /* 比率を指定 */
-}
-
-.price__sp-image img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  object-fit: cover;
-}
-
-.price__pc-image {
-  display: none;
-  position: relative;
-  max-width: calc(50% - rem(40) * 1 / 2);
-  width: 100%;
-  @include mq(md) {
-    display: block;
-    max-width: rem(492);
-    width: vw(1440, 492);
-    margin-left: min(vw(1440, 93), rem(93));
-  }
-}
-
-.price__pc-image::before {
-  content: "";
-  display: block;
-  padding-top: calc(746 / 492 * 100%); /* 比率を指定 */
-}
-
-.price__pc-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .price__contaner {
   width: 100%;
   margin-top: rem(40);
   @include mq(md) {
     width: calc(50% - rem(93) / 2);
     max-width: rem(492);
-    // width: vw(1440, 492);
     margin-top: 0;
   }
 }

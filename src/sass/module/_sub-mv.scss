@@ -1,0 +1,55 @@
+@use "global" as *;
+
+.sub-mv {
+  position: relative;
+  width: 100%;
+  height: rem(460);
+  background-size: cover;
+  background-position: center
+}
+
+.sub-mv::before {
+  content: '';
+  background-color: rgba(#408F95,.3);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.sub-mv__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $white;
+  font-family: $english-font-family;
+  font-weight: $normal;
+  text-align: center;
+  font-size: rem(40);
+
+  @include mq(md) {
+    font-size: rem(80);
+  }
+}
+
+.sub-mv__title::first-letter {
+  text-transform: uppercase;
+}
+
+.sub-mv--campaign{
+  background-image: url(../images/common/campaign-sp.jpg);
+
+  @include mq(md) {
+    background-image: url(../images/common/campaign-pc.jpg);
+  }
+}
+
+.sub-mv--about{
+  background-image: url(../images/common/aboutus-sp.jpg);
+
+  @include mq(md) {
+    background-image: url(../images/common/aboutus-pc.jpg);
+  }
+}

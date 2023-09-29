@@ -4,13 +4,13 @@ jQuery(function ($) {
   //ナビバートグル
   $(".js-hamburger").on("click", function () {
     if ($(".js-hamburger").hasClass("is-open")) {
-      // $('.js-drawer-menu').fadeOut();
       $(this).removeClass("is-open");
       $(".js-sp-nav").fadeOut();
+      $("body").removeClass("sp-nav__active");
     } else {
-      // $('.js-drawer-menu').fadeIn();
       $(this).addClass("is-open");
       $(".js-sp-nav").fadeIn();
+      $("body").addClass("sp-nav__active");
     }
   });
 
@@ -22,10 +22,11 @@ jQuery(function ($) {
   } else {
     space = 40;
   }
-  var swiper = new Swiper(".js-campaign-swiper", {
+  const swiper = new Swiper(".js-campaign-swiper", {
     slidesPerView: "auto",
     spaceBetween: space,
     loop: true, // ループ有効
+    speed: 3000, // ループの時間
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -35,7 +36,8 @@ jQuery(function ($) {
       prevEl: ".swiper-button-prev",
     },
     autoplay: {
-      delay: 0, // 途切れなくループ
+      delay: 1000, // 1秒後に次のスライド（初期値：3000）
+      disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
     },
   });
 

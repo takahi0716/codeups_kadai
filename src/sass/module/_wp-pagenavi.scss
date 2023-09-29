@@ -1,0 +1,31 @@
+@use "global" as *;
+/*wp-pagenavi 02*/
+.wp-pagenavi {
+	display: flex;
+  justify-content: center;
+  gap: rem(10);
+
+}
+.wp-pagenavi a, .wp-pagenavi span {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: rem(38);
+height: rem(38); 
+background-color: $white;
+color: $accent-color;
+font-weight: $bold;
+font-size: rem(16);
+transition:  0.3s ease;
+border: 1px solid $accent-color;
+
+}
+.wp-pagenavi a:hover{
+	background-color: $accent-color;
+  color: $white;
+  opacity: 1;
+    }
+.wp-pagenavi span.current{
+	background-color: $accent-color;
+  color: $white;
+    }

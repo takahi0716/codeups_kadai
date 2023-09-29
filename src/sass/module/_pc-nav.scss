@@ -16,10 +16,7 @@
 
 .pc-nav__item {
   height: inherit;
-
-
 }
-
 
 .pc-nav__link {
   height: inherit;
@@ -30,8 +27,8 @@
   justify-content: center;
   flex-direction: column;
   cursor: pointer;
-  padding-left: vw(1440, 20);
-  padding-right: vw(1440, 20);
+  padding-left: min(vw(1440, 20),rem(20));
+  padding-right: min(vw(1440, 20),rem(20));
   /*線の基点とするためrelativeを指定*/
   position: relative;
 }

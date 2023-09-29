@@ -1,0 +1,14 @@
+@use "global" as *;
+.information-tabs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  }
+  
+  .information-tabs__wrapper{
+  
+  }
+  
+  .information-tabs__wrapper  + .information-tabs__wrapper{
+  margin-left: rem(19);
+  }

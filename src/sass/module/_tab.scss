@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.tab{
+display: grid;
+grid-template-columns: 1fr 1fr;
+max-width: rem(162);
+gap: rem(21);
+@include mq(md) {
+  grid-template-columns:  rem(162)  rem(162)  rem(162) rem(162);
+}
+}
+
+.tab__text {
+  display: inline-block;
+  font-size: rem(14);
+  color: $accent-color;
+  background-color: $white;
+  border: 1px solid $accent-color;
+  text-align: center;
+  transition: 0.2s;
+  line-height:rem(22);
+
+  padding: rem(6) 0;
+}
+
+.tab__text.active {
+  color: $white;
+  background-color: $accent-color;
+}

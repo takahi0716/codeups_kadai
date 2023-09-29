@@ -1,0 +1,37 @@
+@use "global" as *;
+
+.archive-campaign-cards {
+  display: flex;
+  flex-direction: column;
+  @include mq(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.archive-campaign-cards__item {
+  @include mq(md) {
+    max-width: calc(50% - rem(40) * 2 / 3);
+    width: 100%;
+  }
+}
+
+.archive-campaign-cards__item + .archive-campaign-cards__item {
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(0);
+    margin-left: rem(40);
+  }
+}
+
+.archive-campaign-cards__item:nth-child(2n + 1) {
+  @include mq(md) {
+    margin-left: 0;
+  }
+}
+
+.archive-campaign-cards__item:nth-child(n + 3) {
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

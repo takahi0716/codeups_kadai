@@ -59,13 +59,10 @@
   @include mq(md) {
     margin-top: rem(0);
     color: $white;
-    font-size: min(
-      vw(1440, 80),
-      rem(80)
-    ); // レスポンシブを考慮し画面サイズによって大きさを変動
+    font-size: min(vw(1180, 80),rem(80)); // レスポンシブを考慮し画面サイズによって大きさを変動。1080 + 余白の50 + 50 で 1180にしている。
     line-height: 1.25; /* 125% */
     max-width: rem(400);
-    width: vw(1440, 400); // レスポンシブを考慮し画面サイズによって大きさを変動
+    width: calc(400 / 840 * 100%); // レスポンシブを考慮し画面サイズによって大きさを変動
   }
 }
 
@@ -75,7 +72,7 @@
     margin-top: rem(0);
     max-width: rem(400);
     width: calc(400 / 840 * 100%); // レスポンシブを考慮し画面サイズによって大きさを変動
-    margin-left: min(vw(1440, 40), rem(40));
+    margin-left: calc(40 / 840 * 100%);
   }
 }
 
@@ -98,4 +95,26 @@
 .about__button {
 }
 
+.about__image-right--sub img {
+  max-width: 100%;
+  @include mq(md) {
+    max-width: rem(880);
+  }
+}
 
+.about__image-left--sub{
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.about__sub-title--sub{
+  position: absolute;
+  top: rem(-14);
+  left: 5%;
+  color: $white;
+  @include mq(md) {
+    position:initial;
+  }
+}
