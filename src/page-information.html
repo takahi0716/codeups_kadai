@@ -57,7 +57,7 @@
 
       <!-- ナビゲーション（pc） -->
       <div class="header__pc-nav pc-nav js-drawer-menu">
-        <ul class="pc-nav__list">
+        <ul class="pc-nav__items">
           <li class="pc-nav__item">
             <a href="#" class="pc-nav__link">
               <p class="pc-nav__english-title">Campaign</p>
@@ -209,7 +209,13 @@
 
   <main>
     <!--サブメインビュー -->
-    <section class="sub-mv sub-mv--about">
+    <section class="sub-mv">
+      <picture class="sub-mv__image">
+        <!-- ↓幅768px以下で表示↓ -->
+        <source srcset="./assets/images/common/information-sp.jpg" media="(max-width: 767px)" />
+        <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+        <img src="./assets/images/common/information-pc.jpg" alt="ダイバーの写真">
+      </picture>
       <h1 class="sub-mv__title">information</h1>
     </section>
 
@@ -226,10 +232,10 @@
 
 
     <!-- 下層ページ -->
-    <section class="page-information information-sub">
-      <div class="information-sub__inner inner">
+    <section class="page-information">
+      <div class="page-information__inner inner">
 
-        <div class="information-sub__tab information-tabs">
+        <div class="page-information__tab information-tabs">
           <div class="information-tabs__wrapper information-tab">
             <a href="" class="information-tab__text">ライセンス講習</a>
           </div>
@@ -240,11 +246,24 @@
             <a href="" class="information-tab__text">体験ダイビング</a>
           </div>
         </div>
-  
+
+        <div class="page-information__items information-items">
+          <div class="information-items__item information-item">
+            <div class="information-item__body">
+              <h2 class="information-item__title">
+                ライセンス講師
+              </h2>
+              <p class="information-item__text">
+                泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
+              </p>
+            </div>
+            <div class="information-item__image">
+              <img src="./assets/images/common/license.jpg" alt="">
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-
 
     <!-- contact -->
     <section class="top-contact contact">

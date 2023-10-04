@@ -1,0 +1,76 @@
+@use "global" as *;
+
+.campaign-card-sub {
+  color: $font-color;
+
+  background: $white;
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+  display: flex; //下揃えするためflexにしてcolumnで縦にする
+  flex-direction: column;
+  height: 100%;
+}
+
+.campaign-card-sub__img {
+  padding-top: calc(rem(223) / rem(333) * 100%); //高さ÷幅*100
+  position: relative;
+}
+
+.campaign-card-sub__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campaign-card-sub__body {
+  padding: rem(16) rem(16) rem(6);
+  margin-bottom: auto;
+
+  @include mq(md) {
+    padding: rem(23) rem(16) rem(8);
+  }
+}
+
+.campaign-card-sub__title {
+  margin-top: rem(4);
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.campaign-card-sub__price {
+  border-top: rem(1) solid $accent-color;
+  padding-top: rem(8);
+  margin-left: rem(23);
+  margin-right: rem(23 );
+  padding-bottom: rem(24); 
+}
+
+.campaign-card-sub__person {
+  font-size: rem(14);
+  text-align: center;
+}
+
+.campaign-card-sub__price-text {
+  margin-top: rem(8);
+  text-align: center;
+}
+
+.campaign-card-sub__price-previous {
+  font-size: rem(20);
+  font-weight: $bold;
+  line-height: 1;
+  text-decoration: line-through rem(3) solid #c94800;
+}
+
+.campaign-card-sub__price-current {
+  color: $accent-color;
+  font-size: rem(32);
+  font-weight: $bold;
+  line-height: 1;
+  margin-left: rem(15);
+}

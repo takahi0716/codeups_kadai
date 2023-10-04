@@ -212,17 +212,17 @@
     <section class="sub-mv">
       <picture class="sub-mv__image">
         <!-- ↓幅768px以下で表示↓ -->
-        <source srcset="./assets/images/common/campaign-sp.jpg" media="(max-width: 767px)" />
+        <source srcset="./assets/images/common/contact-sp.jpg" media="(max-width: 767px)" />
         <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
-        <img src="./assets/images/common/campaign-pc.jpg" alt="ダイバーの写真">
+        <img src="./assets/images/common/contact-pc.jpg" alt="ダイバーの写真">
       </picture>
-      <h1 class="sub-mv__title">campaign</h1>
+      <h1 class="sub-mv__title">contact</h1>
     </section>
 
     <!-- パンくずリスト -->
     <div class="breadcrumb">
       <div class="breadcrumb__inner inner">
-        <div>HOME > キャンペーン</div>
+        <div>HOME > お問い合わせ</div>
       </div>
     </div>
 
@@ -231,101 +231,84 @@
     </div>
 
 
+    <!-- 下層ページ -->
+    <section class="page-contact">
+      <div class="page-contact__inner inner">
+      
+        <div class="page-contact__content form">
+          <form action="" method="post" id="">
+          <p class="form__error">※必須項目が入力されていません。入力してください。</p>
+            <dl class="form__item">
+              <dt>
+                お名前<span class="form__required">必須</span>
+              </dt>
+              <dd>
+                <input type="text" id="your-name" name="your-name" value="" required placeholder="沖縄　太郎"/>
+              </dd>
+            </dl>
+            <dl class="form__item">
+              <dt>
+                メールアドレス<span class="form__required">必須</span>
+              </dt>
+              <dd>
+                <input type="email" id="email" name="mail_address" value="" placeholder="aaa000@ggmail.com" />
+              </dd>
+            </dl>
+            <dl class="form__item">
+              <dt>
+                電話番号<span class="form__required">必須</span>
+              </dt>
+              <dd>
+                <input type="tel" id="tel" name="telephone" value="" placeholder="000-0000-0000" />
+              </dd>
+            </dl>
+            <dl class="form__item">
+              <dt>お問い合わせ項目<span class="form__required">必須</span></dt>
+              <dd class="form__checkbox">
+                <label><input type="checkbox" name="contact-item" value="ダイビング講習について" /><span>ダイビング講習について</span></label>
+                <label><input type="checkbox" name="contact-item" value="ファンデイビングについて" /><span>ファンデイビングについて</span></label>
+                <label><input type="checkbox" name="contact-item" value="体験ダイビングについて" /><span>体験ダイビングについて</span></label>
+              </dd>
+            </dl>
 
-    <div class="archive-campaign">
-      <div class="archive-campaign__inner inner">
-        <div class="archive-campaign__tab tab">
-          <a href="" class="tab__text">ALL</a>
-          <a href="" class="tab__text">ライセンス講習</a>
-          <a href="" class="tab__text">ファンダイビング</a>
-          <a href="" class="tab__text">体験ダイビング</a>
+            <dl class="form__item">
+              <dt>
+                キャンペーン<span class="form__required">必須</span>
+              </dt>
+              <dd class="form__select">
+                <select name="form-campaign"  id="form-campaign" >
+                  <option value="">キャンペーン内容を選択</option>
+                  <option value="ライセンス講習">ライセンス講習</option>
+                  <option value="ファンダイビング">ファンダイビング</option>
+                  <option value="体験ダイビング">体験ダイビング</option>
+                </select>
+              </dd>
+            </dl>
+            <dl class="form__item">
+              <dt>
+                お問い合わせ内容<span class="form__required">必須</span>
+              </dt>
+              <dd>
+                <textarea name="contents" id="contents"></textarea>
+              </dd>
+            </dl>
+            <dl class="form__item-agree">
+
+              <dd class="form__checkbox-agree">
+                <label><input type="checkbox" name="agree" id="agree" value="個人情報の取り扱いについて同意のうえ
+                  送信します。" /><span>個人情報の取り扱いについて同意のうえ送信します。</span></label>
+              </dd>
+            </dl>
+            <div class="form__item-button">
+                <button type="button" class="form__button button" id="submit_btn">
+                  <span class="button__text">Send</span>
+                </button>
+            </div>
+          </form>
         </div>
-    
-    
-        <div class="archive-campaign__cards archive-campaign-cards">
-    
-    
-          <div class="archive-campaign-cards__item archive-campaign-card">
-            <figure class="archive-campaign-card__img">
-              <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
-            </figure>
-            <div class="archive-campaign-card__body">
-              <div class="archive-campaign-card__category">ライセンス講習</div>
-              <h3 class="archive-campaign-card__title ">ライセンス取得</h3>
-            </div>
-            <div class="archive-campaign-card__price">
-              <p class="archive-campaign-card__person">
-                全部コミコミ(お一人様)
-              </p>
-              <p class="archive-campaign-card__price-text">
-                <span class="archive-campaign-card__price-previous">¥56,000</span>
-                <span class="archive-campaign-card__price-current">¥46,000</span>
-              </p>
-            </div>
-            <div class="archive-campaign-card__text">
-              <p>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-              </p>
-            </div>
-            <div class="archive-campaign-card__footer">
-              <p class="archive-campaign-card__period">2023/6/1-9/30</p>
-              <p class="archive-campaign-card__reservation">ご予約・お問い合わせはコチラ</p>
-              <div class="archive-campaign-card__button button">
-                <a href="#" class="button__text">Contact us</a>
-              </div>
-            </div>
-          </div>
-    
-          <div class="archive-campaign-cards__item archive-campaign-card">
-            <figure class="archive-campaign-card__img">
-              <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
-            </figure>
-            <div class="archive-campaign-card__body">
-              <div class="archive-campaign-card__category">ライセンス講習</div>
-              <h3 class="archive-campaign-card__title ">ライセンス取得</h3>
-            </div>
-            <div class="archive-campaign-card__price">
-              <p class="archive-campaign-card__person">
-                全部コミコミ(お一人様)
-              </p>
-              <p class="archive-campaign-card__price-text">
-                <span class="archive-campaign-card__price-previous">¥56,000</span>
-                <span class="archive-campaign-card__price-current">¥46,000</span>
-              </p>
-            </div>
-            <div class="archive-campaign-card__text">
-              <p>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
-              </p>
-            </div>
-            <div class="archive-campaign-card__footer">
-              <p class="archive-campaign-card__period">2023/6/1-9/30</p>
-              <p class="archive-campaign-card__reservation">ご予約・お問い合わせはコチラ</p>
-              <div class="archive-campaign-card__button button">
-                <a href="#" class="button__text">Contact us</a>
-              </div>
-            </div>
-          </div>
-    
-        </div>
-    
-        <div class="archive-campaign__pagenavi pagenavi">
-          <div class="wp-pagenavi">
-            <a class="previouspostslink" rel="prev" href="#">«</a>
-            <span class="current">1</span>
-            <a class="page smaller" href="#">2</a>
-            <a class="page smaller" href="#">3</a>
-            <a class="page larger" href="#">4</a>
-            <a class="page larger" href="#">5</a>
-            <a class="nextpostslink" rel="next" href="#">»</a>
-          </div>
-        </div>
+
       </div>
-    </div>
-
-
+    </section>
 
     <!-- contact -->
     <section class="top-contact contact">
@@ -366,6 +349,7 @@
         </div>
       </div>
     </section>
+
 
     <!--to-topボタン -->
     <div class="to-top">

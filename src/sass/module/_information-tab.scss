@@ -9,28 +9,29 @@
   transition: 0.2s;
   padding: rem(10) rem(16);
 
-  @include mq(md){
-  font-size: rem(24);
-  line-height:rem(22);
-  padding: rem(26) rem(18) rem(26) calc(rem(18) + rem(64) + rem(8));
-  position: relative;
+  @include mq(md) {
+    font-size: rem(24);
+    line-height: rem(22);
+    padding: rem(26) rem(18) rem(26) calc(rem(18) + rem(64) + rem(8));
+    position: relative;
   }
 }
 
-.information-tab__text::before{
+.information-tab__text::before {
   display: none;
   content: "";
-  @include mq(md){
+
+  @include mq(md) {
     display: block;
     background-image: url(../../assets/images/common/ocean_sea_icon.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: rem(64);
-  height: rem(64);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: rem(14);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: rem(64);
+    height: rem(64);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(14);
   }
 
 }

@@ -1,0 +1,37 @@
+@use "global" as *;
+
+.terms-of-service{
+  max-width: rem(800);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.terms-of-service__title{
+  font-size:rem(24);
+  @include mq(md) {
+    font-size:rem(32);
+    font-weight: 500;
+  }
+
+}
+.terms-of-service__text{
+  line-height: 2; /* 200% */
+}
+.terms-of-service__text:first-of-type{
+  margin-top: rem(40);
+}
+
+.terms-of-service__text:not(:first-of-type){
+  margin-top: rem(32);
+
+}
+.terms-of-service__list{
+  margin-top: rem(32);
+}
+
+.terms-of-service__list li{
+  text-indent: -1em;
+  padding-left: 1em;
+  line-height: 2; /* 200% */
+}

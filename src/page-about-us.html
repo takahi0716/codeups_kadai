@@ -57,7 +57,7 @@
 
       <!-- ナビゲーション（pc） -->
       <div class="header__pc-nav pc-nav js-drawer-menu">
-        <ul class="pc-nav__list">
+        <ul class="pc-nav__items">
           <li class="pc-nav__item">
             <a href="#" class="pc-nav__link">
               <p class="pc-nav__english-title">Campaign</p>
@@ -209,7 +209,13 @@
 
   <main>
     <!--サブメインビュー -->
-    <section class="sub-mv sub-mv--about">
+    <section class="sub-mv">
+      <picture class="sub-mv__image">
+        <!-- ↓幅768px以下で表示↓ -->
+        <source srcset="./assets/images/common/aboutus-sp.jpg" media="(max-width: 767px)" />
+        <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+        <img src="./assets/images/common/aboutus-pc.jpg" alt="ダイバーの写真">
+      </picture>
       <h1 class="sub-mv__title">about us</h1>
     </section>
 
@@ -231,7 +237,7 @@
         <div class="about__contaner">
           <picture class="about__image-right  about__image-right--sub">
             <!-- ↓幅768px以下で表示↓ -->
-            <source srcset="./assets/images/common/ocean2-sp.jpg" media="(max-width: 768px)" />
+            <source srcset="./assets/images/common/ocean2-sp.jpg" media="(max-width: 767px)" />
             <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
             <img src="./assets/images/common/ocean2-pc.jpg" alt=黄色い熱帯魚の写真">
           </picture>

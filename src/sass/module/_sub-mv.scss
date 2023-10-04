@@ -5,7 +5,7 @@
   width: 100%;
   height: rem(460);
   background-size: cover;
-  background-position: center
+  background-position: center;
 }
 
 .sub-mv::before {
@@ -28,6 +28,7 @@
   font-weight: $normal;
   text-align: center;
   font-size: rem(40);
+  width: 100%;
 
   @include mq(md) {
     font-size: rem(80);
@@ -38,18 +39,18 @@
   text-transform: uppercase;
 }
 
-.sub-mv--campaign{
-  background-image: url(../images/common/campaign-sp.jpg);
+.sub-mv__image{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 
-  @include mq(md) {
-    background-image: url(../images/common/campaign-pc.jpg);
-  }
 }
 
-.sub-mv--about{
-  background-image: url(../images/common/aboutus-sp.jpg);
-
-  @include mq(md) {
-    background-image: url(../images/common/aboutus-pc.jpg);
-  }
+.sub-mv__image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
 }

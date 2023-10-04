@@ -19,10 +19,6 @@ $base-font-family: "Noto Sans JP", sans-serif;
 $second-font-family: "Noto Serif JP", serif;
 // ※検証ツールでしっかり反映されているか確認する
 
-body {
-  font-family: $base-font-family;
-}
-
 // フォントウェイト
 $regular: 300;
 $normal: 400;
@@ -40,3 +36,8 @@ $accent-color: #408f95;
 $gray1: #f2f2f2;
 $gray2: #ddf0f1;
 $gray3: #0d2936;
+
+body {
+  font-family: $base-font-family;
+  color: $font-color;
+}

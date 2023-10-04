@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.sidebar-title{
+  border-left: solid 8px $accent-color;/*左線*/
+  padding-left: rem(74);
+  position: relative;
+  height: rem(50);
+  display: flex;
+  align-items: center;
+  font-size: rem(24);
+  color: $font-color;
+  font-weight: $normal;
+}
+
+.sidebar-title::before{
+  content: "";
+  background-image: url(../../assets/images/common/sea_icon_black.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: rem(50);
+  height: rem(50);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: rem(16);
+}

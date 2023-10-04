@@ -71,7 +71,7 @@
 
       <!-- ナビゲーション（pc） -->
       <div class="header__pc-nav pc-nav js-drawer-menu">
-        <ul class="pc-nav__list">
+        <ul class="pc-nav__items">
           <li class="pc-nav__item">
             <a href="/archive-campaign.html" class="pc-nav__link">
               <p class="pc-nav__english-title">Campaign</p>
@@ -225,10 +225,35 @@
     <!-- メインビュー -->
     <div class="top-mv mv">
       <div class="mv_slide slide">
-        <div class="slide__image"></div>
-        <div class="slide__image"></div>
-        <div class="slide__image"></div>
-        <div class="slide__image"></div>
+
+        <picture class="slide__image">
+          <!-- ↓幅768px以下で表示↓ -->
+          <source srcset="./assets/images/common/mv-turtle-sp.jpg" media="(max-width: 767px)" />
+          <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+          <img src="./assets/images/common/mv-turtle-pc.jpg" alt="黄色い熱帯魚の写真">
+        </picture>
+
+        <picture class="slide__image">
+          <!-- ↓幅768px以下で表示↓ -->
+          <source srcset="./assets/images/common/mv-diver-sp.jpg" media="(max-width: 767px)" />
+          <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+          <img src="./assets/images/common/mv-diver-pc.jpg" alt="黄色い熱帯魚の写真">
+        </picture>
+
+        <picture class="slide__image">
+          <!-- ↓幅768px以下で表示↓ -->
+          <source srcset="./assets/images/common/mv-ship-sp.jpg" media="(max-width: 767px)" />
+          <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+          <img src="./assets/images/common/mv-ship-pc.jpg" alt="黄色い熱帯魚の写真">
+        </picture>
+
+        <picture class="slide__image">
+          <!-- ↓幅768px以下で表示↓ -->
+          <source srcset="./assets/images/common/mv-beach-sp.jpg" media="(max-width: 767px)" />
+          <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+          <img src="./assets/images/common/mv-beach-pc.jpg" alt="黄色い熱帯魚の写真">
+        </picture>
+
       </div>
       <div class="mv__title">
         <p class="mv__main">DIVING</p>
@@ -259,7 +284,7 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <!-- campaign-card -->
-              <div class="campaign-card">
+              <div class="swiper__card campaign-card ">
                 <figure class="campaign-card__img">
                   <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
                 </figure>
@@ -280,7 +305,7 @@
             </div>
             <div class="swiper-slide">
               <!-- campaign-card -->
-              <div class="campaign-card">
+              <div class="swiper__card campaign-card">
                 <figure class="campaign-card__img">
                   <img src="./assets/images/common/campaign2.jpg" alt="ビーチの画像">
                 </figure>
@@ -301,7 +326,7 @@
             </div>
             <div class="swiper-slide">
               <!-- campaign-card -->
-              <div class="campaign-card">
+              <div class="swiper__card campaign-card">
                 <figure class="campaign-card__img">
                   <img src="./assets/images/common/campaign3.jpg" alt="クラゲの画像">
                 </figure>
@@ -322,7 +347,7 @@
             </div>
             <div class="swiper-slide">
               <!-- campaign-card -->
-              <div class="campaign-card">
+              <div class="swiper__card campaign-card">
                 <figure class="campaign-card__img">
                   <img src="./assets/images/common/campaign4.jpg" alt="ダイビングの画像">
                 </figure>
@@ -343,7 +368,7 @@
             </div>
             <div class="swiper-slide">
               <!-- campaign-card -->
-              <div class="campaign-card">
+              <div class="swiper__card campaign-card">
                 <figure class="campaign-card__img">
                   <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
                 </figure>
@@ -430,9 +455,7 @@
         </div>
         <div class="campaign__wrapper">
           <!-- button -->
-          <div class="campaign__button button">
-            <a href="#" class="button__text">View more</a>
-          </div>
+          <a herf="#" class="information__button button"><span class="button__text">View more</span></a>
         </div>
       </div>
     </section>
@@ -448,9 +471,9 @@
         <div class="about__contaner">
           <picture class="about__image-right">
             <!-- ↓幅768px以下で表示↓ -->
-            <source srcset="./assets/images/common/ocean2-sp.jpg" media="(max-width: 768px)" />
+            <source srcset="./assets/images/common/ocean2-sp.jpg" media="(max-width: 767px)" />
             <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
-            <img src="./assets/images/common/ocean2-pc.jpg" alt=黄色い熱帯魚の写真">
+            <img src="./assets/images/common/ocean2-pc.jpg" alt="黄色い熱帯魚の写真">
           </picture>
           <div class="about__image-left">
             <img src="./assets/images/common/ocean1.jpg" alt="空とシーサーの画像">
@@ -482,7 +505,7 @@
           <h2 class="section-title__sub">ダイビング情報</h2>
         </div>
         <div class="infomation__contaner">
-          <div class="information__image colorbox">
+          <div class="information__image colorbox js-colorbox">
             <img src="./assets/images/common/ocean3.jpg" alt="サンゴと黄色い熱帯魚の画像">
           </div>
           <div class="information__body">
@@ -506,8 +529,8 @@
 
       <div class="blog__inner inner">
         <div class="blog__title section-title">
-          <p class="section-title__main--white">
-            Blog
+          <p class="section-title__main section-title__main--white">
+            blog
           </p>
           <h2 class="section-title__sub section-title__sub--white">ブログ</h2>
         </div>
@@ -579,9 +602,9 @@
                     ライセンス講習
                   </p>
                 </div>
-                <h3 class="voice-card__title ">ここにタイトルが入ります。ここにタイトル</h3>
+                <h3 class="voice-card__title">ここにタイトルが入ります。ここにタイトル</h3>
               </div>
-              <div class="voice-card__image colorbox">
+              <div class="voice-card__image colorbox js-colorbox">
                 <img src="./assets/images/common/voice-tourist-female.jpg" alt="女性のお客さまの画像">
               </div>
             </div>
@@ -605,7 +628,7 @@
                 </div>
                 <h3 class="voice-card__title ">ここにタイトルが入ります。ここにタイトル</h3>
               </div>
-              <div class="voice-card__image colorbox">
+              <div class="voice-card__image colorbox js-colorbox">
                 <img src="./assets/images/common/voice-tourist-man.jpg" alt="男性のお客さまの画像">
               </div>
             </div>
@@ -631,7 +654,7 @@
           <h2 class="section-title__sub">料金一覧</h2>
         </div>
         <div class="price__flex">
-          <picture class="price__image colorbox">
+          <picture class="price__image colorbox js-colorbox">
             <!-- ↓幅768px以下で表示↓ -->
             <source srcset="./assets/images/common/price-image.jpg" media="(max-width: 767px)" />
             <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->

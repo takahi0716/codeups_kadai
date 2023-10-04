@@ -75,10 +75,12 @@
   transition: 0.2s;
   z-index: -1;
 }
+
 .button:hover {
   cursor: pointer;
   color: $accent-color;
 }
+
 .button:hover::after {
   cursor: pointer;
   transform: scale(1, 1);
@@ -92,4 +94,41 @@
 .button__text:hover::after {
   cursor: pointer;
   border-bottom: rem(1) solid $accent-color;
+}
+
+// 404ページのレイアウト
+.button--white {
+  color: $accent-color;
+  background-color: $white;
+  border: rem(1) solid $white;
+}
+
+.button--white::before {
+  border: rem(1) solid $white;
+}
+
+.button--white::after {
+  background-color: $accent-color;
+}
+
+.button--white .button__text::before {
+  border-bottom: rem(1) solid $accent-color;
+}
+
+.button--white .button__text::after {
+  border-bottom: rem(1) solid $accent-color;
+}
+
+.button--white:hover {
+  color: $white;
+}
+
+.button--white .button__text:hover::before {
+  cursor: pointer;
+  border-bottom: rem(1) solid $white;
+}
+
+.button--white .button__text:hover::after {
+  cursor: pointer;
+  border-bottom: rem(1) solid $white;
 }

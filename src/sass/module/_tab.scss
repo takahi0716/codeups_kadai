@@ -1,13 +1,15 @@
 @use "global" as *;
 
-.tab{
-display: grid;
-grid-template-columns: 1fr 1fr;
-max-width: rem(162);
-gap: rem(21);
-@include mq(md) {
-  grid-template-columns:  rem(162)  rem(162)  rem(162) rem(162);
-}
+.tab {
+  display: grid;
+  grid-template-columns: rem(162) rem(162);
+  gap: rem(21);
+  place-content: center;
+
+  @include mq(md) {
+    grid-template-columns: rem(162) rem(162) rem(162) rem(162);
+    place-content: inherit;
+  }
 }
 
 .tab__text {
@@ -18,7 +20,7 @@ gap: rem(21);
   border: 1px solid $accent-color;
   text-align: center;
   transition: 0.2s;
-  line-height:rem(22);
+  line-height: rem(22);
 
   padding: rem(6) 0;
 }

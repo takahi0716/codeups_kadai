@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.popular-card{
+  display: flex;
+  // justify-content: center;
+  padding: rem(16);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+  color: $font-color;
+  gap: rem(16);
+}
+
+.popular-card__image{
+  // width: 46.1832%;
+  // width: rem(121);
+  width: calc(121 / (294 - (16 + 16 + 16)) * 100%);
+  position: relative;
+  }
+
+  
+  .popular-card__image::before {
+    content: "";
+    display: block;
+    padding-top: calc(90 / 121 * 100%); /* 比率を指定 */
+  }
+  
+  .popular-card__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.popular-card__body{
+  // margin-left: rem(16);
+}
+
+.popular-card__time {
+  font-size: rem(12);
+  line-height: 1.5; /* 150% */
+}
+
+.popular-card__title {
+  font-size: rem(16);
+  font-weight: 500;
+
+}
+

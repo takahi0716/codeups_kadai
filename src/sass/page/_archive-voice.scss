@@ -1,20 +1,24 @@
 @use "global" as *;
 
-.archive-campaign{
+.archive-voice{
   margin-top: rem(58);
   @include mq(md) {
   margin-top: rem(150);
   }
 }
 
-.archive-campaign__button{
+.archive-voice__button{
 
 }
 
-.archive-campaign__cards{
+.archive-voice__cards{
   margin-top: rem(40);
 }
 
-.archive-campaign__pagenavi{
+.archive-voice__pagenavi{
   margin-top: rem(80);
+}
+
+.archive-voice__tab{
+
 }

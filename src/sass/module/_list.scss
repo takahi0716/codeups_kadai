@@ -21,6 +21,7 @@
   width: rem(18);
   height: rem(18);
   background-image: url(../images/common/seastar.png);
+  background-size: cover;
 }
 
 .list__item + .list__item {
@@ -31,4 +32,7 @@
 }
 .list__item:hover {
   opacity: 0.8;
+}
+.lists__item .list__item--image::before {
+  background-image: url(../images/common/seastar_list.png);
 }

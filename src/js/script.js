@@ -43,7 +43,7 @@ jQuery(function ($) {
 
   // 画像への登場アニメーション
   //要素の取得とスピードの設定
-  var box = $(".colorbox"),
+  var box = $(".js-colorbox"),
     speed = 700;
 
   //.colorboxの付いた全ての要素に対して下記の処理を行う
@@ -164,4 +164,70 @@ jQuery(function ($) {
         },
       },">2");
   });
+
+    // 入力チェック
+  $(function () {
+    $('.js-accordion').on('click', function () {
+      $(this).next().toggleClass('is-close');
+      $(this).toggleClass('is-active');
+    });
+  });
+
+  $('#submit_btn').on('click', function(){
+    // エラー表示をリセット
+    $('#your-name').removeClass("is-error");
+    $('#email').removeClass("is-error");
+    $('#tel').removeClass("is-error");
+    $('#contents').removeClass("is-error");
+    $('.form__checkbox').removeClass("is-error");
+    $('#form-campaign').removeClass("is-error");
+    $('.form__checkbox-agree').removeClass("is-error");
+    $('.form__error').removeClass("is-error");
+
+    if($('#your-name').val() === ''){
+      $('#your-name').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+    if($('#email').val() === ''){
+      $('#email').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+    if($('#tel').val() === ''){
+      $('#tel').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+    if($('#contents').val() === ''){
+      $('#contents').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+
+    var checkBoxes = $("input[name='contact-item']");
+    var isChecked = false;
+  
+    checkBoxes.each(function() {
+      if ($(this).prop('checked')) {
+        isChecked = true;
+        return false; // ループを終了します
+      }
+    });
+  
+    if (!isChecked) {
+      $('.form__checkbox').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+
+    if($('#form-campaign').val() === ''){
+      $('#form-campaign').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+
+    if(!$('#agree').prop('checked')){
+      $('.form__checkbox-agree').addClass("is-error");
+      $('.form__error').addClass("is-error");
+    }
+    // alert('送信完了！');
+  });
+
+
+
 });

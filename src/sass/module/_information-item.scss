@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.information-item{
+  border: 1px solid $accent-color;
+  padding: rem(24);
+  @include mq(md){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: rem(48);
+    }
+}
+
+.information-item__body{
+  color: $font-color;
+  @include mq(md){
+    max-width: calc(492 / (1080 - 48) * 100%);
+    }
+}
+
+.information-item__title{
+  font-size: rem(24);
+  font-weight: $bold;
+  line-height: 1;
+  padding-bottom: rem(8);
+  border-bottom:1px solid $accent-color;
+  @include mq(md){
+    font-weight: 500;
+    }
+}
+
+.information-item__text{
+  line-height: 1.5;
+  margin-top: rem(8);
+}
+
+.information-item__image{
+  margin-top: rem(8);
+  @include mq(md){
+  max-width: calc(492 / (1080 - 48) * 100%);
+  }
+} 

@@ -1,0 +1,238 @@
+@use "global" as *;
+
+.form {
+  @include mq(md) {
+    max-width: rem(700);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.form__item {
+  border-bottom: rem(1) dotted $accent-color;
+  padding-bottom: rem(24);
+  margin-top: rem(24);
+
+  @include mq(md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: rem(40);
+    padding-bottom: rem(40);
+  }
+}
+
+.form__item:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.form__item dt {
+  font-weight: $bold;
+}
+
+.form__item dd {
+  @include mq(md) {
+    width: calc(400 / 700 * 100%);
+  }
+}
+
+.form__required {
+  color: $white;
+  font-size: rem(12);
+  letter-spacing: 1;
+  margin-left: rem(10);
+  background: #C94800;
+  padding: 0 rem(16);
+}
+
+.form__item dd input[type="text"],
+.form__item dd input[type="email"],
+.form__item dd input[type="tel"],
+.form__item dd textarea {
+  border: rem(1) solid $accent-color;
+  background-color: $white;
+  padding: rem(9) rem(16);
+  width: 100%;
+  margin-top: rem(7);
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+  color: #DDF0F1;
+}
+
+
+
+.form__item dd textarea {
+  height: rem(200);
+}
+
+.form__checkbox {
+  margin-top: rem(16);
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.form__checkbox label {
+  display: flex;
+  gap: rem(8);
+}
+
+.form__button {}
+
+/* チェックボックスデザイン */
+
+
+input[type="checkbox"] {
+  cursor: pointer;
+  padding-left: rem(14);
+  /*label手前にチェックボックス用の余白を開ける*/
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+}
+
+input[type="checkbox"]::before,
+input[type="checkbox"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+input[type="checkbox"]::before {
+  background-color: #fff;
+  border-radius: 0%;
+  border: rem(1) solid $accent-color;
+  width: rem(14);
+  /*チェックボックスの横幅*/
+  height: rem(14);
+  /*チェックボックスの縦幅*/
+  // transform: translate(-50%, -50%);
+  top: rem(2);
+  left: rem(3);
+}
+
+input[type="checkbox"]::after {
+  border-bottom: rem(2) solid #C94800;
+  /*チェックの太さ*/
+  border-left: rem(2) solid #C94800;
+  /*チェックの太さ*/
+  opacity: 0;
+  /*チェック前は非表示*/
+  height: rem(5);
+  /*チェックの高さ*/
+  width: rem(9);
+  /*チェックの横幅*/
+  transform: rotate(-45deg);
+  top: rem(5);
+  /*チェック時の位置調整*/
+  left: rem(6);
+  /*チェック時の位置調整*/
+}
+
+input[type="checkbox"]:checked::after {
+  opacity: 1;
+  /*チェック後表示*/
+}
+
+.form__select {
+  display: inline-block;
+  position: relative;
+  max-width: rem(480);
+  width: 100%;
+}
+
+.form__select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: rem(9);
+  transform: translateY(-10%);
+  border-width: 10px 5px 0 5px;
+  border-style: solid;
+  border-color: $accent-color transparent transparent transparent;
+}
+
+.form__select select {
+  padding: rem(7) rem(29) rem(7) rem(8);
+  padding-right: 1em;
+  border: rem(1) solid $accent-color;
+  background-color: $white;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  margin-top: rem(7);
+}
+
+.form__item-button {
+  text-align: center;
+  margin-top: rem(24);
+
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.form__button {}
+
+.form__item-agree {
+  text-align: left;
+  margin-top: rem(40);
+
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}
+
+.form__checkbox-agree label {
+  display: flex;
+  gap: rem(8);
+  justify-content: center;
+}
+
+.form__checkbox-agree label span {
+  display: inline-block;
+  width: calc(252 / 345 * 100%);
+
+  @include mq(md) {
+    display: inline;
+    width: inherit;
+  }
+}
+
+.form__error {
+  text-align: center;
+  color: #C94800;
+  font-size: rem(14);
+  display: none;
+}
+
+.form__error.is-error {
+  display: block;
+}
+
+.form__item dd input[type="text"].is-error,
+.form__item dd input[type="email"].is-error,
+.form__item dd input[type="tel"].is-error,
+.form__item dd textarea.is-error,
+.form__select select.is-error {
+  border: rem(1) solid #C94800;
+  background-color: rgba(201, 72, 0, 0.20);
+}
+
+.form__checkbox.is-error,
+.form__checkbox-agree.is-error label span {
+  background-color: rgba(201, 72, 0, 0.20);
+}
