@@ -1,10 +1,8 @@
 @use "global" as *;
 
-.page-information{
+.page-information {}
 
-}
-
-.page-information__tab{
+.page-information__tab {
   margin-top: rem(121);
 
   @include mq(md) {
@@ -12,7 +10,7 @@
   }
 }
 
-.page-information__items{
+.page-information__content {
   margin-top: rem(16);
 
   @include mq(md) {

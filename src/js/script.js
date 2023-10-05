@@ -132,102 +132,164 @@ jQuery(function ($) {
     const tl = gsap.timeline();
     const title = document.querySelector(".loading__title");
     const loading = document.querySelector(".loading");
-
-    tl
-      // 左の画像を上げる
-      .to(".loading__image-left", {
-        y: "0%",
-        duration: 2,
-        ease: "power4.out",
-        delay: 1,
-      })
-      // 右の画像を上げる
-      .to(
-        ".loading__image-right",
-        {
-          y: "0%",
-          duration: 2,
-          ease: "power4.out",
-        },
-        "<0.5"
-      )
-      // 文字色を白に変更
-      .add(() => {
-        title.classList.add("loading__title--white");
-      }, "<0.3")
-      // ローディング画面をゆっくり透明にする
-      .to(".loading", {
-        opacity: 0,
-        duration: 1,
-        onComplete: () => {
-          loading.style.display = "none";
-        },
-      },">2");
+    var webStorage = function () {
+      if (sessionStorage.getItem("access")) {
+        /*2回目以降アクセス時の処理*/
+        // $(".loading").addClass('is-active');
+        $(".loading").css("display","none");
+      } else {
+        /*初回アクセス時の処理*/
+        sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
+        tl
+          // 左の画像を上げる
+          .to(".loading__image-left", {
+            y: "0%",
+            duration: 2,
+            ease: "power4.out",
+            delay: 1,
+          })
+          // 右の画像を上げる
+          .to(
+            ".loading__image-right",
+            {
+              y: "0%",
+              duration: 2,
+              ease: "power4.out",
+            },
+            "<0.5"
+          )
+          // 文字色を白に変更
+          .add(() => {
+            title.classList.add("loading__title--white");
+          }, "<0.3")
+          // ローディング画面をゆっくり透明にする
+          .to(
+            ".loading",
+            {
+              opacity: 0,
+              duration: 1,
+              onComplete: () => {
+                loading.style.display = "none";
+              },
+            },
+            ">2"
+          );
+      }
+    };
+    webStorage();
   });
 
-    // 入力チェック
+  // 入力チェック
   $(function () {
-    $('.js-accordion').on('click', function () {
-      $(this).next().toggleClass('is-close');
-      $(this).toggleClass('is-active');
+    $(".js-accordion").on("click", function () {
+      $(this).next().toggleClass("is-close");
+      $(this).toggleClass("is-active");
     });
   });
 
-  $('#submit_btn').on('click', function(){
+  $("#submit_btn").on("click", function () {
     // エラー表示をリセット
-    $('#your-name').removeClass("is-error");
-    $('#email').removeClass("is-error");
-    $('#tel').removeClass("is-error");
-    $('#contents').removeClass("is-error");
-    $('.form__checkbox').removeClass("is-error");
-    $('#form-campaign').removeClass("is-error");
-    $('.form__checkbox-agree').removeClass("is-error");
-    $('.form__error').removeClass("is-error");
+    $("#your-name").removeClass("is-error");
+    $("#email").removeClass("is-error");
+    $("#tel").removeClass("is-error");
+    $("#contents").removeClass("is-error");
+    $(".form__checkbox").removeClass("is-error");
+    $("#form-campaign").removeClass("is-error");
+    $(".form__checkbox-agree").removeClass("is-error");
+    $(".form__error").removeClass("is-error");
 
-    if($('#your-name').val() === ''){
-      $('#your-name').addClass("is-error");
-      $('.form__error').addClass("is-error");
+    if ($("#your-name").val() === "") {
+      $("#your-name").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
-    if($('#email').val() === ''){
-      $('#email').addClass("is-error");
-      $('.form__error').addClass("is-error");
+    if ($("#email").val() === "") {
+      $("#email").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
-    if($('#tel').val() === ''){
-      $('#tel').addClass("is-error");
-      $('.form__error').addClass("is-error");
+    if ($("#tel").val() === "") {
+      $("#tel").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
-    if($('#contents').val() === ''){
-      $('#contents').addClass("is-error");
-      $('.form__error').addClass("is-error");
+    if ($("#contents").val() === "") {
+      $("#contents").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
 
     var checkBoxes = $("input[name='contact-item']");
     var isChecked = false;
-  
-    checkBoxes.each(function() {
-      if ($(this).prop('checked')) {
+
+    checkBoxes.each(function () {
+      if ($(this).prop("checked")) {
         isChecked = true;
         return false; // ループを終了します
       }
     });
-  
+
     if (!isChecked) {
-      $('.form__checkbox').addClass("is-error");
-      $('.form__error').addClass("is-error");
+      $(".form__checkbox").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
 
-    if($('#form-campaign').val() === ''){
-      $('#form-campaign').addClass("is-error");
-      $('.form__error').addClass("is-error");
+    if ($("#form-campaign").val() === "") {
+      $("#form-campaign").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
 
-    if(!$('#agree').prop('checked')){
-      $('.form__checkbox-agree').addClass("is-error");
-      $('.form__error').addClass("is-error");
+    if (!$("#agree").prop("checked")) {
+      $(".form__checkbox-agree").addClass("is-error");
+      $(".form__error").addClass("is-error");
     }
     // alert('送信完了！');
   });
 
+  // モーダル
+  $("#openModal").on("click", function () {
+    $("#modalArea").toggleClass("is-show");
+  });
+  $("#closeModal").on("click", function () {
+    $("#modalArea").toggleClass("is-show");
+  });
+  $("#modalBg").on("click", function () {
+    $("#modalArea").toggleClass("is-show");
+  });
+
+  // モーダル表示;
+  var scrollPosition2;
+
+  $(".js-tile-item").click(function () {
+    if (windowSize < 376) {
+      return false;
+    }else{
+
+
+    scrollPosition2 = $(window).scrollTop();
+    $(".js-modal-window").html($(this).prop("outerHTML"));
+    $(".js-modal-window").fadeIn();
+    $("body").addClass("gallery__modal-active");
+    return false;
+  }
+  });
+  // モーダル非表示
+  $(".js-modal-window").click(function () {
+    if (windowSize < 376) {
+      return false;
+    }else{
+    $(".js-modal-window").fadeOut();
+    $(window).scrollTop(scrollPosition2);
+    $("body").removeClass("gallery__modal-active");
+
+    return false;
+    }
+  });
+
+  // タブ
+  $('.js-tab-trigger').on('click', function () {
+    $('.js-tab-trigger').removeClass('is-active');
+    $('.js-tab-target').removeClass('is-active');
+    $(this).addClass('is-active');
+    let id = $(this).data("id");
+    $('#' + id).addClass('is-active')
+});
 
 
 });

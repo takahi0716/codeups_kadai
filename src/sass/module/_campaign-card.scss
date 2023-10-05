@@ -2,12 +2,11 @@
 
 .campaign-card {
   color: $font-color;
-
   background: $white;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   display: flex; //下揃えするためflexにしてcolumnで縦にする
   flex-direction: column;
-  height: 100%;
+  height: auto;
 }
 
 .campaign-card__img {
@@ -68,6 +67,14 @@
   }
 }
 
+.campaign-card__price--sub{
+  padding-bottom: rem(24);
+
+  @include mq(md) {
+    padding-bottom: 0;
+  }
+}
+
 .campaign-card__person {
   font-size: rem(14);
   text-align: center;
@@ -107,13 +114,41 @@
 }
 
 .campaign-card__text{
+  display: none;
+  margin-bottom: auto;
+  @include mq(md) {
+    display: block;
   margin-top: rem(24);
+  padding-left: rem(24);
+  padding-right: rem(24);
+}
 }
 
-.campaign-card__period{
+.campaign-card__footer {
+  display: none;
+  @include mq(md) {
+    display: block;
   margin-top: rem(32);
+  padding-left: rem(24);
+  padding-right: rem(24);
+  padding-bottom: rem(44);
+  text-align: center;
+}
 }
 
-.campaign-card__reservation{
+.campaign-card__period {
+  color: $accent-color;
+  font-weight: $bold;
+  line-height: 1.1125; /* 112.5% */
+}
+
+.campaign-card__reservation {
+  margin-top: rem(14);
+  color: $accent-color;
+  line-height: 1.28571;
+}
+
+.campaign-card__button {
   margin-top: rem(16);
 }
+

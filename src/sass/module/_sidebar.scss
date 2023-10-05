@@ -15,3 +15,26 @@
 .sidebar__campaign{
   margin-top: rem(80);
 }
+
+.sidebar__archive{
+  margin-top: rem(89);
+}
+
+.sidebar__archive-item{
+  color: $accent-color;
+  margin-top: rem(24);
+}
+
+.sidebar__archive-item ul {
+  list-style: url(../../assets/images/common/Polygon1.svg);
+  list-style-position: inside;
+}
+
+.sidebar__archive-item li {
+  margin-top: 4px;
+  font-size: rem(24);
+}
+
+.sidebar__archive-item li ul {
+  text-indent: 1em;
+}

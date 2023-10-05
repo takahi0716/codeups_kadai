@@ -1,42 +1,84 @@
 @use "global" as *;
 
-.information-item{
+.information-item {
+  display: none;
+  animation: fade 0.5s ease;
   border: 1px solid $accent-color;
   padding: rem(24);
-  @include mq(md){
-    display: flex;
+
+  @include mq(md) {
     justify-content: space-between;
     align-items: center;
     gap: rem(48);
-    }
+  }
 }
 
-.information-item__body{
+.information-item.is-active {
+  display: block;
+
+  @include mq(md) {
+    display: flex;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.information-item__body {
   color: $font-color;
-  @include mq(md){
+
+  @include mq(md) {
     max-width: calc(492 / (1080 - 48) * 100%);
-    }
+  }
 }
 
-.information-item__title{
+.information-item__title {
   font-size: rem(24);
   font-weight: $bold;
   line-height: 1;
   padding-bottom: rem(8);
-  border-bottom:1px solid $accent-color;
-  @include mq(md){
+  border-bottom: 1px solid $accent-color;
+
+  @include mq(md) {
     font-weight: 500;
-    }
+  }
 }
 
-.information-item__text{
+.information-item__text {
   line-height: 1.5;
   margin-top: rem(8);
 }
 
-.information-item__image{
+.information-item__image {
   margin-top: rem(8);
-  @include mq(md){
-  max-width: calc(492 / (1080 - 48) * 100%);
+  position: relative;
+
+  @include mq(md) {
+    margin-top: 0;
+    max-width: calc(492 / (1080 - 48) * 100%);
+    width: 100%;
   }
-} 
+}
+
+.information-item__image::before {
+  content: "";
+  display: block;
+  padding-top: calc(313 / 492 * 100%);
+  /* 比率を指定 */
+}
+
+.information-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

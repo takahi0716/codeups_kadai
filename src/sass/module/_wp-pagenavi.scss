@@ -1,31 +1,76 @@
 @use "global" as *;
+
 /*wp-pagenavi 02*/
 .wp-pagenavi {
-	display: flex;
+  display: flex;
   justify-content: center;
   gap: rem(10);
 
 }
-.wp-pagenavi a, .wp-pagenavi span {
-display: inline-flex;
-justify-content: center;
-align-items: center;
-width: rem(38);
-height: rem(38); 
-background-color: $white;
-color: $accent-color;
-font-weight: $bold;
-font-size: rem(16);
-transition:  0.3s ease;
-border: 1px solid $accent-color;
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(38);
+  height: rem(38);
+  background-color: $white;
+  color: $accent-color;
+  font-weight: $bold;
+  font-size: rem(16);
+  transition: 0.3s ease;
+  border: 1px solid $accent-color;
 
 }
-.wp-pagenavi a:hover{
-	background-color: $accent-color;
+
+.wp-pagenavi a:hover {
+  background-color: $accent-color;
   color: $white;
   opacity: 1;
-    }
-.wp-pagenavi span.current{
-	background-color: $accent-color;
+}
+
+.wp-pagenavi span.current {
+  background-color: $accent-color;
   color: $white;
-    }
+}
+
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink{
+  position: relative;
+}
+
+.wp-pagenavi .previouspostslink::after{
+  border-left: 0.0625rem solid $accent-color;
+  border-top: 0.0625rem solid $accent-color;
+  content: "";
+  height: 0.625rem;
+  position: absolute;
+  right: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 0.625rem;
+}
+
+.wp-pagenavi .previouspostslink:hover::after{
+  border-left: 0.0625rem solid $white;
+  border-top: 0.0625rem solid $white;
+}
+
+.wp-pagenavi .nextpostslink::after{
+  border-bottom: 0.0625rem solid $accent-color;
+  border-right: 0.0625rem solid $accent-color;
+  content: "";
+  height: 0.625rem;
+  left: 32%;
+  position: absolute;
+  right: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 0.625rem;
+}
+
+.wp-pagenavi .nextpostslink:hover::after{
+  border-bottom: 0.0625rem solid $white;
+  border-right: 0.0625rem solid $white;
+}

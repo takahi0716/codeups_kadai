@@ -70,12 +70,10 @@
 .loading__main {
   font-size: rem(40);
   letter-spacing: 0.54em;
-  transform: translateX(rem(10));
+  text-indent:0.54em;
   @include mq(md) {
     font-size: rem(80);
     line-height: 1;
-    letter-spacing: 0.52em;
-    transform: translateX(rem(21));
   }
 }
 

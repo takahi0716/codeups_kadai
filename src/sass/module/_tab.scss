@@ -25,7 +25,14 @@
   padding: rem(6) 0;
 }
 
-.tab__text.active {
+.tab__text.is-active {
   color: $white;
   background-color: $accent-color;
+}
+
+.tab__text:hover {
+  color: $white;
+  background-color: $accent-color;
+  border: 1px solid $white;
+
 }

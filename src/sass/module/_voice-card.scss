@@ -5,6 +5,7 @@
   color: $font-color;
   background: $white;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+  height: auto;
   @include mq(md) {
     padding: rem(25) rem(24) rem(24);
   }

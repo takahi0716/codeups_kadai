@@ -1,23 +1,47 @@
 @use "global" as *;
 
+.information-tab{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: min(calc(19 / 375 * 100%),rem(19));
+  @include mq(md){
+  gap: min(calc(90 / 1080 * 100%),rem(90));
+  }
+}
+
+.information-tab__item{
+  height: auto;
+  padding: rem(10) rem(16);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: #DDF0F1;
+  text-align: center;
+  cursor: pointer;
+  @include mq(md){
+    padding: rem(26) 0 rem(26) min(calc(90 / 300 * 100%),rem(90));
+    position: relative;
+  box-shadow: none;
+  text-align: left;
+  }
+}
+
+.information-tab__item:hover{
+  opacity: 0.8;
+}
 
 .information-tab__text {
   display: inline-block;
   color: $accent-color;
-  background-color: #DDF0F1;
-  text-align: center;
   transition: 0.2s;
-  padding: rem(10) rem(16);
+  font-size: rem(14);
 
   @include mq(md) {
-    font-size: rem(24);
+    font-size: min(vw(1130, 24), rem(24));
     line-height: rem(22);
-    padding: rem(26) rem(18) rem(26) calc(rem(18) + rem(64) + rem(8));
-    position: relative;
+
   }
 }
 
-.information-tab__text::before {
+.information-tab__item::before {
   display: none;
   content: "";
 
@@ -36,8 +60,16 @@
 
 }
 
-.information-tab__text.active {
-  color: $white;
+.information-tab__item.is-active {
   background-color: $accent-color;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  cursor:inherit;
+}
+
+.information-tab__item.is-active:hover{
+  opacity: 1;
+} 
+
+.information-tab__item.is-active .information-tab__text {
+  color: $white;
 }
