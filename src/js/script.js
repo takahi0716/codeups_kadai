@@ -261,7 +261,6 @@ jQuery(function ($) {
       return false;
     }else{
 
-
     scrollPosition2 = $(window).scrollTop();
     $(".js-modal-window").html($(this).prop("outerHTML"));
     $(".js-modal-window").fadeIn();

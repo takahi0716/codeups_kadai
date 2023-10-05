@@ -7,6 +7,7 @@
   gap: rem(8) 0;
 
   transition: transform 0.6s ease;
+
   @include mq(md) {
     grid-template-columns: 4fr 1fr 4fr;
     grid-auto-flow: dense; // できるだけ敷き詰める指定
@@ -18,9 +19,10 @@
 .tile__item {
   position: relative;
   grid-column: span 2;
+
   @include mq(md) {
-  cursor: pointer;
-}
+    cursor: pointer;
+  }
 }
 
 .tile__item:first-child {
@@ -46,11 +48,10 @@
 }
 
 .tile__item:first-child:before,
-.tile__item:nth-child(6n + 1):before{
+.tile__item:nth-child(6n + 1):before {
   content: "";
   display: block;
-  aspect-ratio: 492 / 746;
-  /* 比率を指定 */
+  aspect-ratio: 492 / 746; /* 比率を指定 */
 }
 
 .tile__item img {
