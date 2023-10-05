@@ -3,10 +3,11 @@
 .tab {
   display: grid;
   grid-template-columns: rem(162) rem(162);
-  gap: rem(21);
+  gap: rem(16) rem(21);
   place-content: center;
 
   @include mq(md) {
+    gap: rem(21);
     grid-template-columns: rem(162) rem(162) rem(162) rem(162);
     place-content: inherit;
   }

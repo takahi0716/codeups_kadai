@@ -10,6 +10,9 @@
 }
 
 .archive-campaign-cards__item {
+  margin-left: auto;
+  margin-right: auto;
+
   @include mq(md) {
     max-width: calc(50% - rem(40) * 2 / 3);
     width: 100%;

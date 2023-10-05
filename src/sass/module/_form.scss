@@ -112,7 +112,7 @@ input[type="checkbox"]::after {
 }
 
 input[type="checkbox"]::before {
-  background-color: #fff;
+  background-color: $white;
   border-radius: 0%;
   border: rem(1) solid $accent-color;
   width: rem(14);

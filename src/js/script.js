@@ -239,6 +239,10 @@ jQuery(function ($) {
       $(".form__checkbox-agree").addClass("is-error");
       $(".form__error").addClass("is-error");
     }
+
+    if ($("#your-name").val() !== "" && $("#email").val() !== "" && $("#tel").val() !== "" && $("#contents").val() !== "" && isChecked && $("#form-campaign").val() !== "" && $("#agree").prop("checked")){
+      window.location.href = '../page-thanks.html';
+    }
     // alert('送信完了！');
   });
 

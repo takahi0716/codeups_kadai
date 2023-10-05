@@ -6,6 +6,9 @@
   height: rem(460);
   background-size: cover;
   background-position: center;
+  @include mq(md) {
+    height: rem(548);
+  }
 }
 
 .sub-mv::before {
@@ -22,14 +25,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   color: $white;
   font-family: $english-font-family;
   font-weight: $normal;
   text-align: center;
   font-size: rem(40);
+  line-height:1.25;
   width: 100%;
-
   @include mq(md) {
     font-size: rem(80);
   }
@@ -37,6 +40,7 @@
 
 .sub-mv__title::first-letter {
   text-transform: uppercase;
+  transform: translateX(-50%);
 }
 
 .sub-mv__image{

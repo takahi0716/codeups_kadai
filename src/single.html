@@ -28,12 +28,12 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script defer src="./assets/js/jquery.inview.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script defer src="./assets/js/script.js"></script>
 </head>
@@ -258,46 +258,44 @@
             </div>
 
 
-            <div class="single-article__pagenavi pagenavi">
-              <div class="wp-pagenavi">
-                <a class="previouspostslink" rel="prev" href="#">«</a>
+            <div class="single-article__pagenavi wp-pagenavi wp-pagenavi--single">
+                <a class="previouspostslink" rel="prev" href="#"></a>
 
-                <a class="nextpostslink" rel="next" href="#">»</a>
-              </div>
+                <a class="nextpostslink" rel="next" href="#"></a>
             </div>
           </div>
 
-          <aside class="single__sidebar sidebar">
+          <aside class="home__sidebar sidebar">
             <div class="sidebar__popular">
               <h2 class="sidebar__title sidebar-title">人気記事</h2>
               <div class="sidebar__cards popular-cards">
-                <div class="popular-cards__item popular-card">
+                <a href="#" class="popular-cards__item popular-card">
                   <div class="popular-card__image">
-                    <img src="./assets/images/common/yellowfish.jpg" alt="">
+                    <img src="./assets/images/common/yellowfish.jpg" alt="ブログ記事のサムネイル">
                   </div>
                   <div class="popular-card__body">
                     <time class="popular-card__time" datetime="2023-11-17">2023.11.17</time>
                     <p class="popular-card__title">ライセンス取得</p>
                   </div>
-                </div>
-                <div class="popular-cards__item popular-card">
+                </a>
+                <a href="#" class="popular-cards__item popular-card">
                   <div class="popular-card__image">
-                    <img src="./assets/images/common/yellowfish.jpg" alt="">
+                    <img src="./assets/images/common/blog-turtle.jpg" alt="ブログ記事のサムネイル">
                   </div>
                   <div class="popular-card__body">
                     <time class="popular-card__time" datetime="2023-11-17">2023.11.17</time>
-                    <p class="popular-card__title">ライセンス取得</p>
+                    <p class="popular-card__title">ウミガメと泳ぐ</p>
                   </div>
-                </div>
-                <div class="popular-cards__item popular-card">
+                </a>
+                <a href="#" class="popular-cards__item popular-card">
                   <div class="popular-card__image">
-                    <img src="./assets/images/common/yellowfish.jpg" alt="">
+                    <img src="./assets/images/common/blog-clownfish.jpg" alt="ブログ記事のサムネイル">
                   </div>
                   <div class="popular-card__body">
                     <time class="popular-card__time" datetime="2023-11-17">2023.11.17</time>
-                    <p class="popular-card__title">ライセンス取得</p>
+                    <p class="popular-card__title">カクレクマノミ</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -305,14 +303,15 @@
               <h2 class="sidebar__title sidebar-title">口コミ</h2>
               <div class="sidebar__voice-itme sidebar-voice">
                 <div class="sidebar-voice__image">
-                  <img src="./assets/images/common/voice5.jpg" alt="">
+                  <img src="./assets/images/common/voice5.jpg" alt="口コミ１の画像">
                 </div>
                 <div class="sidebar-voice__body">
                   <p class="sidebar-voice__guest">30代(カップル)</p>
                   <h3 class="sidebar-voice__title">ここにタイトルが入ります。ここにタイトル</h3>
                 </div>
                 <div class="sidebar-voice__wrapper">
-                  <a href="#" class="sidebar-voice__button button"><span class="button__text">View more</span></a>
+                  <a href="./archive-voice.html" class="sidebar-voice__button button"><span class="button__text">View
+                      more</span></a>
                 </div>
               </div>
             </div>
@@ -320,7 +319,7 @@
             <div class="sidebar__campaign sidebar-campaign">
               <h2 class="sidebar-campaign__title sidebar-title">キャンペーン</h2>
               <div class="sidebar-campaign__cards">
-                <div class="sidebar-campaign__card campaign-card-sub">
+                <a href="#" class="sidebar-campaign__card campaign-card-sub">
                   <figure class="campaign-card-sub__img">
                     <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
                   </figure>
@@ -336,33 +335,34 @@
                       <span class="campaign-card-sub__price-current">¥46,000</span>
                     </p>
                   </div>
-                </div>
-                <div class="sidebar-campaign__card campaign-card-sub">
+                </a>
+                <a href="#" class="sidebar-campaign__card campaign-card-sub">
                   <figure class="campaign-card-sub__img">
-                    <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
+                    <img src="./assets/images/common/campaign2.jpg" alt="キャンペーンの画像">
                   </figure>
                   <div class="campaign-card-sub__body">
-                    <h3 class="campaign-card-sub__title ">ライセンス取得</h3>
+                    <h3 class="campaign-card-sub__title ">貸切体験ダイビング</h3>
                   </div>
                   <div class="campaign-card-sub__price">
                     <p class="campaign-card-sub__person">
                       全部コミコミ(お一人様)
                     </p>
                     <p class="campaign-card-sub__price-text">
-                      <span class="campaign-card-sub__price-previous">¥56,000</span>
-                      <span class="campaign-card-sub__price-current">¥46,000</span>
+                      <span class="campaign-card-sub__price-previous">¥24,000</span>
+                      <span class="campaign-card-sub__price-current">¥18,000</span>
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
               <div class="sidebar-campaign__wrapper">
-                <a href="#" class="sidebar-campaign__button button"><span class="button__text">View more</span></a>
+                <a href="./archive-campaign.html" class="sidebar-campaign__button button"><span
+                    class="button__text">View more</span></a>
               </div>
             </div>
 
-            <div class="sidebar__archive sidebar-archive">
-              <h2 class="sidebar-archive__title sidebar-title">口コミ</h2>
-              <div class="sidebar-archive__itme">
+            <div class="sidebar__archive">
+              <h2 class="sidebar__title sidebar-title">アーカイブ</h2>
+              <div class="sidebar__archive-item">
                 <ul>
                   <li>2023
                     <ul>
