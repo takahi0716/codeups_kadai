@@ -135,7 +135,7 @@ jQuery(function ($) {
     var webStorage = function () {
       if (sessionStorage.getItem("access")) {
         /*2回目以降アクセス時の処理*/
-        // $(".loading").addClass('is-active');
+        $(".loading").addClass('is-active');
         $(".loading").css("display","none");
       } else {
         /*初回アクセス時の処理*/
