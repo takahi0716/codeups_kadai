@@ -1,40 +1,26 @@
 @use "global" as *;
 
 .archive-campaign-cards {
-  display: flex;
-  flex-direction: column;
+
+  padding-left: rem(30);
+    padding-right: rem(30);
+    display: grid;
+    gap: rem(40) 0;
+    grid-template-columns:1fr;
+
   @include mq(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
+
+    display: grid;
+    gap: rem(80) rem(40);
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-.archive-campaign-cards__item {
-  margin-left: auto;
-  margin-right: auto;
-
-  @include mq(md) {
-    max-width: calc(50% - rem(40) * 2 / 3);
-    width: 100%;
-  }
-}
-
-.archive-campaign-cards__item + .archive-campaign-cards__item {
-  margin-top: rem(40);
-  @include mq(md) {
-    margin-top: rem(0);
-    margin-left: rem(40);
-  }
-}
-
-.archive-campaign-cards__item:nth-child(2n + 1) {
-  @include mq(md) {
-    margin-left: 0;
-  }
-}
-
-.archive-campaign-cards__item:nth-child(n + 3) {
-  @include mq(md) {
-    margin-top: rem(80);
-  }
+.sidebar__campaign-cards.archive-campaign-cards--sideber{
+  gap: rem(40) 0;
+  grid-template-columns:1fr;
+  padding-left: 0;
+  padding-right: 0;
 }

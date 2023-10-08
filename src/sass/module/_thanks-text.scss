@@ -1,6 +1,9 @@
 @use "global" as *;
 
-.thanks-text{
-  margin-top: rem(40);
+.thanks-text {
   text-align: center;
+}
+
+.thanks-text + .thanks-text {
+  margin-top: rem(40);
 }

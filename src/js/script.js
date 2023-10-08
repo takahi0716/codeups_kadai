@@ -1,7 +1,10 @@
 jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
 
-  //ナビバートグル
+  // ======================================================
+  //  ナビバートグル
+  // ======================================================
+
   $(".js-hamburger").on("click", function () {
     if ($(".js-hamburger").hasClass("is-open")) {
       $(this).removeClass("is-open");
@@ -14,7 +17,9 @@ jQuery(function ($) {
     }
   });
 
-  // swiper
+  // ======================================================
+  //  swiper
+  // ======================================================
   var windowSize = $(window).width();
   var space = 24;
   if (windowSize < 376) {
@@ -70,7 +75,9 @@ jQuery(function ($) {
     });
   });
 
+  // ===============================================================
   // to-topボタンを表示
+  // ===============================================================
   let topBtn = $(".to-top");
   let header = $(".header");
   let footer = $(".footer");
@@ -105,7 +112,7 @@ jQuery(function ($) {
     return false;
   });
   // フッター手前でストップ
-  if (windowSize < 376) {
+  if (windowSize < 768) {
     buttoBottom = 16;
   } else {
     buttoBottom = 20;
@@ -127,59 +134,70 @@ jQuery(function ($) {
     }
   });
 
+  // ===============================================================
   // ローディング
+  // ===============================================================
   window.addEventListener("load", (e) => {
     const tl = gsap.timeline();
     const title = document.querySelector(".loading__title");
     const loading = document.querySelector(".loading");
     var webStorage = function () {
       if (sessionStorage.getItem("access")) {
-        /*2回目以降アクセス時の処理*/
-        $(".loading").addClass('is-active');
-        $(".loading").css("display","none");
+      // /*2回目以降アクセス時の処理*/
+      $(".loading").addClass('is-active');
+      $(".loading").css("display","none");
       } else {
-        /*初回アクセス時の処理*/
-        sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
-        tl
-          // 左の画像を上げる
-          .to(".loading__image-left", {
+      // /*初回アクセス時の処理*/
+      sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
+
+      $("body").css("overflow", "hidden");
+      tl
+        // 左の画像を上げる
+        .to(".loading__image-left", {
+          y: "0%",
+          duration: 2,
+          ease: "power4.out",
+          delay: 1,
+          onstart: () => {
+            $("body").css("overflow", "hidden");
+          },
+        })
+        // 右の画像を上げる
+        .to(
+          ".loading__image-right",
+          {
             y: "0%",
             duration: 2,
             ease: "power4.out",
-            delay: 1,
-          })
-          // 右の画像を上げる
-          .to(
-            ".loading__image-right",
-            {
-              y: "0%",
-              duration: 2,
-              ease: "power4.out",
+          },
+          "<0.5"
+        )
+        // 文字色を白に変更
+        .add(() => {
+          title.classList.add("loading__title--white");
+        }, "<0.3")
+        // ローディング画面をゆっくり透明にする
+        .to(
+          ".loading",
+          {
+            opacity: 0,
+            duration: 1,
+            onComplete: () => {
+              // アニメーションがおわったら消してスクロールを可能にする
+              loading.style.display = "none";
+              $("body").css("overflow", "auto");
             },
-            "<0.5"
-          )
-          // 文字色を白に変更
-          .add(() => {
-            title.classList.add("loading__title--white");
-          }, "<0.3")
-          // ローディング画面をゆっくり透明にする
-          .to(
-            ".loading",
-            {
-              opacity: 0,
-              duration: 1,
-              onComplete: () => {
-                loading.style.display = "none";
-              },
-            },
-            ">2"
-          );
+          },
+          ">2"
+        );
       }
     };
     webStorage();
   });
 
-  // 入力チェック
+  // ===============================================================
+  // 問い合わせフォームの入力チェック
+  // ===============================================================
   $(function () {
     $(".js-accordion").on("click", function () {
       $(this).next().toggleClass("is-close");
@@ -230,69 +248,62 @@ jQuery(function ($) {
       $(".form__error").addClass("is-error");
     }
 
-    if ($("#form-campaign").val() === "") {
-      $("#form-campaign").addClass("is-error");
-      $(".form__error").addClass("is-error");
-    }
-
     if (!$("#agree").prop("checked")) {
       $(".form__checkbox-agree").addClass("is-error");
       $(".form__error").addClass("is-error");
     }
 
-    if ($("#your-name").val() !== "" && $("#email").val() !== "" && $("#tel").val() !== "" && $("#contents").val() !== "" && isChecked && $("#form-campaign").val() !== "" && $("#agree").prop("checked")){
-      window.location.href = '../page-thanks.html';
+    if (
+      $("#your-name").val() !== "" &&
+      $("#email").val() !== "" &&
+      $("#tel").val() !== "" &&
+      $("#contents").val() !== "" &&
+      isChecked &&
+      $("#agree").prop("checked")
+    ) {
+      window.location.href = "../page-thanks.html";
     }
     // alert('送信完了！');
   });
 
-  // モーダル
-  $("#openModal").on("click", function () {
-    $("#modalArea").toggleClass("is-show");
-  });
-  $("#closeModal").on("click", function () {
-    $("#modalArea").toggleClass("is-show");
-  });
-  $("#modalBg").on("click", function () {
-    $("#modalArea").toggleClass("is-show");
-  });
+  // ===============================================================
+  // ギャラリのモーダル
+  // ===============================================================
 
-  // モーダル表示;
-  var scrollPosition2;
-
-  $(".js-tile-item").click(function () {
-    if (windowSize < 376) {
+  // モーダル表示
+  $(".js-tile-item img").click(function () {
+    var windowSize = $(window).width();
+    if (windowSize < 768) {
       return false;
-    }else{
-
-    scrollPosition2 = $(window).scrollTop();
-    $(".js-modal-window").html($(this).prop("outerHTML"));
-    $(".js-modal-window").fadeIn();
-    $("body").addClass("gallery__modal-active");
-    return false;
-  }
-  });
-  // モーダル非表示
-  $(".js-modal-window").click(function () {
-    if (windowSize < 376) {
+    } else {
+      $(".js-modal-window").html($(this).prop("outerHTML"));
+      $(".js-modal-window").fadeIn();
+      $("body").css("overflow", "hidden");
       return false;
-    }else{
-    $(".js-modal-window").fadeOut();
-    $(window).scrollTop(scrollPosition2);
-    $("body").removeClass("gallery__modal-active");
-
-    return false;
     }
   });
 
+  // モーダル非表示
+  $(".js-modal-window").click(function () {
+    var windowSize = $(window).width();
+    if (windowSize < 768) {
+      return false;
+    } else {
+      $(".js-modal-window").fadeOut();
+      // モーダル非表示時に背景スクロール許可
+      $("body").css("overflow", "auto");
+      return false;
+    }
+  });
+
+  // ===============================================================
   // タブ
-  $('.js-tab-trigger').on('click', function () {
-    $('.js-tab-trigger').removeClass('is-active');
-    $('.js-tab-target').removeClass('is-active');
-    $(this).addClass('is-active');
+  // ===============================================================
+  $(".js-tab-trigger").on("click", function () {
+    $(".js-tab-trigger").removeClass("is-active");
+    $(".js-tab-target").removeClass("is-active");
+    $(this).addClass("is-active");
     let id = $(this).data("id");
-    $('#' + id).addClass('is-active')
-});
-
-
+    $("#" + id).addClass("is-active");
+  });
 });

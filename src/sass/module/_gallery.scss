@@ -21,22 +21,15 @@
   z-index: 9999;
 }
 
-.gallery__modal .tile__item {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.gallery__modal .tile__item img {
-  aspect-ratio: 580 / 369;
-  width: 70vw;
-  height: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.gallery__modal-active {
-  height: 100%;
-  overflow: hidden;
+.gallery__modal img {
+    margin: auto;
+    max-height: 95%;
+    max-width: 90%;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
 }

@@ -4,11 +4,14 @@
 }
 
 .campaign__inner {
+
 }
+
 .campaign__title {
 }
-.campaign__swiper-wrapper {
+.campaign__swiper-buttons {
   display: none;
+
   @include mq(md) {
     display: block;
     position: relative;
@@ -25,21 +28,20 @@
 
 .campaign__swiper {
   margin-top: rem(29);
-  padding-left: 0;
-  padding-right: rem(15);
+  margin-right: calc(50% - 49vw);
   @include mq(md) {
     margin-top: rem(40);
-    padding-right: rem(180);
-    width: calc(100% + (100vw - rem(1080)) / 2);
-    margin-right: calc(50% - 50vw);
-    overflow: hidden;
   }
+}
+
+.campaign__swiper-wrapper {
+  padding-bottom: rem(10);
 }
 
 .campaign__wrapper {
   margin-top: rem(28);
   text-align: center;
-  padding-right: rem(4);
+  // padding-right: rem(4);
   @include mq(md) {
     margin-top: rem(72);
   }

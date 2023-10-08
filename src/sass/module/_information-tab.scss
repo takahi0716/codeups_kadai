@@ -2,27 +2,33 @@
 
 .information-tab {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: min(calc(19 / 375 * 100%), rem(19));
 
   @include mq(md) {
-    gap: min(calc(90 / 1080 * 100%), rem(90));
+    gap: rem(90);
+    justify-content: center;
   }
 }
 
 .information-tab__item {
-  height: auto;
   padding: rem(10) rem(16);
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #DDF0F1;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  font-size: rem(14);
+  color: $accent-color;
+  justify-content: center;
 
   @include mq(md) {
-    padding: rem(26) 0 rem(26) min(calc(90 / 300 * 100%), rem(90));
+    padding: rem(26) 0;
     position: relative;
     box-shadow: none;
-    text-align: left;
+    text-align: right;
+    max-width: rem(300);
+    font-size: rem(24);
   }
 }
 
@@ -30,32 +36,27 @@
   opacity: 0.8;
 }
 
-.information-tab__text {
-  display: inline-block;
-  color: $accent-color;
-  transition: 0.2s;
-  font-size: rem(14);
+.information-tab__item span {
+  transition: 0.3s;
 
   @include mq(md) {
-    font-size: min(vw(1130, 24), rem(24));
-    line-height: rem(22);
+    padding-left: rem(72);
   }
 }
 
 .information-tab__item::before {
-  display: none;
   content: "";
 
   @include mq(md) {
     display: block;
-    background-image: url(../../assets/images/common/ocean_sea_icon.png);
+    background-image: url(../../assets/images/common/ocean_sea_icon1.png);
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     width: rem(64);
     height: rem(64);
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: rem(12);
     left: rem(14);
   }
 
@@ -65,6 +66,13 @@
   background-color: $accent-color;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
   cursor: inherit;
+
+}
+
+.information-tab__item.is-active::before {
+  @include mq(md) {
+    background-image: url(../../assets/images/common/ocean_sea_icon.png);
+  }
 }
 
 .information-tab__item.is-active:hover {

@@ -1,16 +1,11 @@
 @use "global" as *;
 
-.page-information {}
 
-.page-information__tab {
-  margin-top: rem(121);
-
-  @include mq(md) {
-    margin-top: rem(150);
-  }
+.information-sub__content{
+  width: 100%;
 }
 
-.page-information__content {
+.information-sub__item {
   margin-top: rem(16);
 
   @include mq(md) {

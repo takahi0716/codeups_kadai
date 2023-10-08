@@ -36,6 +36,9 @@
 
 .wp-pagenavi .page:nth-of-type(n+5) {
   display: none;
+  @include mq(md){
+    display: inline-flex;
+  }
 }
 
 

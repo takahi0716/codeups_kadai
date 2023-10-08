@@ -1,36 +1,32 @@
 @use "global" as *;
 
-.privacypolicy{
-  max-width: rem(800);
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.page-content{
 }
 
-.privacypolicy__title{
+.page-content__title{
   font-size:rem(24);
+  font-weight: 500;
   @include mq(md) {
     font-size:rem(32);
-    font-weight: 500;
   }
 
 }
-.privacypolicy__text{
+.page-content__text{
   line-height: 2; /* 200% */
 }
-.privacypolicy__text:first-of-type{
+.page-content__text:first-of-type{
   margin-top: rem(40);
 }
 
-.privacypolicy__text:not(:first-of-type){
+.page-content__text:not(:first-of-type){
   margin-top: rem(32);
 
 }
-.privacypolicy__list{
+.page-content__list{
   margin-top: rem(32);
 }
 
-.privacypolicy__list li{
+.page-content__list li{
   text-indent: -1em;
   padding-left: 1em;
   line-height: 2; /* 200% */

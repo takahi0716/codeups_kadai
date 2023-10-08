@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.archive-voice-layout{
+  margin-top: rem(58);
+  @include mq(md) {
+  margin-top: rem(150);
+  }
+}

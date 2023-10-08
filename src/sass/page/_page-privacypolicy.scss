@@ -1,13 +1,8 @@
 @use "global" as *;
 
-.page-privacypolicy{
-  margin-top: rem(52);
+.page-privacypolicy {}
 
-  @include mq(md) {
-    margin-top: rem(150);
-  }
-}
-
-.page-privacypolicy__inner{
-
+.page-privacypolicy .page-privacypolicy__inner {
+  max-width: rem(850);
+  width: 100%;
 }

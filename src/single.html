@@ -220,52 +220,49 @@
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
+    <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
-        <div>HOME > ブログ一覧 > ブログ詳細</div>
+        <div>TOP > ブログ一覧 > ブログ詳細</div>
       </div>
     </div>
 
-    <!-- あしらい-->
-    <div class="ornament">
-    </div>
-
-
     <!-- 下層ページ -->
-    <section class="single">
-      <div class="single__inner inner">
-        <div class="single__container">
-          <div class="single__main single-article">
-            <time class="single-article__time" datetime="2023-11-17">2023.11.17</time>
-            <h2 class="single-article__title">ライセンス取得</h2>
-            <div class="single-article__content">
-              <img src="./assets/images/common/blog-license.jpg" alt="">
-              <p>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              </p>
-              <img src="./assets/images/common/blog-license.jpg" alt="">
-              <p>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              </p>
-              <ul>
-                <li>リスト1</li>
-                <li>リスト2</li>
-                <li>リスト3</li>
-              </ul>
-              <p>
-                ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              </p>
-            </div>
+    <section class="home-layout home ornament">
+      <div class="home__inner inner">
+        <div class="home__container columns">
+          <div class="columns__main">
+            <article class="columns__article single-article">
+              <time class="single-article__time" datetime="2023-11-17">2023.11.17</time>
+              <h2 class="single-article__title">ライセンス取得</h2>
+              <div class="single-article__content">
+                <img src="./assets/images/common/blog-license.jpg" alt="">
+                <p>
+                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                </p>
+                <img src="./assets/images/common/blog-license.jpg" alt="">
+                <p>
+                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                </p>
+                <ul>
+                  <li>リスト1</li>
+                  <li>リスト2</li>
+                  <li>リスト3</li>
+                </ul>
+                <p>
+                  ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                </p>
+              </div>
 
 
-            <div class="single-article__pagenavi wp-pagenavi wp-pagenavi--single">
+              <div class="single-article__pagenavi wp-pagenavi wp-pagenavi--single">
                 <a class="previouspostslink" rel="prev" href="#"></a>
 
                 <a class="nextpostslink" rel="next" href="#"></a>
-            </div>
+              </div>
+            </article>
           </div>
 
-          <aside class="home__sidebar sidebar">
+          <aside class="columns__sideber sidebar">
             <div class="sidebar__popular">
               <h2 class="sidebar__title sidebar-title">人気記事</h2>
               <div class="sidebar__cards popular-cards">
@@ -316,65 +313,71 @@
               </div>
             </div>
 
-            <div class="sidebar__campaign sidebar-campaign">
-              <h2 class="sidebar-campaign__title sidebar-title">キャンペーン</h2>
-              <div class="sidebar-campaign__cards">
-                <a href="#" class="sidebar-campaign__card campaign-card-sub">
-                  <figure class="campaign-card-sub__img">
-                    <img src="./assets/images/common/campaign1.jpg" alt="熱帯魚の画像">
-                  </figure>
-                  <div class="campaign-card-sub__body">
-                    <h3 class="campaign-card-sub__title ">ライセンス取得</h3>
-                  </div>
-                  <div class="campaign-card-sub__price">
-                    <p class="campaign-card-sub__person">
-                      全部コミコミ(お一人様)
-                    </p>
-                    <p class="campaign-card-sub__price-text">
-                      <span class="campaign-card-sub__price-previous">¥56,000</span>
-                      <span class="campaign-card-sub__price-current">¥46,000</span>
-                    </p>
-                  </div>
-                </a>
-                <a href="#" class="sidebar-campaign__card campaign-card-sub">
-                  <figure class="campaign-card-sub__img">
-                    <img src="./assets/images/common/campaign2.jpg" alt="キャンペーンの画像">
-                  </figure>
-                  <div class="campaign-card-sub__body">
-                    <h3 class="campaign-card-sub__title ">貸切体験ダイビング</h3>
-                  </div>
-                  <div class="campaign-card-sub__price">
-                    <p class="campaign-card-sub__person">
-                      全部コミコミ(お一人様)
-                    </p>
-                    <p class="campaign-card-sub__price-text">
-                      <span class="campaign-card-sub__price-previous">¥24,000</span>
-                      <span class="campaign-card-sub__price-current">¥18,000</span>
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="sidebar-campaign__wrapper">
-                <a href="./archive-campaign.html" class="sidebar-campaign__button button"><span
-                    class="button__text">View more</span></a>
-              </div>
-            </div>
+            <div class="sidebar__campaign">
+              <h2 class="sidebar__campaign-title sidebar-title">キャンペーン</h2>
 
-            <div class="sidebar__archive">
-              <h2 class="sidebar__title sidebar-title">アーカイブ</h2>
-              <div class="sidebar__archive-item">
-                <ul>
-                  <li>2023
-                    <ul>
-                      <li>3月</li>
-                      <li>2月</li>
-                      <li>1月</li>
-                    </ul>
-                  </li>
-                  <li>2022</li>
-                </ul>
+              <div class="sidebar__campaign-cards archive-campaign-cards archive-campaign-cards--sideber">
+                <div class="archive-campaign-cards__item campaign-card">
+                  <figure class="campaign-card__img">
+                    <img src="./assets/images/common/campaign1.jpg" alt="ビーチの画像">
+                  </figure>
+                  <div class="campaign-card__inner">
+                    <div class="campaign-card__body">
+                      <div class="campaign-card__category">ライセンス講習</div>
+                      <h2 class="campaign-card__title campaign-card__title--sub">ライセンス取得</h2>
+                    </div>
+                    <div class="campaign-card__price">
+                      <p class="campaign-card__person">
+                        全部コミコミ(お一人様)
+                      </p>
+                      <p class="campaign-card__price-text">
+                        <span class="campaign-card__price-previous">¥56,000</span>
+                        <span class="campaign-card__price-current">¥46,000</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="archive-campaign-cards__item campaign-card">
+                  <figure class="campaign-card__img">
+                    <img src="./assets/images/common/campaign2.jpg" alt="キャンペーン2の画像">
+                  </figure>
+                  <div class="campaign-card__inner">
+                    <div class="campaign-card__body">
+                      <div class="campaign-card__category">体験ダイビング</div>
+                      <h2 class="campaign-card__title campaign-card__title--sub">貸切体験ダイビング</h2>
+                    </div>
+                    <div class="campaign-card__price">
+                      <p class="campaign-card__person">
+                        全部コミコミ(お一人様)
+                      </p>
+                      <p class="campaign-card__price-text">
+                        <span class="campaign-card__price-previous">¥24,000</span>
+                        <span class="campaign-card__price-current">¥18,000</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar__campaign-wrapper">
+                  <a href="./archive-campaign.html" class="sidebar-campaign__button button"><span
+                      class="button__text">View more</span></a>
+                </div>
               </div>
-            </div>
+
+              <div class="sidebar__archive">
+                <h2 class="sidebar__title sidebar-title">アーカイブ</h2>
+                <div class="sidebar__archive-item">
+                  <ul>
+                    <li>2023
+                      <ul>
+                        <li>3月</li>
+                        <li>2月</li>
+                        <li>1月</li>
+                      </ul>
+                    </li>
+                    <li>2022</li>
+                  </ul>
+                </div>
+              </div>
           </aside>
         </div>
       </div>

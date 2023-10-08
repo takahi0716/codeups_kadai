@@ -1,13 +1,6 @@
 @use "global" as *;
 
-.form {
-  @include mq(md) {
-    max-width: rem(700);
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
+.form {}
 
 .form__item {
   border-bottom: rem(1) dotted $accent-color;
@@ -30,11 +23,15 @@
 
 .form__item dt {
   font-weight: $bold;
+
+  @include mq(md) {
+    width: calc(220 / 700 * 100%);
+  }
 }
 
 .form__item dd {
   @include mq(md) {
-    width: calc(400 / 700 * 100%);
+    width: calc(480 / 700 * 100%);
   }
 }
 

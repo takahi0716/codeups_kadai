@@ -220,35 +220,29 @@
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
+    <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
-        <div>HOME > ダイビング情報</div>
+        <div>TOP > ダイビング情報</div>
       </div>
     </div>
 
-    <!-- あしらい-->
-    <div class="ornament">
-    </div>
-
-
     <!-- 下層ページ -->
-    <section class="page-information">
-      <div class="page-information__inner inner">
+    <section class="information-sub page-information-layout ornament">
+      <div class="information-sub__inner inner">
+        <div class="information-sub__content">
+          <ul class="information-sub__tab information-tab">
+            <li class="information-tab__item js-tab-trigger is-active" data-id="tab01">
+              <span class="information-tab__text">ライセンス<br class="u-mobile">講習</span>
+            </li>
+            <li class="information-tab__item js-tab-trigger" data-id="tab02">
+              <span class="information-tab__text">ファン<br class="u-mobile">ダイビング</span>
+            </li>
+            <li class="information-tab__item js-tab-trigger" data-id="tab03">
+              <span class="information-tab__text">体験<br class="u-mobile">ダイビング</span>
+            </li>
+          </ul>
 
-        <ul class="page-information__tab information-tab">
-          <li class="information-tab__item js-tab-trigger is-active" data-id="tab01">
-            <span class="information-tab__text">ライセンス<br class="u-mobile">講習</span>
-          </li>
-          <li class="information-tab__item js-tab-trigger" data-id="tab02">
-            <span class="information-tab__text">ファン<br class="u-mobile">ダイビング</span>
-          </li>
-          <li class="information-tab__item js-tab-trigger" data-id="tab03">
-            <span class="information-tab__text">体験<br class="u-mobile">ダイビング</span>
-          </li>
-        </ul>
-
-        <div class="page-information__content">
-          <div class="page-information__item information-item js-tab-target is-active" id="tab01">
+          <div class="information-sub__item information-item js-tab-target is-active" id="tab01">
             <div class="information-item__body">
               <h2 class="information-item__title">
                 ライセンス講師
@@ -261,7 +255,7 @@
               <img src="./assets/images/common/license.jpg" alt="インフォメーション1の画像">
             </div>
           </div>
-          <div class="page-information__item information-item js-tab-target" id="tab02">
+          <div class="information-sub__item information-item js-tab-target" id="tab02">
             <div class="information-item__body">
               <h2 class="information-item__title">
                 ファンダイビング
@@ -274,7 +268,7 @@
               <img src="./assets/images/common/gallery5.jpg" alt="インフォメーション2の画像">
             </div>
           </div>
-          <div class="page-information__item information-item js-tab-target" id="tab03">
+          <div class="information-sub__item information-item js-tab-target" id="tab03">
             <div class="information-item__body">
               <h2 class="information-item__title">
                 体験ダイビング

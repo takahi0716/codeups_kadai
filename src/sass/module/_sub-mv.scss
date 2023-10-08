@@ -35,6 +35,7 @@
   width: 100%;
   @include mq(md) {
     font-size: rem(80);
+    top: 60%;
   }
 }
 

@@ -7,7 +7,7 @@
   place-content: center;
 
   @include mq(md) {
-    gap: rem(21);
+    gap: 0 rem(32);
     grid-template-columns: rem(162) rem(162) rem(162) rem(162);
     place-content: inherit;
   }

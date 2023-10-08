@@ -1,33 +1,135 @@
 @use "global" as *;
+
 .data-list {
-  color: $font-color;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.data-list__title {
-  font-size: rem(16);
-  font-weight: $bold;
-  line-height: 1.5; /* 150% */
-  padding-bottom: rem(4);
-  border-bottom: rem(1) solid $accent-color;
-}
-
-.data-list__data {
-  font-size: rem(14);
-  line-height: 1.71429; /* 171.429% */
-  margin-top: rem(8);
+.data-list--sub {
   @include mq(md) {
-    font-size: rem(16);
-    line-height: 1.5; /* 150% */
+    grid-template-columns: 28.5% 71.5%;
+    justify-content: center;
   }
 }
 
-.data-list__wrapper {
-  margin-top: rem(8);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.data-list__title {
+  padding-bottom: rem(4);
+  border-bottom: rem(1) solid $accent-color;
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: 1.5;
+  width: 100%;
 }
 
-.data-list__wrapper dt {
-  padding-right: rem(10);
+.data-list--sub .data-list__title {
+  background: $accent-color;
+  border: solid 1px $accent-color;
+  color: #fff;
+  text-align: center;
+  padding: rem(8) 0;
+
+  @include mq(md) {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.data-list--sub .data-list__title span {
+  padding-left: rem(32);
+  position: relative;
+
+  @include mq(md) {
+    padding-left: 0;
+    padding-bottom: rem(72);
+  }
+}
+
+.data-list--sub .data-list__title span::before {
+  content: "";
+  background-image: url(../../assets/images/common/ocean_sea_icon.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: rem(24);
+  height: rem(24);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include mq(md) {
+    width: rem(64);
+    height: rem(64);
+    top: initial;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+}
+
+.data-list__data {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-auto-rows: 1fr;
+  margin-top: rem(8);
+  gap: rem(8) 0;
+}
+
+.data-list--sub .data-list__data {
+  grid-template-columns: 70% 30%;
+  grid-auto-rows: 1fr;
+  border: solid rem(1) $accent-color;
+  margin-top: 0;
+  gap: 0;
+
+  @include mq(md) {
+    grid-template-columns: 68% 32%;
+  }
+}
+
+.data-list__data dt,
+.data-list__data dd {
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  font-size: rem(14);
+
+  @include mq(md) {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+}
+
+.data-list--sub .data-list__data dt,
+.data-list--sub .data-list__data dd {
+  font-size: rem(16);
+  padding: rem(6) rem(16);
+  border-top: solid rem(1) $accent-color;
+  box-sizing: border-box;
+  @include mq(md) {
+    padding: rem(18) rem(16);
+  }
+}
+
+.data-list__data dt {
+  text-align: center;
+}
+
+.data-list--sub .data-list__data dt {
+  border-right: solid rem(1) $accent-color;
+  text-align: center;
+  justify-content: center;
+  @include mq(md) {
+    justify-content: left;
+  }
+}
+
+.data-list__data dd {
+  justify-content: right;
+}
+
+.data-list__data dt:first-of-type,
+.data-list__data dd:first-of-type {
+  border-top: none;
 }

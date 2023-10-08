@@ -221,22 +221,17 @@
     </section>
 
     <!-- パンくずリスト -->
-    <div class="breadcrumb">
+    <div class="breadcrumb breadcrumb-layout">
       <div class="breadcrumb__inner inner">
-        <div>HOME > 私たちについて</div>
+        <p>TOP > 私たちについて</p>
       </div>
     </div>
 
-    <!-- あしらい-->
-    <div class="ornament">
-    </div>
-
-
     <!-- 下層ページ -->
-    <section class="page-about-us about">
+    <section class="page-about-layout about ornament">
       <div class="about__inner inner">
-        <div class="about__contaner">
-          <picture class="about__image-right  about__image-right--sub">
+        <div class="about__contaner about__contaner--sub">
+          <picture class="about__image-right">
             <!-- ↓幅768px以下で表示↓ -->
             <source srcset="./assets/images/common/ocean2-sp.jpg" media="(max-width: 767px)" />
             <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
@@ -260,14 +255,16 @@
       </div>
     </section>
 
-    <section class="page-about-us__gallery gallery">
+    <section class="page-about-gallery gallery">
       <div class="gallery__inner inner">
         <div class="gallery__title section-title">
           <p class="section-title__main">gallery</p>
           <h2 class="section-title__sub">フォト</h2>
         </div>
+
         <div class="gallery__modal js-modal-window">
         </div>
+
         <div class="gallery__container tile">
           <div class="tile__item js-tile-item">
             <img src="./assets/images/common/priceimg.jpg" alt="gallery1">

@@ -1,0 +1,13 @@
+@use "global" as *;
+.one-column{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(40) 0;
+  @include mq(md){
+    gap: rem(80) 0;
+  }
+}
+
+.one-column.one-column--faq{
+  gap: rem(40) 0;
+}
