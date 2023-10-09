@@ -332,34 +332,13 @@ jQuery(function ($) {
   // ===============================================================
 
   // DOM取得
-  const tabMenus = document.querySelectorAll(".js-tab-trigger");
 
   var tabList = document.querySelectorAll(".js-tab-trigger");
   var tabContents = document.querySelectorAll(".js-tab-target");
-  //   tabItems.forEach((tabItem) => {
-  //     tabItem.classList.remove('is-active');
-  //   })
+
   // タブがクリックされた際の処理
   tabList.forEach(function (element, i) {
     element.addEventListener("click", function () {
-      // タブのクリック状態を切り替える
-      if (!element.classList.contains("is-active")) {
-        toggleClass(element, "is-active");
-      }
-
-      // クリックされたタブに対応するコンテンツを表示する
-      toggleClass(tabContents[i], "is-show");
-
-      // 他のタブとコンテンツを非表示にする（必要であれば）
-      for (var j = 0; j < tabContents.length; j++) {
-        if (j !== i) {
-          tabList[j].classList.remove("is-active");
-          tabContents[j].classList.remove("is-show");
-        }
-      }
-    });
-
-    element.addEventListener("touchstart", function () {
       // タブのクリック状態を切り替える
       if (!element.classList.contains("is-active")) {
         toggleClass(element, "is-active");
