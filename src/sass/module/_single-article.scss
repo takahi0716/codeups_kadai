@@ -1,9 +1,5 @@
 @use "global" as *;
 
-.single-article {
-
-}
-
 .single-article__time {
   font-size: rem(14);
 }
@@ -11,7 +7,7 @@
 .single-article__title {
   font-size: rem(32);
   font-weight: 500;
-  border-bottom: 1px solid $accent-color;
+  border-bottom: rem(1) solid $accent-color;
   margin-top: rem(8);
 }
 
@@ -27,6 +23,7 @@
 
 .single-article__content {
   margin-top: rem(24);
+
   @include mq(md) {
     margin-top: rem(40);
   }
@@ -35,41 +32,38 @@
     tab-size: rem(14);
     line-height: 1.5;
     margin-top: rem(24);
+
     @include mq(md) {
       margin-top: rem(40);
     }
   }
-  h2 {
-  }
 
-  h3 {
-
-    }
-
-  img{
+  img {
     margin-top: rem(24);
     width: 100%;
     object-fit: cover;
     aspect-ratio: 345 / 231;
+
     @include mq(md) {
       margin-top: rem(40);
     }
   }
 
-  ul{
+  ul {
     margin-top: rem(24);
+
     @include mq(md) {
       margin-top: rem(40);
     }
 
   }
 
-  li{
+  li {
     background-image: url(../images/common/seastar_list.png);
-    background-size: 18px auto;
+    background-size: rem(18) auto;
     background-position: 0 rem(4);
     background-repeat: no-repeat;
-    padding-left: 27px;
+    padding-left: rem(27);
     margin-top: rem(4);
   }
 }

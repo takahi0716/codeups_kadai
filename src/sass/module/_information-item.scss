@@ -3,7 +3,7 @@
 .information-item {
   display: none;
   animation: fade 0.5s ease;
-  border: 1px solid $accent-color;
+  border: rem(1) solid $accent-color;
   padding: rem(24);
 
   @include mq(md) {
@@ -43,7 +43,7 @@
   font-weight: $bold;
   line-height: 1;
   padding-bottom: rem(8);
-  border-bottom: 1px solid $accent-color;
+  border-bottom: rem(1) solid $accent-color;
 
 }
 

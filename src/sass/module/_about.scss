@@ -1,7 +1,5 @@
 @use "global" as *;
 
-.about {}
-
 .about__contaner {
   position: relative;
   margin-top: rem(53);
@@ -99,8 +97,6 @@
     margin-top: rem(40);
   }
 }
-
-.about__button {}
 
 .about__inner .about__contaner--sub {
   margin-top: rem(0);

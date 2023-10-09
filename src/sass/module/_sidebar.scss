@@ -1,9 +1,5 @@
 @use "global" as *;
 
-.sidebar{
-
-}
-
 .sidebar__voice{
   margin-top: rem(80);
 }
@@ -39,7 +35,7 @@
 }
 
 .sidebar__archive-item li {
-  margin-top: 4px;
+  margin-top: rem(4);
   font-size: rem(24);
 }
 

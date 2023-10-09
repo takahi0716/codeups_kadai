@@ -1,17 +1,12 @@
 @use "global" as *;
 
-.faq-accordion {
-
-}
-
-
 .faq-accordion__title {
   padding: rem(16);
   color: $white;
   font-size: rem(16);
   font-weight: $normal;
   background-color: $accent-color;
-  max-width: rem(700);
+  width: 100%;
   position: relative;
   cursor: pointer;
   margin-left: auto;
@@ -63,7 +58,7 @@
   line-height: normal;
   height: auto;
   opacity: 1;
-  max-width: rem(700);
+  width: 100%;
   transition-duration: .3s;
   @include mq(md){
     padding: rem(40);

@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .sidebar-title{
-  border-left: solid 8px $accent-color;/*左線*/
+  border-left: solid rem(8) $accent-color;/*左線*/
   padding-left: rem(74);
   position: relative;
   height: rem(50);

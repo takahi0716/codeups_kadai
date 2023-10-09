@@ -2,13 +2,13 @@
 
 .tab {
   display: grid;
-  grid-template-columns: rem(162) rem(162);
+  grid-template-columns: repeat(2,1fr);
   gap: rem(16) rem(21);
   place-content: center;
 
   @include mq(md) {
     gap: 0 rem(32);
-    grid-template-columns: rem(162) rem(162) rem(162) rem(162);
+    grid-template-columns: repeat(4,1fr);
     place-content: inherit;
   }
 }
@@ -18,7 +18,7 @@
   font-size: rem(14);
   color: $accent-color;
   background-color: $white;
-  border: 1px solid $accent-color;
+  border: rem(1) solid $accent-color;
   text-align: center;
   transition: 0.2s;
   line-height: rem(22);
@@ -34,6 +34,6 @@
 .tab__text:hover {
   color: $white;
   background-color: $accent-color;
-  border: 1px solid $white;
+  border: rem(1) solid $white;
 
 }

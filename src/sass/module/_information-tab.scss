@@ -13,7 +13,7 @@
 
 .information-tab__item {
   padding: rem(10) rem(16);
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rem(2) rem(2) rem(4) 0 rgba(0, 0, 0, 0.25);
   background-color: #DDF0F1;
   text-align: center;
   cursor: pointer;
@@ -64,7 +64,7 @@
 
 .information-tab__item.is-active {
   background-color: $accent-color;
-  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: rem(4) rem(4) rem(8) 0 rgba(0, 0, 0, 0.25);
   cursor: inherit;
 
 }

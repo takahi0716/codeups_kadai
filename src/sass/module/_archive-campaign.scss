@@ -1,13 +1,5 @@
 @use "global" as *;
 
-.archive-campaign{
-
-}
-
-.archive-campaign__button{
-
-}
-
 .archive-campaign__cards{
   margin-top: rem(40);
 }
@@ -18,4 +10,8 @@
 
 .archive-campaign__tab{
 
+width: 100%;
+@include mq(md){
+  max-width: rem(744); 
+}
 }

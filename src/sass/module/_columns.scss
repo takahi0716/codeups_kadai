@@ -7,7 +7,7 @@
   gap: rem(80);
 
   @include mq(md) {
-    grid-template-columns: 1fr 294px;
+    grid-template-columns: 1fr rem(294);
     gap: 0 rem(80);
   }
 }
