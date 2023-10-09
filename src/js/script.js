@@ -332,100 +332,116 @@ jQuery(function ($) {
   // ===============================================================
 
   // DOM取得
-  const tabMenus = document.querySelectorAll('.js-tab-trigger');
+  const tabMenus = document.querySelectorAll(".js-tab-trigger");
 
-  var tabList = document.querySelectorAll('.js-tab-trigger');
-  var tabContents = document.querySelectorAll('.js-tab-target');
+  var tabList = document.querySelectorAll(".js-tab-trigger");
+  var tabContents = document.querySelectorAll(".js-tab-target");
   //   tabItems.forEach((tabItem) => {
   //     tabItem.classList.remove('is-active');
   //   })
   // タブがクリックされた際の処理
   tabList.forEach(function (element, i) {
-    element.addEventListener('click', function () {
-
+    element.addEventListener("click", function () {
       // タブのクリック状態を切り替える
-      if (!element.classList.contains('is-active')) {
-        toggleClass(element, 'is-active');
-  
+      if (!element.classList.contains("is-active")) {
+        toggleClass(element, "is-active");
       }
 
       // クリックされたタブに対応するコンテンツを表示する
-      toggleClass(tabContents[i], 'is-show');
+      toggleClass(tabContents[i], "is-show");
 
       // 他のタブとコンテンツを非表示にする（必要であれば）
       for (var j = 0; j < tabContents.length; j++) {
         if (j !== i) {
-          tabList[j].classList.remove('is-active');
-          tabContents[j].classList.remove('is-show');
+          tabList[j].classList.remove("is-active");
+          tabContents[j].classList.remove("is-show");
         }
       }
     });
 
-  });
+    element.addEventListener("touchstart", function () {
+      // タブのクリック状態を切り替える
+      if (!element.classList.contains("is-active")) {
+        toggleClass(element, "is-active");
+      }
 
-  function toggleClass(target, c) {
-    var targetSiblings = getSiblings(target);
-    targetSiblings.forEach(function (el) {
-      el.classList.remove(c);
+      // クリックされたタブに対応するコンテンツを表示する
+      toggleClass(tabContents[i], "is-show");
+
+      // 他のタブとコンテンツを非表示にする（必要であれば）
+      for (var j = 0; j < tabContents.length; j++) {
+        if (j !== i) {
+          tabList[j].classList.remove("is-active");
+          tabContents[j].classList.remove("is-show");
+        }
+      }
     });
-    target.classList.add(c);
-  }
 
-  // 同じ階層の要素を全て取得する関数
-  function getSiblings(e) {
-    var siblings = [];
-    if (!e.parentNode) {
+    function toggleClass(target, c) {
+      var targetSiblings = getSiblings(target);
+      targetSiblings.forEach(function (el) {
+        el.classList.remove(c);
+      });
+      target.classList.add(c);
+    }
+
+    // 同じ階層の要素を全て取得する関数
+    function getSiblings(e) {
+      var siblings = [];
+      if (!e.parentNode) {
+        return siblings;
+      }
+      var sibling = e.parentNode.firstChild;
+      while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== e) {
+          siblings.push(sibling);
+        }
+        sibling = sibling.nextSibling;
+      }
       return siblings;
     }
-    var sibling = e.parentNode.firstChild;
-    while (sibling) {
-      if (sibling.nodeType === 1 && sibling !== e) {
-        siblings.push(sibling);
-      }
-      sibling = sibling.nextSibling;
-    }
-    return siblings;
-  }
-  ;
-
-
-  var footerTabList = document.querySelectorAll('.js-tab-list');
-  footerTabList.forEach(function (element, i) {
-    element.addEventListener('click', function () {
+    var footerTabList = document.querySelectorAll(".js-tab-list");
+    footerTabList.forEach(function (element, i) {
+      element.addEventListener("click", function () {
         // 対応するコンテンツも表示する
 
-      // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
-      var targetTab = element.dataset.tab;
-      var matchingPageTab = document.querySelector(".js-tab-trigger[data-tab=\"".concat(targetTab, "\"]"));
-      console.log(matchingPageTab);
-      if (matchingPageTab) {
-        toggleClass(matchingPageTab, 'is-active');
+        // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+        var targetTab = element.dataset.tab;
+        var matchingPageTab = document.querySelector(
+          '.js-tab-trigger[data-tab="'.concat(targetTab, '"]')
+        );
+        console.log(matchingPageTab);
+        if (matchingPageTab) {
+          toggleClass(matchingPageTab, "is-active");
 
-        // 対応するコンテンツも表示する
-        var matchingPageContent = document.querySelector(".js-tab-target[data-id=\"".concat(targetTab, "\"]"));
-        if (matchingPageContent) {
-          toggleClass(matchingPageContent, 'is-show');
+          // 対応するコンテンツも表示する
+          var matchingPageContent = document.querySelector(
+            '.js-tab-target[data-id="'.concat(targetTab, '"]')
+          );
+          if (matchingPageContent) {
+            toggleClass(matchingPageContent, "is-show");
+          }
         }
+      });
+    });
+
+    // URLからクエリパラメータを取得
+    var params = new URLSearchParams(window.location.search);
+    var targetTab = params.get("tab");
+
+    // クエリパラメータが存在する場合は、該当のタブを表示する
+    if (targetTab) {
+      // クリックイベントを作成して実行
+      var event = new Event("click", {
+        bubbles: true,
+      });
+      var targetElement = document.querySelector(
+        '[data-id="'.concat(targetTab, '"]')
+      );
+      console.log(targetElement);
+      if (targetElement) {
+        targetElement.dispatchEvent(event);
       }
-    });
-  });
-
-  // URLからクエリパラメータを取得
-  var params = new URLSearchParams(window.location.search);
-  var targetTab = params.get('tab');
-
-  // クエリパラメータが存在する場合は、該当のタブを表示する
-  if (targetTab) {
-    // クリックイベントを作成して実行
-    var event = new Event('click', {
-      bubbles: true
-    });
-    var targetElement = document.querySelector("[data-id=\"".concat(targetTab, "\"]"));
-    console.log(targetElement);
-    if (targetElement) {
-      targetElement.dispatchEvent(event);
     }
-  }
-
-
+  });
 });
