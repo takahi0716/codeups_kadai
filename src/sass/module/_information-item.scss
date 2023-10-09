@@ -2,7 +2,7 @@
 
 .information-item {
   display: none;
-  animation: fade 0.5s ease;
+  // animation: fade 0.5s ease;
   border: rem(1) solid $accent-color;
   padding: rem(24);
 
@@ -13,6 +13,14 @@
 }
 
 .information-item.is-active {
+  display: block;
+
+  @include mq(md) {
+    display: flex;
+  }
+}
+
+.information-item.is-show {
   display: block;
 
   @include mq(md) {

@@ -28,12 +28,12 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- JavaScript -->
 
-  <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script defer src="./assets/js/jquery.inview.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="./assets/js/jquery.inview.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- GSAP -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script defer src="./assets/js/script.js"></script>
 </head>
@@ -230,55 +230,58 @@
     <section class="information-sub page-information-layout ornament">
       <div class="information-sub__inner inner">
         <div class="information-sub__content">
+
           <ul class="information-sub__tab information-tab">
             <li class="information-tab__item js-tab-trigger is-active" data-id="tab01">
               <span class="information-tab__text">ライセンス<br class="u-mobile">講習</span>
             </li>
             <li class="information-tab__item js-tab-trigger" data-id="tab02">
-              <span class="information-tab__text">ファン<br class="u-mobile">ダイビング</span>
+              <span class="information-tab__text">体験<br class="u-mobile">ダイビング</span>
             </li>
             <li class="information-tab__item js-tab-trigger" data-id="tab03">
-              <span class="information-tab__text">体験<br class="u-mobile">ダイビング</span>
+              <span class="information-tab__text">ファン<br class="u-mobile">ダイビング</span>
             </li>
           </ul>
 
-          <div class="information-sub__item information-item js-tab-target is-active" id="tab01">
-            <div class="information-item__body">
-              <h2 class="information-item__title">
-                ライセンス講師
-              </h2>
-              <p class="information-item__text">
-                泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
-              </p>
+          <div class="information-sub__container">
+            <div class="information-sub__item information-item js-tab-target is-show" data-tab="tab01">
+              <div class="information-item__body">
+                <h2 class="information-item__title">
+                  ライセンス講師
+                </h2>
+                <p class="information-item__text">
+                  泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
+                </p>
+              </div>
+              <div class="information-item__image">
+                <img src="./assets/images/common/license.jpg" alt="インフォメーション1の画像">
+              </div>
             </div>
-            <div class="information-item__image">
-              <img src="./assets/images/common/license.jpg" alt="インフォメーション1の画像">
+            <div class="information-sub__item information-item js-tab-target" data-tab="tab02">
+              <div class="information-item__body">
+                <h2 class="information-item__title">
+                  体験ダイビング
+                </h2>
+                <p class="information-item__text">
+                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                </p>
+              </div>
+              <div class="information-item__image">
+                <img src="./assets/images/common/gallery5.jpg" alt="インフォメーション2の画像">
+              </div>
             </div>
-          </div>
-          <div class="information-sub__item information-item js-tab-target" id="tab02">
-            <div class="information-item__body">
-              <h2 class="information-item__title">
-                ファンダイビング
-              </h2>
-              <p class="information-item__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-              </p>
-            </div>
-            <div class="information-item__image">
-              <img src="./assets/images/common/gallery5.jpg" alt="インフォメーション2の画像">
-            </div>
-          </div>
-          <div class="information-sub__item information-item js-tab-target" id="tab03">
-            <div class="information-item__body">
-              <h2 class="information-item__title">
-                体験ダイビング
-              </h2>
-              <p class="information-item__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
-              </p>
-            </div>
-            <div class="information-item__image">
-              <img src="./assets/images/common/gallery3.jpg" alt="インフォメーション3の画像">
+            <div class="information-sub__item information-item js-tab-target" data-tab="tab03">
+              <div class="information-item__body">
+                <h2 class="information-item__title">
+                  ファンダイビング
+                </h2>
+                <p class="information-item__text">
+                  ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                </p>
+              </div>
+              <div class="information-item__image">
+                <img src="./assets/images/common/gallery3.jpg" alt="インフォメーション3の画像">
+              </div>
             </div>
           </div>
         </div>
@@ -377,16 +380,16 @@
           <div class="lists__container">
             <ul class="lists__item list">
               <li class="list__item">
-                <a href="#">ダイビング情報</a>
+                <a href="./page-information.html">ダイビング情報</a>
               </li>
-              <li class="list__item">
-                <a href="#">ライセンス講習</a>
+              <li class="list__item js-tab-list" data-tab="tab01">
+                <a href="./page-information.html?tab=tab01">ライセンス講習</a>
               </li>
-              <li class="list__item">
-                <a href="#">体験ダイビング</a>
+              <li class="list__item js-tab-list" data-tab="tab02">
+                <a href="./page-information.html?tab=tab02">体験ダイビング</a>
               </li>
-              <li class="list__item">
-                <a href="#">ファンダイビング</a>
+              <li class="list__item js-tab-list" data-tab="tab03">
+                <a href="./page-information.html?tab=tab03">ファンダイビング</a>
               </li>
             </ul>
             <ul class="lists__item list">

@@ -15,6 +15,19 @@
   margin-top: rem(40);
 }
 
+.single-article__thumbnail{
+  margin-top: rem(24);
+
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.single-article__thumbnail img{
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 345 / 231;
+}
 
 .single-article__pagenavi {
   margin-top: rem(80);
@@ -40,9 +53,6 @@
 
   img {
     margin-top: rem(24);
-    width: 100%;
-    object-fit: cover;
-    aspect-ratio: 345 / 231;
 
     @include mq(md) {
       margin-top: rem(40);

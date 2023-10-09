@@ -44,6 +44,14 @@
   }
 }
 
+.information-tab__item a {
+  transition: 0.3s;
+
+  @include mq(md) {
+    padding-left: rem(72);
+  }
+}
+
 .information-tab__item::before {
   content: "";
 
@@ -82,3 +90,4 @@
 .information-tab__item.is-active .information-tab__text {
   color: $white;
 }
+
