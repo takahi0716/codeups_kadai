@@ -149,6 +149,7 @@ input[type="checkbox"]:checked::after {
   position: relative;
   max-width: rem(480);
   width: 100%;
+
 }
 
 .form__select::after {
@@ -171,6 +172,7 @@ input[type="checkbox"]:checked::after {
   position: relative;
   width: 100%;
   margin-top: rem(7);
+  font-size: $font-color;
 }
 
 .form__item-button {

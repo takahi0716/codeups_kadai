@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .loading {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -15,9 +15,6 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.loading__backgroud {
   background-color: $white;
   z-index: 10;
   overflow: hidden;
@@ -90,3 +87,6 @@
   color: $white;
 }
 
+.loading.is-action{
+  display: none;
+}

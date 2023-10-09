@@ -137,63 +137,83 @@ jQuery(function ($) {
   // ===============================================================
   // ローディング
   // ===============================================================
-  window.addEventListener("load", (e) => {
-    const tl = gsap.timeline();
-    const title = document.querySelector(".loading__title");
-    const loading = document.querySelector(".loading");
-    var webStorage = function () {
-      if (sessionStorage.getItem("access")) {
-      // /*2回目以降アクセス時の処理*/
-      $(".loading").addClass('is-active');
-      $(".loading").css("display","none");
-      } else {
-      // /*初回アクセス時の処理*/
-      sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
+  const tl = gsap.timeline();
+  const title = document.querySelector(".loading__title");
+  const loading = document.querySelector(".loading");
 
-      $("body").css("overflow", "hidden");
-      tl
-        // 左の画像を上げる
-        .to(".loading__image-left", {
+  var windowSize = $(window).width();
+
+  if (windowSize < 768) {
+    // スマホサイズではローディングを実施しない
+    $(".loading").addClass("is-action");
+    return false;
+  } else {
+    $(window).on("load", function () {
+      var webStorage = function () {
+        if (!sessionStorage.getItem("access")) {
+          // /*初回アクセス時の処理*/
+          sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
+          loadingAnimation();
+        } else {
+          // /*2回目以降アクセス時の処理*/
+          $(".loading").addClass("is-action");
+        }
+      };
+      webStorage();
+    });
+  }
+
+  setTimeout(function () {
+    // 5秒後に0.5秒でフェードアウトする
+    $(".loading").fadeOut(500);
+  }, 5000);
+  // ===============================================================
+  // ローディングアニメーション
+  // ===============================================================
+  function loadingAnimation() {
+    $("body").css("overflow", "hidden");
+    tl
+      // 左の画像を上げる
+      .to(".loading__image-left", {
+        y: "0%",
+        duration: 2,
+        ease: "power4.out",
+        delay: 1,
+        onstart: () => {
+          $("body").css("overflow", "hidden");
+        },
+      })
+      // 右の画像を上げる
+      .to(
+        ".loading__image-right",
+        {
           y: "0%",
           duration: 2,
           ease: "power4.out",
-          delay: 1,
-          onstart: () => {
-            $("body").css("overflow", "hidden");
+        },
+        "<0.5"
+      )
+      // 文字色を白に変更
+      .add(() => {
+        title.classList.add("loading__title--white");
+      }, "<0.3")
+      // ローディング画面をゆっくり透明にする
+      .to(
+        ".loading",
+        {
+          opacity: 0,
+          duration: 1,
+
+          onComplete: () => {
+            // アニメーションがおわったら消してスクロールを可能にする
+            // $(".loading").css("display", "none");
+            $("body").css("overflow", "auto");
           },
-        })
-        // 右の画像を上げる
-        .to(
-          ".loading__image-right",
-          {
-            y: "0%",
-            duration: 2,
-            ease: "power4.out",
-          },
-          "<0.5"
-        )
-        // 文字色を白に変更
-        .add(() => {
-          title.classList.add("loading__title--white");
-        }, "<0.3")
-        // ローディング画面をゆっくり透明にする
-        .to(
-          ".loading",
-          {
-            opacity: 0,
-            duration: 1,
-            onComplete: () => {
-              // アニメーションがおわったら消してスクロールを可能にする
-              loading.style.display = "none";
-              $("body").css("overflow", "auto");
-            },
-          },
-          ">2"
-        );
-      }
-    };
-    webStorage();
-  });
+        },
+        ">2"
+      )
+      .add(() => loading.classList.add("is-action"));
+  }
 
   // ===============================================================
   // 問い合わせフォームの入力チェック
