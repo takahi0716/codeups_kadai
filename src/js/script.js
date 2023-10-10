@@ -392,7 +392,6 @@ jQuery(function ($) {
     ) {
       window.location.href = "../page-thanks.html";
     }
-    // alert('送信完了！');
   });
 
   // ===============================================================
