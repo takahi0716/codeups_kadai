@@ -167,6 +167,7 @@ jQuery(function ($) {
     // 5秒後に0.5秒でフェードアウトする
     $(".loading").fadeOut(500);
   }, 5000);
+
   // ===============================================================
   // ローディングアニメーション
   // ===============================================================
@@ -216,8 +217,116 @@ jQuery(function ($) {
   }
 
   // ===============================================================
+  // インフォメーションのタブ
+  // ===============================================================
+  // $(".js-tab-trigger").on("click", function () {
+  //   // alert(".js-tab-trigger");
+  //   $(".js-tab-trigger").removeClass("is-active");
+  //   $(".js-tab-target").removeClass("is-active");
+  //   $(this).addClass("is-active");
+  //   let id = $(this).data("id");
+  //   $("#" + id).addClass("is-active");
+  // });
+
+  // ===============================================================
+  // インフォメーションのタブ
+  // ===============================================================
+
+  // var tabList = document.querySelectorAll(".js-tab-trigger");
+  // var tabContents = document.querySelectorAll(".js-tab-target");
+
+  // // タブがクリックされた際の処理
+  // tabList.forEach(function (element, i) {
+  //   element.addEventListener("click", function () {
+  //     // タブのクリック状態を切り替える
+  //     if (!element.classList.contains("is-active")) {
+  //       toggleClass(element, "is-active");
+  //     }
+
+  //     // クリックされたタブに対応するコンテンツを表示する
+  //     toggleClass(tabContents[i], "is-show");
+
+  //     // 他のタブとコンテンツを非表示にする（必要であれば）
+  //     for (var j = 0; j < tabContents.length; j++) {
+  //       if (j !== i) {
+  //         tabList[j].classList.remove("is-active");
+  //         tabContents[j].classList.remove("is-show");
+  //       }
+  //     }
+  //   });
+
+  //   function toggleClass(target, c) {
+  //     var targetSiblings = getSiblings(target);
+  //     targetSiblings.forEach(function (el) {
+  //       el.classList.remove(c);
+  //     });
+  //     target.classList.add(c);
+  //   }
+
+  //   // 同じ階層の要素を全て取得する関数
+  //   function getSiblings(e) {
+  //     var siblings = [];
+  //     if (!e.parentNode) {
+  //       return siblings;
+  //     }
+  //     var sibling = e.parentNode.firstChild;
+  //     while (sibling) {
+  //       if (sibling.nodeType === 1 && sibling !== e) {
+  //         siblings.push(sibling);
+  //       }
+  //       sibling = sibling.nextSibling;
+  //     }
+  //     return siblings;
+  //   }
+  //   var footerTabList = document.querySelectorAll(".js-tab-list");
+  //   footerTabList.forEach(function (element, i) {
+  //     element.addEventListener("click", function () {
+  //       // 対応するコンテンツも表示する
+
+  //       // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+  //       var targetTab = element.dataset.tab;
+  //       var matchingPageTab = document.querySelector(
+  //         '.js-tab-trigger[data-tab="'.concat(targetTab, '"]')
+  //       );
+  //       console.log(matchingPageTab);
+  //       if (matchingPageTab) {
+  //         toggleClass(matchingPageTab, "is-active");
+
+  //         // 対応するコンテンツも表示する
+  //         var matchingPageContent = document.querySelector(
+  //           '.js-tab-target[data-id="'.concat(targetTab, '"]')
+  //         );
+  //         if (matchingPageContent) {
+  //           toggleClass(matchingPageContent, "is-show");
+  //         }
+  //       }
+  //     });
+  //   });
+
+  //   // URLからクエリパラメータを取得
+  //   var params = new URLSearchParams(window.location.search);
+  //   var targetTab = params.get("tab");
+
+  //   // クエリパラメータが存在する場合は、該当のタブを表示する
+  //   if (targetTab) {
+  //     // クリックイベントを作成して実行
+  //     var event = new Event("click", {
+  //       bubbles: true,
+  //     });
+  //     var targetElement = document.querySelector(
+  //       '[data-id="'.concat(targetTab, '"]')
+  //     );
+  //     console.log(targetElement);
+  //     if (targetElement) {
+  //       targetElement.dispatchEvent(event);
+  //     }
+  //   }
+  // });
+
+  // ===============================================================
   // 問い合わせフォームの入力チェック
   // ===============================================================
+
   $(function () {
     $(".js-accordion").on("click", function () {
       $(this).next().toggleClass("is-close");
@@ -316,92 +425,50 @@ jQuery(function ($) {
     }
   });
 
-  // ===============================================================
-  // インフォメーションのタブ
-  // ===============================================================
-  //   $(".js-tab-trigger").on("click", function () {
-  //     $(".js-tab-trigger").removeClass("is-active");
-  //     $(".js-tab-target").removeClass("is-active");
-  //     $(this).addClass("is-active");
-  //     let id = $(this).data("id");
-  //     $("#" + id).addClass("is-active");
-  //   });
+});
 
-  // ===============================================================
-  // インフォメーションのタブ
-  // ===============================================================
+// ===============================================================
+// インフォメーションのタブ
+// ===============================================================
+jQuery(function ($) {
+  $(document).ready(function () {
+    var tabList = $(".js-tab-trigger");
+    var tabContents = $(".js-tab-target");
 
-  // DOM取得
+    // タブがクリックされた際の処理
+    tabList.on("click", function () {
+      var index = tabList.index(this);
 
-  var tabList = document.querySelectorAll(".js-tab-trigger");
-  var tabContents = document.querySelectorAll(".js-tab-target");
-
-  // タブがクリックされた際の処理
-  tabList.forEach(function (element, i) {
-    element.addEventListener("click", function () {
       // タブのクリック状態を切り替える
-      if (!element.classList.contains("is-active")) {
-        toggleClass(element, "is-active");
+      if (!$(this).hasClass("is-active")) {
+        $(this).addClass("is-active");
       }
 
       // クリックされたタブに対応するコンテンツを表示する
-      toggleClass(tabContents[i], "is-show");
+      tabContents.removeClass("is-show").eq(index).addClass("is-show");
 
       // 他のタブとコンテンツを非表示にする（必要であれば）
-      for (var j = 0; j < tabContents.length; j++) {
-        if (j !== i) {
-          tabList[j].classList.remove("is-active");
-          tabContents[j].classList.remove("is-show");
-        }
-      }
+      tabList.not(this).removeClass("is-active");
+      tabContents.not(tabContents.eq(index)).removeClass("is-show");
     });
 
-    function toggleClass(target, c) {
-      var targetSiblings = getSiblings(target);
-      targetSiblings.forEach(function (el) {
-        el.classList.remove(c);
-      });
-      target.classList.add(c);
-    }
+    var footerTabList = $(".js-tab-list");
+    footerTabList.on("click", function () {
+      var targetTab = $(this).data("tab");
 
-    // 同じ階層の要素を全て取得する関数
-    function getSiblings(e) {
-      var siblings = [];
-      if (!e.parentNode) {
-        return siblings;
-      }
-      var sibling = e.parentNode.firstChild;
-      while (sibling) {
-        if (sibling.nodeType === 1 && sibling !== e) {
-          siblings.push(sibling);
-        }
-        sibling = sibling.nextSibling;
-      }
-      return siblings;
-    }
-    var footerTabList = document.querySelectorAll(".js-tab-list");
-    footerTabList.forEach(function (element, i) {
-      element.addEventListener("click", function () {
+      // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+      var matchingPageTab = $('.js-tab-trigger[data-tab="' + targetTab + '"]');
+      if (matchingPageTab.length > 0) {
+        matchingPageTab.addClass("is-active");
+
         // 対応するコンテンツも表示する
-
-        // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
-        var targetTab = element.dataset.tab;
-        var matchingPageTab = document.querySelector(
-          '.js-tab-trigger[data-tab="'.concat(targetTab, '"]')
+        var matchingPageContent = $(
+          '.js-tab-target[data-id="' + targetTab + '"]'
         );
-        console.log(matchingPageTab);
-        if (matchingPageTab) {
-          toggleClass(matchingPageTab, "is-active");
-
-          // 対応するコンテンツも表示する
-          var matchingPageContent = document.querySelector(
-            '.js-tab-target[data-id="'.concat(targetTab, '"]')
-          );
-          if (matchingPageContent) {
-            toggleClass(matchingPageContent, "is-show");
-          }
+        if (matchingPageContent.length > 0) {
+          matchingPageContent.addClass("is-show");
         }
-      });
+      }
     });
 
     // URLからクエリパラメータを取得
@@ -410,17 +477,8 @@ jQuery(function ($) {
 
     // クエリパラメータが存在する場合は、該当のタブを表示する
     if (targetTab) {
-      // クリックイベントを作成して実行
-      var event = new Event("click", {
-        bubbles: true,
-      });
-      var targetElement = document.querySelector(
-        '[data-id="'.concat(targetTab, '"]')
-      );
-      console.log(targetElement);
-      if (targetElement) {
-        targetElement.dispatchEvent(event);
-      }
+      // クリックイベントをトリガーして実行
+      $('[data-id="' + targetTab + '"]').trigger("click");
     }
   });
 });

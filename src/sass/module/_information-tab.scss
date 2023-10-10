@@ -16,18 +16,18 @@
   box-shadow: rem(2) rem(2) rem(4) 0 rgba(0, 0, 0, 0.25);
   background-color: #DDF0F1;
   text-align: center;
-  cursor: pointer;
+  // cursor: pointer;
   display: flex;
   font-size: rem(14);
   color: $accent-color;
   justify-content: center;
+  width: 100%;
 
   @include mq(md) {
     padding: rem(26) 0;
     position: relative;
     box-shadow: none;
     text-align: right;
-    max-width: rem(300);
     font-size: rem(24);
   }
 }
@@ -37,7 +37,7 @@
 }
 
 .information-tab__item span {
-  transition: 0.3s;
+
 
   @include mq(md) {
     padding-left: rem(72);
@@ -45,8 +45,9 @@
 }
 
 .information-tab__item a {
-  transition: 0.3s;
+  display: block;
 
+width: 100%;
   @include mq(md) {
     padding-left: rem(72);
   }
@@ -87,7 +88,6 @@
   opacity: 1;
 }
 
-.information-tab__item.is-active .information-tab__text {
+.information-tab__item.is-active {
   color: $white;
 }
-
