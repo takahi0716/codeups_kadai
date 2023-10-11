@@ -135,195 +135,6 @@ jQuery(function ($) {
   });
 
   // ===============================================================
-  // ローディング
-  // ===============================================================
-  const tl = gsap.timeline();
-  const title = document.querySelector(".loading__title");
-  const loading = document.querySelector(".loading");
-
-  var windowSize = $(window).width();
-
-  if (windowSize < 768) {
-    // スマホサイズではローディングを実施しない
-    $(".loading").addClass("is-action");
-    return false;
-  } else {
-    $(window).on("load", function () {
-      var webStorage = function () {
-        if (!sessionStorage.getItem("access")) {
-          // /*初回アクセス時の処理*/
-          sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
-          loadingAnimation();
-        } else {
-          // /*2回目以降アクセス時の処理*/
-          $(".loading").addClass("is-action");
-        }
-      };
-      webStorage();
-    });
-  }
-
-  setTimeout(function () {
-    // 5秒後に0.5秒でフェードアウトする
-    $(".loading").fadeOut(500);
-  }, 5000);
-
-  // ===============================================================
-  // ローディングアニメーション
-  // ===============================================================
-  function loadingAnimation() {
-    $("body").css("overflow", "hidden");
-    tl
-      // 左の画像を上げる
-      .to(".loading__image-left", {
-        y: "0%",
-        duration: 2,
-        ease: "power4.out",
-        delay: 1,
-        onstart: () => {
-          $("body").css("overflow", "hidden");
-        },
-      })
-      // 右の画像を上げる
-      .to(
-        ".loading__image-right",
-        {
-          y: "0%",
-          duration: 2,
-          ease: "power4.out",
-        },
-        "<0.5"
-      )
-      // 文字色を白に変更
-      .add(() => {
-        title.classList.add("loading__title--white");
-      }, "<0.3")
-      // ローディング画面をゆっくり透明にする
-      .to(
-        ".loading",
-        {
-          opacity: 0,
-          duration: 1,
-
-          onComplete: () => {
-            // アニメーションがおわったら消してスクロールを可能にする
-            // $(".loading").css("display", "none");
-            $("body").css("overflow", "auto");
-          },
-        },
-        ">2"
-      )
-      .add(() => loading.classList.add("is-action"));
-  }
-
-  // ===============================================================
-  // インフォメーションのタブ
-  // ===============================================================
-  // $(".js-tab-trigger").on("click", function () {
-  //   // alert(".js-tab-trigger");
-  //   $(".js-tab-trigger").removeClass("is-active");
-  //   $(".js-tab-target").removeClass("is-active");
-  //   $(this).addClass("is-active");
-  //   let id = $(this).data("id");
-  //   $("#" + id).addClass("is-active");
-  // });
-
-  // ===============================================================
-  // インフォメーションのタブ
-  // ===============================================================
-
-  // var tabList = document.querySelectorAll(".js-tab-trigger");
-  // var tabContents = document.querySelectorAll(".js-tab-target");
-
-  // // タブがクリックされた際の処理
-  // tabList.forEach(function (element, i) {
-  //   element.addEventListener("click", function () {
-  //     // タブのクリック状態を切り替える
-  //     if (!element.classList.contains("is-active")) {
-  //       toggleClass(element, "is-active");
-  //     }
-
-  //     // クリックされたタブに対応するコンテンツを表示する
-  //     toggleClass(tabContents[i], "is-show");
-
-  //     // 他のタブとコンテンツを非表示にする（必要であれば）
-  //     for (var j = 0; j < tabContents.length; j++) {
-  //       if (j !== i) {
-  //         tabList[j].classList.remove("is-active");
-  //         tabContents[j].classList.remove("is-show");
-  //       }
-  //     }
-  //   });
-
-  //   function toggleClass(target, c) {
-  //     var targetSiblings = getSiblings(target);
-  //     targetSiblings.forEach(function (el) {
-  //       el.classList.remove(c);
-  //     });
-  //     target.classList.add(c);
-  //   }
-
-  //   // 同じ階層の要素を全て取得する関数
-  //   function getSiblings(e) {
-  //     var siblings = [];
-  //     if (!e.parentNode) {
-  //       return siblings;
-  //     }
-  //     var sibling = e.parentNode.firstChild;
-  //     while (sibling) {
-  //       if (sibling.nodeType === 1 && sibling !== e) {
-  //         siblings.push(sibling);
-  //       }
-  //       sibling = sibling.nextSibling;
-  //     }
-  //     return siblings;
-  //   }
-  //   var footerTabList = document.querySelectorAll(".js-tab-list");
-  //   footerTabList.forEach(function (element, i) {
-  //     element.addEventListener("click", function () {
-  //       // 対応するコンテンツも表示する
-
-  //       // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
-  //       var targetTab = element.dataset.tab;
-  //       var matchingPageTab = document.querySelector(
-  //         '.js-tab-trigger[data-tab="'.concat(targetTab, '"]')
-  //       );
-  //       console.log(matchingPageTab);
-  //       if (matchingPageTab) {
-  //         toggleClass(matchingPageTab, "is-active");
-
-  //         // 対応するコンテンツも表示する
-  //         var matchingPageContent = document.querySelector(
-  //           '.js-tab-target[data-id="'.concat(targetTab, '"]')
-  //         );
-  //         if (matchingPageContent) {
-  //           toggleClass(matchingPageContent, "is-show");
-  //         }
-  //       }
-  //     });
-  //   });
-
-  //   // URLからクエリパラメータを取得
-  //   var params = new URLSearchParams(window.location.search);
-  //   var targetTab = params.get("tab");
-
-  //   // クエリパラメータが存在する場合は、該当のタブを表示する
-  //   if (targetTab) {
-  //     // クリックイベントを作成して実行
-  //     var event = new Event("click", {
-  //       bubbles: true,
-  //     });
-  //     var targetElement = document.querySelector(
-  //       '[data-id="'.concat(targetTab, '"]')
-  //     );
-  //     console.log(targetElement);
-  //     if (targetElement) {
-  //       targetElement.dispatchEvent(event);
-  //     }
-  //   }
-  // });
-
-  // ===============================================================
   // 問い合わせフォームの入力チェック
   // ===============================================================
 
@@ -424,60 +235,125 @@ jQuery(function ($) {
     }
   });
 
-});
+  // ===============================================================
+  // インフォメーションのタブ
+  // ===============================================================
+  var tabList = $(".information-tab__item");
+  var tabContents = $(".js-tab-target");
+  // タブがクリックされた際の処理
+  tabList.on("click", function () {
+    var index = tabList.index(this);
 
-// ===============================================================
-// インフォメーションのタブ
-// ===============================================================
-jQuery(function ($) {
-  $(document).ready(function () {
-    var tabList = $(".js-tab-trigger");
-    var tabContents = $(".js-tab-target");
+    // タブのクリック状態を切り替える
+    if (!$(this).hasClass("is-active")) {
+      $(this).addClass("is-active");
+    }
 
-    // タブがクリックされた際の処理
-    tabList.on("click", function () {
-      var index = tabList.index(this);
+    // クリックされたタブに対応するコンテンツを表示する
+    tabContents.removeClass("is-show").eq(index).addClass("is-show");
 
-      // タブのクリック状態を切り替える
-      if (!$(this).hasClass("is-active")) {
-        $(this).addClass("is-active");
+    // 他のタブとコンテンツを非表示にする（必要であれば）
+    tabList.not(this).removeClass("is-active");
+    tabContents.not(tabContents.eq(index)).removeClass("is-show");
+  });
+
+  var footerTabList = $(".js-tab-list");
+  footerTabList.on("click", function () {
+    var targetTab = $(this).data("tab");
+
+    // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
+    var matchingPageTab = $('.js-tab-trigger[data-tab="' + targetTab + '"]');
+    if (matchingPageTab.length > 0) {
+      matchingPageTab.addClass("is-active");
+
+      // 対応するコンテンツも表示する
+      var matchingPageContent = $(
+        '.js-tab-target[data-id="' + targetTab + '"]'
+      );
+      if (matchingPageContent.length > 0) {
+        matchingPageContent.addClass("is-show");
       }
-
-      // クリックされたタブに対応するコンテンツを表示する
-      tabContents.removeClass("is-show").eq(index).addClass("is-show");
-
-      // 他のタブとコンテンツを非表示にする（必要であれば）
-      tabList.not(this).removeClass("is-active");
-      tabContents.not(tabContents.eq(index)).removeClass("is-show");
-    });
-
-    var footerTabList = $(".js-tab-list");
-    footerTabList.on("click", function () {
-      var targetTab = $(this).data("tab");
-
-      // フッタータブがクリックされた際に、ページタブとページコンテンツを連動させる処理を追加
-      var matchingPageTab = $('.js-tab-trigger[data-tab="' + targetTab + '"]');
-      if (matchingPageTab.length > 0) {
-        matchingPageTab.addClass("is-active");
-
-        // 対応するコンテンツも表示する
-        var matchingPageContent = $(
-          '.js-tab-target[data-id="' + targetTab + '"]'
-        );
-        if (matchingPageContent.length > 0) {
-          matchingPageContent.addClass("is-show");
-        }
-      }
-    });
-
-    // URLからクエリパラメータを取得
-    var params = new URLSearchParams(window.location.search);
-    var targetTab = params.get("tab");
-
-    // クエリパラメータが存在する場合は、該当のタブを表示する
-    if (targetTab) {
-      // クリックイベントをトリガーして実行
-      $('[data-id="' + targetTab + '"]').trigger("click");
     }
   });
+
+  // URLからクエリパラメータを取得
+  var params = new URLSearchParams(window.location.search);
+  var targetTab = params.get("tab");
+
+  // クエリパラメータが存在する場合は、該当のタブを表示する
+  if (targetTab) {
+    // クリックイベントをトリガーして実行
+    $('[data-id="' + targetTab + '"]').trigger("click");
+  }
 });
+
+// ===============================================================
+// ローディング
+// ===============================================================
+const tl = gsap.timeline();
+const title = document.querySelector(".loading__title");
+const loading = document.querySelector(".loading");
+
+var windowSize = $(window).width();
+
+$(window).on("load", function () {
+  var webStorage = function () {
+    if (!sessionStorage.getItem("access")) {
+      // /*初回アクセス時の処理*/
+      sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
+      loadingAnimation();
+    } else {
+      // /*2回目以降アクセス時の処理*/
+      $(".loading").addClass("is-action");
+    }
+  };
+  webStorage();
+});
+
+// ===============================================================
+// ローディングアニメーション
+// ===============================================================
+function loadingAnimation() {
+  $("body").css("overflow", "hidden");
+  tl
+    // 左の画像を上げる
+    .to(".loading__image-left", {
+      y: "0%",
+      duration: 2,
+      ease: "power4.out",
+      delay: 1,
+      onstart: () => {
+        $("body").css("overflow", "hidden");
+      },
+    })
+    // 右の画像を上げる
+    .to(
+      ".loading__image-right",
+      {
+        y: "0%",
+        duration: 2,
+        ease: "power4.out",
+      },
+      "<0.5"
+    )
+    // 文字色を白に変更
+    .add(() => {
+      title.classList.add("loading__title--white");
+    }, "<0.3")
+    // ローディング画面をゆっくり透明にする
+    .to(
+      ".loading",
+      {
+        opacity: 0,
+        duration: 1,
+
+        onComplete: () => {
+          // アニメーションがおわったら消してスクロールを可能にする
+          // $(".loading").css("display", "none");
+          $("body").css("overflow", "auto");
+        },
+      },
+      ">2"
+    )
+    .add(() => loading.classList.add("is-action"));
+}
